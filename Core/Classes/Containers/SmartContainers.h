@@ -10,6 +10,8 @@
 
 #include "../LlanyCore.h"
 
+#define CONTAINER Llanylib::Core::Classes::Containers
+
 namespace Llanylib {
 namespace Core {
 namespace Classes {

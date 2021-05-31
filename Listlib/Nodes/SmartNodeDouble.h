@@ -17,19 +17,23 @@ namespace Nodes {
 
 // Nodo doble con un smart objeto (SmartContainer)
 template<class T>
-class NDUSO : public NodeDouble<NDUSO<T>>, Core::Classes::Containers::SmartContainer<T> {
+class NDUSO : public NodeDouble<NDUSO<T>>, CONTAINER::SmartContainer<T> {
 	public:
-		NDUSO() : NodeDouble<NDUSO>(), Containers::Container<T>() {}
-		NDUSO(const T& item_0) : NodeDouble<NDUSO>(), Containers::Container<T>(item_0) {}
+		NDUSO() : NodeDouble<NDUSO>(), CONTAINER::SmartContainer<T>() {}
+		NDUSO(T* item_0, Destructor destructor_0) :
+			NodeDouble<NDUSO>(),
+			CONTAINER::SmartContainer<T>(item_0, destructor_0) {}
 		virtual ~NDUSO() {}
 };
 
 // Nodo doble con dos smart objetos (SmartContainerDouble)
 template<class T0, class T1>
-class NDDSO : public NodeDouble<NDDSO<T0, T1>>, Core::Classes::Containers::SmartContainerDouble<T0, T1> {
+class NDDSO : public NodeDouble<NDDSO<T0, T1>>, CONTAINER::SmartContainerDouble<T0, T1> {
 	public:
-		NDDSO() : NodeDouble<NDDSO<T0, T1>>(), Containers::ContainerDouble<T0, T1>() {}
-		NDDSO(const T0& item_0, const T1& item_1) : NodeDouble<NDDSO<T0, T1>>(), Containers::ContainerDouble<T0, T1>(item_1, item_1) {}
+		NDDSO() : NodeDouble<NDDSO<T0, T1>>(), CONTAINER::SmartContainerDouble<T0, T1>() {}
+		NDDSO(T0* item_0, Destructor destructor_0, T1* item_1, Destructor destructor_1) :
+			NodeDouble<NDDSO<T0, T1>>(),
+			CONTAINER::SmartContainerDouble<T0, T1>(item_0, destructor_0, item_1, destructor_1) {}
 		virtual ~NDDSO() {}
 };
 

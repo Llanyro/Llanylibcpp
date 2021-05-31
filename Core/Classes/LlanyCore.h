@@ -10,6 +10,8 @@
 
 #include  "../Libs/llanymathtypeslib.h"
 
+#define CORE Llanylib::Core::Classes
+
 namespace Llanylib {
 namespace Core {
 namespace Classes {

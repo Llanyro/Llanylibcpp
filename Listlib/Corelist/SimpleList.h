@@ -67,7 +67,7 @@ class Simplelist : public Core::Classes::LlanyCore {
 		// Funcion: Por defecto llama a remove()
 		ll_bool_t del(const len_t& pos) { return this->remove(pos); }
 		// Funcion:Por defector llama a contains()_
-		ll_bool_t cont(const T* item) const { return this->contains(item, nullptr); }
+		ll_bool_t contains(const T* item) const { return this->contains(item, nullptr); }
 		#pragma endregion
 		#pragma region Funciones heredadas
 		#pragma endregion

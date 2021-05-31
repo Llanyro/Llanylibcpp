@@ -17,14 +17,14 @@ namespace Nodes {
 
 // Nodo doble con un objeto (Container)
 template<class T>
-class NDUO : public NodeDouble<NDUO<T>>, public Core::Classes::Containers::Container<T> {
+class NDUO : public NodeDouble<NDUO<T>>, public CONTAINER::Container<T> {
 	public:
-		NDUO() : NodeDouble<NDUO>(), Containers::Container<T>() {}
-		NDUO(const T& item_0) : NodeDouble<NDUO>(), Containers::Container<T>(item_0) {}
+		NDUO() : NodeDouble<NDUO>(), CONTAINER::Container<T>() {}
+		NDUO(const T& item_0) : NodeDouble<NDUO>(), CONTAINER::Container<T>(item_0) {}
 		virtual ~NDUO() {}
 		NDUO<T>* operator+(const len_t& positions) {
 			NDUO<T>* result = nullptr;
-			// Si estamos en la posicion insicada devolvemos este nodo
+			// Si estamos en la posicion indicada devolvemos este nodo
 			if (positions == 0) result = this;
 			// Si aun quedan posiciones
 			else
@@ -36,7 +36,7 @@ class NDUO : public NodeDouble<NDUO<T>>, public Core::Classes::Containers::Conta
 		}
 		NDUO<T>* operator-(const len_t& positions) {
 			NDUO<T>* result = nullptr;
-			// Si estamos en la posicion insicada devolvemos este nodo
+			// Si estamos en la posicion indicada devolvemos este nodo
 			if (positions == 0) result = this;
 			// Si aun quedan posiciones
 			else
@@ -50,10 +50,10 @@ class NDUO : public NodeDouble<NDUO<T>>, public Core::Classes::Containers::Conta
 
 // Nodo doble con dos objetos (ContainerDouble)
 template<class T0, class T1>
-class NDDO : public NodeDouble<NDDO<T0, T1>>, public Core::Classes::Containers::ContainerDouble<T0, T1> {
+class NDDO : public NodeDouble<NDDO<T0, T1>>, public CONTAINER::ContainerDouble<T0, T1> {
 	public:
-		NDDO() : NodeDouble<NDDO<T0, T1>>(), Containers::ContainerDouble<T0, T1>() {}
-		NDDO(const T0& item_0, const T1& item_1) : NodeDouble<NDDO<T0, T1>>(), Containers::ContainerDouble<T0, T1>(item_1, item_1) {}
+		NDDO() : NodeDouble<NDDO<T0, T1>>(), CONTAINER::ContainerDouble<T0, T1>() {}
+		NDDO(const T0& item_0, const T1& item_1) : NodeDouble<NDDO<T0, T1>>(), CONTAINER::ContainerDouble<T0, T1>(item_1, item_1) {}
 		virtual ~NDDO() {}
 		NDDO<T0, T1>* operator+(const len_t& positions) {
 			NDDO<T0, T1>* result = nullptr;

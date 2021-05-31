@@ -1,30 +1,30 @@
 /*
- * Linkedlist.h
+ * LinkedlistPre.h
  *
- *  Created on: Mar 11, 2021
+ *  Created on: May 30, 2021
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORE_LISTLIB_LINKEDLIST_LINKEDLIST_H_
-#define LLANYLIB_CORE_LISTLIB_LINKEDLIST_LINKEDLIST_H_
+#ifndef LISTLIB_LINKEDLISTS_LINKEDLISTPRE_H_
+#define LISTLIB_LINKEDLISTS_LINKEDLISTPRE_H_
 
 #include "../Corelist/List.h"
 
 namespace Llanylib {
 namespace Listlib {
-namespace LinkedList {
+namespace Linkedlists {
 
 template<class T, class T_NODE>
-class Linkedlist : public Corelist::List<T> {
+class LinkedlistPre : public Corelist::List<T> {
 	protected:
 		T_NODE* raiz;
 		BASIC_STRUCTS::cachelist<T_NODE*, len_t>* cache;
 	protected:
-		Linkedlist() : Corelist::List<T>() {
+		LinkedlistPre() : Corelist::List<T>() {
 			this->raiz = nullptr;
 			this->cache = new BASIC_STRUCTS::cachelist<T_NODE*, len_t>();
 		}
-		virtual ~Linkedlist() { this->clear(); }
+		virtual ~LinkedlistPre() { this->clear(); }
 		void changeCacheNode(T_NODE* node, const len_t& position) const {
 			this->cache->cache = node;
 			this->cache->position = position;
@@ -143,31 +143,6 @@ class Linkedlist : public Corelist::List<T> {
 				item = this->getNodoCache(pos)->get_0();
 			return item;
 		}
-		virtual void add(const T& object) {
-			// Creamos el nodo
-			T_NODE* nuevoNodo = new T_NODE(object);
-			// Caso especial de que la lista este vacia
-			if (this->length == 0) {
-				this->raiz = nuevoNodo;
-				nuevoNodo->setSiguienteNodo(nuevoNodo);
-				nuevoNodo->setAnteriorNodo(nuevoNodo);
-			}
-			// Añadirmos al final
-			else {
-				// Guardamos los Nodes que vamos a modificar
-				T_NODE* anteriorNodo = this->getNodoCache(this->length - 1);
-				T_NODE* siguienteNodo = anteriorNodo->getSiguienteNodo();
-
-				// Apuntamos correctamente el nodo entre los otros Nodes
-				nuevoNodo->setSiguienteNodo(siguienteNodo);
-				nuevoNodo->setAnteriorNodo(anteriorNodo);
-				// Hacemos que los otros Nodes apunten al nuevo
-				anteriorNodo->setSiguienteNodo(nuevoNodo);
-				siguienteNodo->setAnteriorNodo(nuevoNodo);
-			}
-			// Incrementamos el tama�o
-			this->length++;
-		}
 		virtual T* operator[](const len_t& pos) override {
 			return nullptr;
 		}
@@ -182,4 +157,4 @@ class Linkedlist : public Corelist::List<T> {
 } /* namespace Listlib */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORE_LISTLIB_LINKEDLIST_LINKEDLIST_H_ */
+#endif /* LISTLIB_LINKEDLISTS_LINKEDLISTPRE_H_ */

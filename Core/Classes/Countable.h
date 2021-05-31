@@ -9,6 +9,7 @@
 #define LLANYLIB_CORE_CLASSES_HERITABLES_LEN_H_
 
 #include "../Structs/basicstructs.h"
+
 #include "LlanyCore.h"
 
 namespace Llanylib {
