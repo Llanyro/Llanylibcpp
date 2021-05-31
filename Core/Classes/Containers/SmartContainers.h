@@ -48,7 +48,7 @@ class SmartContainer : public LlanyCore {
 		void setSmart_0(T* item_0) { this->setSmart_0(item_0, nullptr); }
 		void remove_0() {
 			if(this->destructor_0 != nullptr && this->item_0 != nullptr) {
-				this->destructor_0(&this->item_0);
+				this->destructor_0((void**)&this->item_0);
 				this->destructor_0 = nullptr;
 			}
 		}
@@ -77,7 +77,7 @@ class SmartContainerDouble : public SmartContainer<T0> {
 			this->destructor_1 = nullptr;
 		}
 		SmartContainerDouble(T0* item_0, Destructor destructor_0, T1* item_1, Destructor destructor_1)
-		: SmartContainerDouble<T0, T1>(), SmartContainer<T0>(item_0, destructor_0) {
+		: SmartContainer<T0>(item_0, destructor_0) {
 			this->set_1(item_1, destructor_1);
 		}
 		SmartContainerDouble(T0* item_0, T1* item_1, Destructor destructor_1)
@@ -89,21 +89,21 @@ class SmartContainerDouble : public SmartContainer<T0> {
 		virtual ~SmartContainerDouble() { this->remove_1(); }
 
 		// Get/Set/Remove
-		T* get_1() { return this->item_1; }
-		const T* getConst_1() const { return this->item_1; }
-		void set_1(T* item_1, Destructor destructor_1) {
+		T1* get_1() { return this->item_1; }
+		const T1* getConst_1() const { return this->item_1; }
+		void set_1(T1* item_1, Destructor destructor_1) {
 			this->item_1 = item_1;
 			this->destructor_1 = destructor_1;
 		}
-		void set_1(T* item_1) { this->set_1(item_1, nullptr); }
-		void setSmart_1(T* item_1, Destructor destructor_1) {
+		void set_1(T1* item_1) { this->set_1(item_1, nullptr); }
+		void setSmart_1(T1* item_1, Destructor destructor_1) {
 			this->remove_1();
 			this->set_1(item_1, destructor_1);
 		}
-		void setSmart_1(T* item_1) { this->setSmart_1(item_1, nullptr); }
+		void setSmart_1(T1* item_1) { this->setSmart_1(item_1, nullptr); }
 		void remove_1() {
 			if(this->destructor_1 != nullptr && this->item_1 != nullptr) {
-				this->destructor_1(&this->item_1);
+				this->destructor_1((void**)&this->item_1);
 				this->destructor_1 = nullptr;
 			}
 		}

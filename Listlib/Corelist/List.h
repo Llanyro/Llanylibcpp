@@ -19,7 +19,7 @@ template<class T>
 class List : public Simplelist<T>, public Core::Classes::Countable {
 	protected:
 		List() : Simplelist<T>(), Countable() {}
-		List(const len_t& length) : Simplelist<T>(), Len(length) {}
+		List(const len_t& length) : Simplelist<T>(), Countable(length) {}
 		virtual ~List() {}
 	public:
 		#pragma region Funciones nuevas heredables

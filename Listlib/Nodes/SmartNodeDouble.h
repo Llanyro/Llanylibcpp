@@ -9,7 +9,7 @@
 #define LLANYLIB_CORE_CLASSES_NODES_SMARTNODEDOUBLE_H_
 
 #include "Nodes.h"
-#include "../Containers/SmartContainers.h"
+#include "../../Core/Classes/Containers/SmartContainers.h"
 
 namespace Llanylib {
 namespace Listlib {
@@ -17,7 +17,7 @@ namespace Nodes {
 
 // Nodo doble con un smart objeto (SmartContainer)
 template<class T>
-class NDUSO : public NodeDouble<NDUSO<T>>, CONTAINER::SmartContainer<T> {
+class NDUSO : public NodeDouble<NDUSO<T>>, public CONTAINER::SmartContainer<T> {
 	public:
 		NDUSO() : NodeDouble<NDUSO>(), CONTAINER::SmartContainer<T>() {}
 		NDUSO(T* item_0, Destructor destructor_0) :
@@ -28,7 +28,7 @@ class NDUSO : public NodeDouble<NDUSO<T>>, CONTAINER::SmartContainer<T> {
 
 // Nodo doble con dos smart objetos (SmartContainerDouble)
 template<class T0, class T1>
-class NDDSO : public NodeDouble<NDDSO<T0, T1>>, CONTAINER::SmartContainerDouble<T0, T1> {
+class NDDSO : public NodeDouble<NDDSO<T0, T1>>, public CONTAINER::SmartContainerDouble<T0, T1> {
 	public:
 		NDDSO() : NodeDouble<NDDSO<T0, T1>>(), CONTAINER::SmartContainerDouble<T0, T1>() {}
 		NDDSO(T0* item_0, Destructor destructor_0, T1* item_1, Destructor destructor_1) :

@@ -8,15 +8,16 @@
 #ifndef LLANYLIB_CORE_MATHLIB_VECTORSPACE_X_H_
 #define LLANYLIB_CORE_MATHLIB_VECTORSPACE_X_H_
 
-#include "../../Simplelibs/llanymathtypeslib.h"
-#include "../../Classes/Heritables/LlanyCore.h"
+#include "../../Core/Libs/llanymathtypeslib.h"
+#include "../../Core/Classes/LlanyCore.h"
+
 
 namespace Llanylib {
 namespace Core {
 namespace Math {
 namespace VectorSpace {
 
-class X : Classes::Heritables::LlanyCore {
+class X : CORE::LlanyCore {
 	protected:
 		ll_coordinate_t x;
 	public:

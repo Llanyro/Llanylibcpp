@@ -19,7 +19,6 @@ Countable::~Countable() { this->length = 0; }
 // Complejidad temporal y espacial: O(1) y M(1)
 len_t Countable::count() const { return this->length; }
 len_t Countable::len() const { return this->length; }
-len_t Countable::length() const { return this->length; }
 len_t Countable::size() const { return this->length; }
 
 } /* namespace Classes */

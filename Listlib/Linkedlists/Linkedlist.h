@@ -23,7 +23,7 @@ class Linkedlist : public LinkedlistPre<T, Nodes::NDUO<T>> {
 
 		virtual void add(const T& object) {
 			// Creamos el nodo
-			T_NODE* nuevoNodo = new T_NODE(object);
+			Nodes::NDUO<T>* nuevoNodo = new Nodes::NDUO<T>(object);
 			// Caso especial de que la lista este vacia
 			if (this->length == 0) {
 				this->raiz = nuevoNodo;
@@ -33,8 +33,8 @@ class Linkedlist : public LinkedlistPre<T, Nodes::NDUO<T>> {
 			// Añadirmos al final
 			else {
 				// Guardamos los Nodes que vamos a modificar
-				T_NODE* anteriorNodo = this->getNodoCache(this->length - 1);
-				T_NODE* siguienteNodo = anteriorNodo->getSiguienteNodo();
+				Nodes::NDUO<T>* anteriorNodo = this->getNodoCache(this->length - 1);
+				Nodes::NDUO<T>* siguienteNodo = anteriorNodo->getSiguienteNodo();
 
 				// Apuntamos correctamente el nodo entre los otros Nodes
 				nuevoNodo->setSiguienteNodo(siguienteNodo);
@@ -46,9 +46,9 @@ class Linkedlist : public LinkedlistPre<T, Nodes::NDUO<T>> {
 			// Incrementamos el tama�o
 			this->length++;
 		}
-		virtual ll_bool_t set(const T& object, const lent_t& position) {
+		virtual ll_bool_t set(const T& object, const len_t& position) {
 			ll_bool_t result = true;
-			T_NODE* nodo = this->getNodoCache(position);
+			Nodes::NDUO<T>* nodo = this->getNodoCache(position);
 			if(nodo != nullptr) nodo->set_0(object);
 			else result = false;
 			return result;

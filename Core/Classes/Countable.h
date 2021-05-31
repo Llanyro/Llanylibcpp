@@ -25,7 +25,6 @@ class Countable : protected Structs::llanyLen, public LlanyCore {
 		// Complejidad temporal y espacial: O(1) y M(1)
 		len_t count() const;
 		len_t len() const;
-		len_t length() const;
 		len_t size() const;
 };
 

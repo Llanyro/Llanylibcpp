@@ -20,13 +20,12 @@ namespace Linkedlists {
 template<class T>
 class SmartLinkedlist : public LinkedlistPre<T, Nodes::NDUSO<T>> {
 	public:
-		SmartLinkedlist() : LinkedlistPre<T, Nodes::NDUO<T>>() {}
+		SmartLinkedlist() : LinkedlistPre<T, Nodes::NDUSO<T>>() {}
 		virtual ~SmartLinkedlist() {}
 
 		virtual void add(T* object) {
 			// Creamos el nodo
-			T_NODE* nuevoNodo = new T_NODE();
-			nuevoNodo->setSmart_0(object, MEM_LIB::__delete__);
+			Nodes::NDUSO<T>* nuevoNodo = new Nodes::NDUSO<T>(object, MEM_LIB::__delete__);
 			// Caso especial de que la lista este vacia
 			if (this->length == 0) {
 				this->raiz = nuevoNodo;
@@ -36,8 +35,8 @@ class SmartLinkedlist : public LinkedlistPre<T, Nodes::NDUSO<T>> {
 			// Añadirmos al final
 			else {
 				// Guardamos los Nodes que vamos a modificar
-				T_NODE* anteriorNodo = this->getNodoCache(this->length - 1);
-				T_NODE* siguienteNodo = anteriorNodo->getSiguienteNodo();
+				Nodes::NDUSO<T>* anteriorNodo = this->getNodoCache(this->length - 1);
+				Nodes::NDUSO<T>* siguienteNodo = anteriorNodo->getSiguienteNodo();
 
 				// Apuntamos correctamente el nodo entre los otros Nodes
 				nuevoNodo->setSiguienteNodo(siguienteNodo);
@@ -49,10 +48,11 @@ class SmartLinkedlist : public LinkedlistPre<T, Nodes::NDUSO<T>> {
 			// Incrementamos el tama�o
 			this->length++;
 		}
-		virtual ll_bool_t set(T* object, const lent_t& position) {
+		virtual ll_bool_t set(T* object, const len_t& position) {
 			ll_bool_t result = true;
-			T_NODE* nodo = this->getNodoCache(position);
-			if(nodo != nullptr) nodo->setSmart_0(object, MEM_LIB::__delete__);
+			Nodes::NDUSO<T>* nodo = this->getNodoCache(position);
+			if(nodo != nullptr)
+				nodo->setSmart_0(object, MEM_LIB::__delete__);
 			else result = false;
 			return result;
 		}

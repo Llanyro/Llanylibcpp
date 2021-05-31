@@ -10,7 +10,7 @@
 
 #include "llanytypeslib.h"
 
-//typedef ll_float_t ll_coordinate_t;
+typedef ll_float_t ll_coordinate_t;
 
 #define PI_VAL (3.14159265358979323846)
 #define E_VAL 2.718
