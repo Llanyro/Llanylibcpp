@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
 	int* temp;
 	for (int i = 0; i < list->len(); ++i) {
 		temp = list->get(i);
-		if(temp != nullptr) PRINT2LN("", *temp);
+		if(temp != nullptr) PRINT2LN("Num:", *temp);
 	}
 
 	delete list;
@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
 
 	for (int i = 0; i < list_2->len(); ++i) {
 		temp = list_2->get(i);
-		if (temp != nullptr) PRINT2LN("", *temp);
+		if (temp != nullptr) PRINT2LN("Num:", *temp);
 	}
 
 	delete list_2;
