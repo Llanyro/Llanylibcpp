@@ -48,8 +48,8 @@ class Linkedlist : public LinkedlistPre<T, Nodes::NDUO<T>> {
 		}
 		virtual ll_bool_t set(const T& object, const len_t& position) {
 			ll_bool_t result = true;
-			Nodes::NDUO<T>* nodo = this->getNodoCache(position);
-			if(nodo != nullptr) nodo->set_0(object);
+			if(this->validPos(position))
+				this->getNodoCache(position)->set_0(object);
 			else result = false;
 			return result;
 		}

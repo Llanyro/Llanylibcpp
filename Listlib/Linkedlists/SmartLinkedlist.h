@@ -26,6 +26,9 @@ class SmartLinkedlist : public LinkedlistPre<T, Nodes::NDUSO<T>> {
 		virtual void add(T* object) {
 			// Creamos el nodo
 			Nodes::NDUSO<T>* nuevoNodo = new Nodes::NDUSO<T>(object, MEM_LIB::__delete__);
+			//Nodes::NDUSO<T>* nuevoNodo = new Nodes::NDUSO<T>();
+			//nuevoNodo->setSmart_0(object, MEM_LIB::__delete__);
+
 			// Caso especial de que la lista este vacia
 			if (this->length == 0) {
 				this->raiz = nuevoNodo;
@@ -50,9 +53,9 @@ class SmartLinkedlist : public LinkedlistPre<T, Nodes::NDUSO<T>> {
 		}
 		virtual ll_bool_t set(T* object, const len_t& position) {
 			ll_bool_t result = true;
-			Nodes::NDUSO<T>* nodo = this->getNodoCache(position);
-			if(nodo != nullptr)
-				nodo->setSmart_0(object, MEM_LIB::__delete__);
+			if(this->validPos(position))
+				this->getNodoCache(position)->
+						setSmart_0(object, MEM_LIB::__delete__);
 			else result = false;
 			return result;
 		}

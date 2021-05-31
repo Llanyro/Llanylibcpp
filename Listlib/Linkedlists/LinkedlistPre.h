@@ -44,7 +44,7 @@ class LinkedlistPre : public Corelist::List<T> {
 		// Complejidad temporal y espacial: O(n/2) y M(1)
 		T_NODE* getNodoNoCache(const len_t& position) const {
 			T_NODE* nodoActual = nullptr;
-			if (position < this->length) {
+			if (this->validPos(position)) {
 				nodoActual = this->raiz;
 				if (position < this->length / 2)
 					for (len_t i = 0; i < position; i++)
@@ -66,7 +66,7 @@ class LinkedlistPre : public Corelist::List<T> {
 		// Complejidad temporal y espacial mejor: O(1) y M(1)
 		T_NODE* getNodoCache(const len_t& position) const {
 			T_NODE* nodoActual = nullptr;
-			if (position < this->length) {
+			if (this->validPos(position)) {
 				if (position == 0)
 					nodoActual = this->raiz;
 				else if (position == (this->length - 1))
@@ -108,7 +108,7 @@ class LinkedlistPre : public Corelist::List<T> {
 		}
 		virtual ll_bool_t remove(const len_t& pos) override {
 			bool resultado = false;
-			if (pos < this->length) {
+			if (this->validPos(pos)) {
 				// Nodes a modificar
 				T_NODE* nodoAEliminar = nullptr;
 				if (this->length == 1) {
@@ -139,7 +139,7 @@ class LinkedlistPre : public Corelist::List<T> {
 		}
 		virtual T* get(const len_t& pos) const override {
 			T* item = nullptr;
-			if(this->length > pos)
+			if(this->validPos(pos))
 				item = this->getNodoCache(pos)->get_0();
 			return item;
 		}

@@ -28,23 +28,32 @@ class Vector : public Corelist::List<T> {
 			this->free = true;
 			this->vector = new T[length];
 		}
+		Vector(T* vector, const len_t& length) : Vector<T>(vector, length, true) {}
 		Vector(T* vector, const len_t& length, const ll_bool_t& free) : Vector<T>() {
-			this->setVector(vector, length, free);
+			this->free = free;
+			this->vector = vector;
+			this->length = length;
 		}
 		virtual ~Vector() { this->clear(); }
 	public:
 		# pragma region Funciones nuevas heredables
 		virtual ll_bool_t setVector(T* vector, const len_t& length, const ll_bool_t& free) {
-			this->clear();
-			this->free = free;
-			this->vector = vector;
-			this->length = length;
-			return true;
+			ll_bool_t result = true;
+			if(this->clear()) {
+				this->free = free;
+				this->vector = vector;
+				this->length = length;
+			}
+			else result = false;
+			return result;
 		}
-		virtual ll_bool_t set(T* item, const len_t& pos) const {
+		virtual ll_bool_t setVector(T* vector, const len_t& length) {
+			return this->setVector(vector, length, true);
+		}
+		virtual ll_bool_t set(const T& item, const len_t& pos) const {
 			ll_bool_t result = true;
 			if (this->validPos(pos))
-				this->vector[pos] = *item;
+				this->vector[pos] = item;
 			else result = false;
 			return result;
 		}
@@ -54,7 +63,8 @@ class Vector : public Corelist::List<T> {
 		#pragma endregion
 		#pragma region Funciones heredadas
 		virtual ll_bool_t clear() override {
-			if (this->vector != nullptr && this->free) delete this->vector;
+			if (this->vector != nullptr && this->free)
+				delete[] this->vector;
 			this->vector = nullptr;
 			return Corelist::List<T>::clear();
 		}
@@ -71,9 +81,9 @@ class Vector : public Corelist::List<T> {
 			return result;
 		}
 		virtual T* begin() const override { return this->vector; }
-		virtual T* end() const override { return this->vector + this->length; }
+		virtual T* end() const override { return this->vector + this->length - 1; }
 		virtual const T* cbegin() const override { return this->vector; }
-		virtual const T* cend() const override { return this->vector + this->length; }
+		virtual const T* cend() const override { return this->vector + this->length - 1; }
 		#pragma endregion
 };
 
