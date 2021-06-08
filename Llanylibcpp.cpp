@@ -11,10 +11,10 @@
 
 using namespace Llanylib::Listlib::Linkedlists;
 
-#define NUM 999999
+/*#define NUM 999999
 
 void test_func() {
-	/*SmartLinkedlist<int>* list = new SmartLinkedlist<int>();
+	/SmartLinkedlist<int>* list = new SmartLinkedlist<int>();
 
 	for (int i = 0; i < 10; ++i) list->add(new int(i));
 
@@ -24,7 +24,7 @@ void test_func() {
 		if (temp != nullptr) PRINT2LN("Num:", *temp);
 	}
 
-	delete list;*/
+	delete list;*
 
 	Linkedlist<ll_uint64_t>* list_2 = new Linkedlist<ll_uint64_t>();
 
@@ -41,7 +41,7 @@ void test_func() {
 		temp = list_2->get(i);
 		if (temp != nullptr) std::cout << *temp << ", ";
 	}
-	std::cout << "};\n";*/
+	std::cout << "};\n";*
 
 	delete list_2;
 }
@@ -58,7 +58,7 @@ void test_func_std() {
 
 	/*std::cout << "l = { ";
 	for (int n : (*list)) std::cout << n << ", ";
-	std::cout << "};\n";*/
+	std::cout << "};\n";*
 
 	delete list;
 }
@@ -82,4 +82,4 @@ int main(int argc, char **argv) {
 		<< " milliseconds\n";
 
 	return 0;
-}
+}*/

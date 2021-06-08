@@ -85,7 +85,7 @@ char randomCharNumber() { return getRandomChar(CHARS_NUMS, CHARS_NUMS_LEN); }
 char randomCharAbecedarioOrNumber() { return getRandomChar(ABECEDARIO_NUMS_1, ABECEDARIO_NUMS_1_LEN); }
 char randomCharVisible() { return getRandomChar(VISIBLE_CHARS, VISIBLE_CHARS_LEN); }
 
-/*LLANY_MULTI_RETURN::TypeOne::multireturn<ll_float_t, 4> randomBoxMuller() {
+std::list<ll_float_t>* randomBoxMuller() {
     /*do {
         result.results[0] = randomf();
         result.results[1] = randomf();
@@ -101,15 +101,16 @@ char randomCharVisible() { return getRandomChar(VISIBLE_CHARS, VISIBLE_CHARS_LEN
 	 * result.results[1] = random float 2
 	 * result.results[2] = r * cos(FI) = sqrt(-2 * ln(U1)) * cos(2 * PI * U2);
 	 * result.results[3] = r * sin(FI) = sqrt(-2 * ln(U1)) * sin(2 * PI * U2);
-	 **
-	LLANY_MULTI_RETURN::TypeOne::multireturn<ll_float_t, 4> result;
-	randomBoxMuller(&result);
+	 **/
+	std::list<ll_float_t>* result = new std::list<ll_float_t>();
+	randomBoxMuller(result);
 	return result;
-}*/
-/*ll_bool_t randomBoxMuller(LLANY_MULTI_RETURN::TypeOne::multireturn<ll_float_t, 4>* values) {
+}
+ll_bool_t randomBoxMuller(std::list<ll_float_t>* values) {
 	ll_bool_t resultado = false;
 	if(values != nullptr) {
 	    do {
+	    	values->
 	    	values->results[0] = randomf();
 	    	values->results[1] = randomf();
 	    } while (values->results[0] <= FLT_MIN);
@@ -121,7 +122,7 @@ char randomCharVisible() { return getRandomChar(VISIBLE_CHARS, VISIBLE_CHARS_LEN
 		values->results[3] = raiz * sin(two_pi_u2);
 	}
 	return resultado;
-}*/
+}
 
 
 } /* namespace Random */

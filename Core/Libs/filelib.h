@@ -1,19 +1,23 @@
+/*
+ * filelib.h
+ *
+ *  Created on: Jun 8, 2021
+ *      Author: llanyro
+ */
 
-
-#include "../Structs/llanystring.h"
+#ifndef CORE_LIBS_FILELIB_H_
+#define CORE_LIBS_FILELIB_H_
 
 namespace Llanylib {
 namespace Core {
-namespace Structs { namespace String { struct llanystring; }
+namespace Libs {
+namespace File {
 
 
 
-}
-}
-}
+} /* namespace File */
+} /* namespace Libs */
+} /* namespace Core */
+} /* namespace Llanylib */
 
-
-Llanylib::Core::Structs::String::llanystring* simpleReadFile(char* filename);
-
-
-
+#endif /* CORE_LIBS_FILELIB_H_ */
