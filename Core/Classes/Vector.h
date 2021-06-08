@@ -21,7 +21,7 @@ class Vector : public Countable {
 	public:
 		Vector() : Vector(300) {}
 		Vector(const len_t& length) : Countable(length) {
-			this->vector = new T[this->vector];
+			this->vector = new T[this->length];
 		}
 		virtual ~Vector() { delete[] this->vector; }
 		// Funcion: Sustituye el objeto antiguo por uno nuevo
@@ -64,10 +64,9 @@ class Vector : public Countable {
 			return item;
 		}
 		virtual T& operator[](const len_t& position) const {
-			return
-					this->in_range(position)
-					? this->vector + position
-							: this->vector + this->length - 1;
+			return this->in_range(position) ? 
+				this->vector[position] : 
+				this->vector[this->length - 1];
 		}
 };
 

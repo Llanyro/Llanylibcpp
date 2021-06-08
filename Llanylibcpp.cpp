@@ -6,8 +6,9 @@
 #include "Core/Libs/llanysimpleprint.h"
 
 #include "Core/Libs/randomlib.h"
+#include "Core/Libs/filelib.h"
 
-#include "Core/Structs/llanylinkedlist.h"
+//#include "Core/Structs/llanylinkedlist.h"
 //#include "Listlib/Linkedlists/SmartLinkedlist.h"
 //#include "Listlib/Linkedlists/Linkedlist.h"
 
@@ -77,7 +78,6 @@ void execute_test(void* func(void)) {
 
 
 int main(int argc, char **argv) {
-
-
+	std::cout << FILE_LIB::dir_exist_create("/FolderFolder2/Test") << std::endl;
 	return 0;
 }
