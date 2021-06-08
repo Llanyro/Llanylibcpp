@@ -6,15 +6,17 @@
 #include "Core/Libs/llanysimpleprint.h"
 
 #include "Core/Libs/randomlib.h"
-#include "Listlib/Linkedlists/SmartLinkedlist.h"
-#include "Listlib/Linkedlists/Linkedlist.h"
 
-using namespace Llanylib::Listlib::Linkedlists;
+#include "Core/Structs/llanylinkedlist.h"
+//#include "Listlib/Linkedlists/SmartLinkedlist.h"
+//#include "Listlib/Linkedlists/Linkedlist.h"
 
-/*#define NUM 999999
+using namespace Llanylib::Core::Structs;
+
+#define NUM 9999
 
 void test_func() {
-	/SmartLinkedlist<int>* list = new SmartLinkedlist<int>();
+	/*SmartLinkedlist<int>* list = new SmartLinkedlist<int>();
 
 	for (int i = 0; i < 10; ++i) list->add(new int(i));
 
@@ -24,26 +26,26 @@ void test_func() {
 		if (temp != nullptr) PRINT2LN("Num:", *temp);
 	}
 
-	delete list;*
+	delete list;*/
 
-	Linkedlist<ll_uint64_t>* list_2 = new Linkedlist<ll_uint64_t>();
+	BASIC_STRUCTS::llanyList<ll_uint64_t>* list_2 = BASIC_STRUCTS::newlist<ll_uint64_t>();
 
 	for (ll_uint64_t i = 0; i < NUM; ++i) {
 		//std::cout << i << ", ";
-		list_2->add(i);
+		BASIC_STRUCTS::add(list_2, i);
 		//if(i % 500 == 0) std::cout << std::endl;
 	}
 	//std::cout << std::endl;
 
-	/*int* temp;
+	/*ll_uint64_t* temp;
 	std::cout << "l = { ";
-	for (int i = 0; i < list_2->len(); ++i) {
-		temp = list_2->get(i);
+	for (int i = 0; i < list_2->length; ++i) {
+		temp = BASIC_STRUCTS::getValue(list_2, i);
 		if (temp != nullptr) std::cout << *temp << ", ";
 	}
-	std::cout << "};\n";*
+	std::cout << "};\n";*/
 
-	delete list_2;
+	BASIC_STRUCTS::removelist(&list_2);
 }
 void test_func_std() {
 	std::list<ll_uint64_t>* list = new std::list<ll_uint64_t>();
@@ -58,7 +60,7 @@ void test_func_std() {
 
 	/*std::cout << "l = { ";
 	for (int n : (*list)) std::cout << n << ", ";
-	std::cout << "};\n";*
+	std::cout << "};\n";*/
 
 	delete list;
 }
@@ -82,4 +84,4 @@ int main(int argc, char **argv) {
 		<< " milliseconds\n";
 
 	return 0;
-}*/
+}

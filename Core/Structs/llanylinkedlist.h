@@ -36,7 +36,7 @@ llanyList<T>* newlist() { return newlist<T>(nullptr); }
 template<class T>
 void removenoderecursive(llanyNode<T>* n, Destructor destructor) {
 	if (n->next != nullptr) removenoderecursive(n->next, destructor);
-	if(destructor != nullptr) delete n->item_0;
+	//if(destructor != nullptr) delete n->item_0;
 	delete n;
 }
 template<class T>

@@ -65,9 +65,9 @@ char randomCharNumber();
 char randomCharAbecedarioOrNumber();
 char randomCharVisible();
 
-std::list<ll_float_t>* randomBoxMuller();
+//std::list<ll_float_t>* randomBoxMuller();
 // Sobrescribe un grupo de valores anteriormente usado para no regenerar la memoria
-ll_bool_t randomBoxMuller(std::list<ll_float_t>* values);
+//ll_bool_t randomBoxMuller(std::list<ll_float_t>* values);
 
 
 /*

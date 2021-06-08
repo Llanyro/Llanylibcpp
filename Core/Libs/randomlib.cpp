@@ -103,10 +103,10 @@ std::list<ll_float_t>* randomBoxMuller() {
 	 * result.results[3] = r * sin(FI) = sqrt(-2 * ln(U1)) * sin(2 * PI * U2);
 	 **/
 	std::list<ll_float_t>* result = new std::list<ll_float_t>();
-	randomBoxMuller(result);
+	//randomBoxMuller(result);
 	return result;
 }
-ll_bool_t randomBoxMuller(std::list<ll_float_t>* values) {
+/*ll_bool_t randomBoxMuller(std::list<ll_float_t>* values) {
 	ll_bool_t resultado = false;
 	if(values != nullptr) {
 	    do {
@@ -122,7 +122,7 @@ ll_bool_t randomBoxMuller(std::list<ll_float_t>* values) {
 		values->results[3] = raiz * sin(two_pi_u2);
 	}
 	return resultado;
-}
+}*/
 
 
 } /* namespace Random */
