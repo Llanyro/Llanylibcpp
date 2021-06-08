@@ -46,6 +46,22 @@ class NDUO : public NodeDouble<NDUO<T>>, public CONTAINER::Container<T> {
 				// Si es nullptr devolvemos nullptr (Ya que se ha pasado)
 				: nullptr;
 		}
+		/*virtual void deleteRecursivo(const NodeDouble<NDUO<T>>* first) {
+			// Si no hay primero, este nodo es el primero
+			// Si hay siguiente nodo
+			if (first == nullptr && this->getSiguienteNodo() != nullptr) {
+				// Si el siguiente nodo no es este nodo
+				if (this->getSiguienteNodo() != this)
+					this->getSiguienteNodo()->deleteRecursivo(this);
+				// Si es el mismo nodo, no hacemos nada
+			}
+			else {
+				// Si hay siguiente nodo y no es el primero
+				if (this->getSiguienteNodo() != nullptr && this->getSiguienteNodo() != first)
+					this->getSiguienteNodo()->deleteRecursivo(first);
+			}
+			delete this;
+		}*/
 };
 
 // Nodo doble con dos objetos (ContainerDouble)
@@ -79,6 +95,22 @@ class NDDO : public NodeDouble<NDDO<T0, T1>>, public CONTAINER::ContainerDouble<
 				// Si es nullptr devolvemos nullptr (Ya que se ha pasado)
 				: nullptr;
 		}
+		/*virtual void deleteRecursivo(const NodeDouble<NDDO<T0, T1>>* first) {
+			// Si no hay primero, este nodo es el primero
+			// Si hay siguiente nodo
+			if (first == nullptr && this->getSiguienteNodo() != nullptr) {
+				// Si el siguiente nodo no es este nodo
+				if (this->getSiguienteNodo() != this)
+					this->getSiguienteNodo()->deleteRecursivo(this);
+				// Si es el mismo nodo, no hacemos nada
+			}
+			else {
+				// Si hay siguiente nodo y no es el primero
+				if (this->getSiguienteNodo() != nullptr && this->getSiguienteNodo() != first)
+					this->getSiguienteNodo()->deleteRecursivo(first);
+			}
+			delete this;
+		}*/
 };
 
 } /* namespace Nodes */

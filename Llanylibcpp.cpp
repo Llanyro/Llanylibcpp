@@ -26,9 +26,9 @@ void test_func() {
 
 	delete list;*/
 
-	Linkedlist<int>* list_2 = new Linkedlist<int>();
+	Linkedlist<ll_uint64_t>* list_2 = new Linkedlist<ll_uint64_t>();
 
-	for (int i = 0; i < NUM; ++i) {
+	for (ll_uint64_t i = 0; i < NUM; ++i) {
 		//std::cout << i << ", ";
 		list_2->add(i);
 		//if(i % 500 == 0) std::cout << std::endl;
@@ -46,9 +46,9 @@ void test_func() {
 	delete list_2;
 }
 void test_func_std() {
-	std::list<int>* list = new std::list<int>();
+	std::list<ll_uint64_t>* list = new std::list<ll_uint64_t>();
 
-	for (int i = 0; i < NUM; ++i) {
+	for (ll_uint64_t i = 0; i < NUM; ++i) {
 		//std::cout << i << ", ";
 		list->push_back(i);
 		//if(i % 500 == 0) std::cout << std::endl;

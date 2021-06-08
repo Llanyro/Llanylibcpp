@@ -20,8 +20,8 @@ namespace Structs {
 // Struct para los objetos que sean contables
 struct llanyLen { len_t length = 0; };
 
-template<class T, const len_t numReturns>
-struct llanyStaticVector { T vector[numReturns]; };
+//template<class T, const len_t numReturns>
+//struct llanyStaticVector { T vector[numReturns]; };
 
 template<class T>
 struct llanyContainer { T item_0 = T(); };

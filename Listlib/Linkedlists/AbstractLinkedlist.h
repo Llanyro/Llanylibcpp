@@ -110,7 +110,16 @@ class AbstractLinkedlist : public Corelist::List<T> {
 		virtual T* operator[](const len_t& pos) override { return this->get(pos); }
 		virtual ll_bool_t clear() override {
 			delete this->cache;
-			this->raiz->deleteRecursivo(nullptr);
+			//this->raiz->deleteRecursivo(nullptr);
+			T_NODE* temp = nullptr;
+			T_NODE* nodeRemove = this->raiz->getAnteriorNodo();
+			while (nodeRemove != this->raiz) {
+				temp = nodeRemove->getAnteriorNodo();
+				delete nodeRemove;
+				nodeRemove = temp;
+			}
+			delete this->raiz;
+
 			return Corelist::List<T>::clear();
 		}
 		// Funcion: Elimina un item de la lista

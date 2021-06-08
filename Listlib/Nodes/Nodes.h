@@ -8,8 +8,6 @@
 #ifndef LLANYLIB_CORE_CLASSES_NODES_NODES_H_
 #define LLANYLIB_CORE_CLASSES_NODES_NODES_H_
 
-#include "../../Core/Structs/basicstructs.h"
-
 #include "../../Core/Classes/LlanyCore.h"
 
 namespace Llanylib {
@@ -17,15 +15,17 @@ namespace Listlib {
 namespace Nodes {
 
 template<class T, const len_t numNodes>
-class Node : public Core::Classes::LlanyCore, protected BASIC_STRUCTS::llanyStaticVector<T*, numNodes> {
+class Node : public Core::Classes::LlanyCore {
+	protected:
+		T** vector;
 	public:
 		Node() : LlanyCore() {
-			for (len_t i = 0; i < numNodes; ++i)
-				this->vector[i] = nullptr;
+			this->vector = new T*[numNodes];
+			for (len_t i = 0; i < numNodes; ++i) this->vector[i] = nullptr;
 		}
 		virtual ~Node() {
-			for (len_t i = 0; i < numNodes; ++i)
-				this->vector[i] = nullptr;
+			for (len_t i = 0; i < numNodes; ++i) this->vector[i] = nullptr;
+			delete[] this->vector;
 		}
 		T* get(const len_t& position) {
 			T* result = nullptr;
@@ -46,7 +46,7 @@ class Node : public Core::Classes::LlanyCore, protected BASIC_STRUCTS::llanyStat
 			else result = false;
 			return result;
 		}
-		virtual void deleteRecursivo(const void* first) {}
+		//virtual void deleteRecursivo(const void* first) {}
 };
 
 template<class T>
@@ -60,7 +60,7 @@ class NodeDouble : protected Node<T, 2> {
 		T* getAnteriorNodo() { return Node<T, 2>::get(1); }
 		const T* getConstAnteriorNodo() const { return Node<T, 2>::getConst(1); }
 		ll_bool_t setAnteriorNodo(T* node) { return Node<T, 2>::set(node, 1); }
-		virtual void deleteRecursivo(const NodeDouble<T>* first) {
+		/*virtual void deleteRecursivo(const NodeDouble<T>* first) {
 			// Si no hay primero, este nodo es el primero
 			// Si hay siguiente nodo
 			if(first == nullptr && this->getSiguienteNodo() != nullptr) {
@@ -75,7 +75,7 @@ class NodeDouble : protected Node<T, 2> {
 					this->getSiguienteNodo()->deleteRecursivo(first);
 			}
 			delete this;
-		}
+		}*/
 };
 
 template<class T>
