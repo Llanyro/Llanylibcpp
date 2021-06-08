@@ -21,9 +21,9 @@ namespace Linkedlists {
 template<class T>
 class SmartLinkedlist : public AbstractLinkedlist<T, Nodes::NDUSO<T>>, public Corelist::AbstractSmartList<T> {
 	public:
-		SmartLinkedlist() : AbstractLinkedlist<T, Nodes::NDUSO<T>>() {}
+		SmartLinkedlist() : Corelist::AbstractSmartList<T>(), AbstractLinkedlist<T, Nodes::NDUSO<T>>() {}
 		virtual ~SmartLinkedlist() {}
-		virtual void add(T* object, Destructor destructor) override {
+		virtual void addSmart(T* object, Destructor destructor) override {
 			// Creamos el nodo
 			Nodes::NDUSO<T>* nuevoNodo = new Nodes::NDUSO<T>(object, destructor);
 
@@ -49,7 +49,7 @@ class SmartLinkedlist : public AbstractLinkedlist<T, Nodes::NDUSO<T>>, public Co
 			// Incrementamos el tama�o
 			this->length++;
 		}
-		virtual ll_bool_t set(T* object, Destructor destructor, const len_t& position, const ll_bool_t& smart) const override {
+		virtual ll_bool_t setSmart(T* object, Destructor destructor, const len_t& position, const ll_bool_t& smart) const override {
 			ll_bool_t result = true;
 			if(this->validPos(position)) {
 				if(smart)
@@ -60,7 +60,7 @@ class SmartLinkedlist : public AbstractLinkedlist<T, Nodes::NDUSO<T>>, public Co
 			else result = false;
 			return result;
 		}
-		virtual ll_bool_t remove(const len_t& position, const ll_bool_t& smart) override {
+		virtual ll_bool_t removeSmart(const len_t& position, const ll_bool_t& smart) override {
 			ll_bool_t result = false;
 
 			// If smart is up -> then remove normally

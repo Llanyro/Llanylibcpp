@@ -49,24 +49,11 @@ class Simplelist : public Core::Classes::LlanyCore {
 		//		Si la posicion es erronea devuelve nullptr
 		// Complejidad temporal y espacial: O(?) y M(1)
 		virtual const T* cget(const len_t& pos) const { return nullptr; }
-		// Funcion: Elimina un item de la lista
-		// Extra: Si esta seteado como liberable, eliminara el objeto
-		// Version: Final
-		// Precondiciones:
-		//		pos < len
-		// Retorno:
-		//		 true: Si se ha eliminado el objeto con exito
-		//		false: Si no se ha eliminado el objeto con exito
-		// Complejidad temporal y espacial: O(1) y M(1)
-		virtual ll_bool_t remove(const len_t& pos) { return false; }
 		virtual T* operator[](const len_t& pos) { return nullptr; }
 		virtual ll_bool_t contains(const T* item, Compare_bool compare) const { return false; }
 		virtual ll_bool_t swap(const len_t& posObject1, const len_t& posObject2) { return false; }
-
 		#pragma endregion
 		#pragma region Funciones nuevas no heredables
-		// Funcion: Por defecto llama a remove()
-		ll_bool_t del(const len_t& pos) { return this->remove(pos); }
 		// Funcion:Por defector llama a contains()_
 		ll_bool_t contains(const T* item) const { return this->contains(item, nullptr); }
 		#pragma endregion

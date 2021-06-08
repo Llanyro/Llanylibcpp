@@ -20,15 +20,15 @@ class AbstractSmartList {
 		AbstractSmartList() {}
 		virtual ~AbstractSmartList() {}
 	public:
-		virtual void add(T* object, Destructor destructor) {}
-		virtual ll_bool_t set(T* object, Destructor destructor, const len_t& position, const ll_bool_t& smart) const { return false; }
-		virtual ll_bool_t remove(const len_t& pos, const ll_bool_t& smart) { return false; }
+		virtual void addSmart(T* object, Destructor destructor) {}
+		virtual ll_bool_t setSmart(T* object, Destructor destructor, const len_t& position, const ll_bool_t& smart) const { return false; }
+		virtual ll_bool_t removeSmart(const len_t& pos, const ll_bool_t& smart) { return false; }
 
-		void add(T* object) { this->add(object, (Destructor) MEM_LIB::__delete__); }
-		ll_bool_t set(T* object, const len_t& position, const ll_bool_t& smart) const { return this->set(object, (Destructor) MEM_LIB::__delete__, position, smart); }
-		ll_bool_t set(T* object, const len_t& position) const { return this->set(object, (Destructor) MEM_LIB::__delete__, position, true); }
-		ll_bool_t set(T* object, Destructor destructor, const len_t& position) const { return this->set(object, destructor, position, true); }
-		virtual ll_bool_t remove(const len_t& pos) { return this->remove(pos, true); }
+		void add(T* object) { this->addSmart(object, (Destructor) MEM_LIB::__delete__); }
+		ll_bool_t set(T* object, const len_t& position, const ll_bool_t& smart) const { return this->setSmart(object, (Destructor) MEM_LIB::__delete__, position, smart); }
+		ll_bool_t set(T* object, const len_t& position) const { return this->setSmart(object, (Destructor) MEM_LIB::__delete__, position, true); }
+		ll_bool_t set(T* object, Destructor destructor, const len_t& position) const { return this->setSmart(object, destructor, position, true); }
+		ll_bool_t remove(const len_t& pos) { return this->removeSmart(pos, true); }
 };
 
 } /* namespace Corelist */

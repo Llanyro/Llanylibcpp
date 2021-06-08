@@ -30,11 +30,6 @@ class AbstractLinkedlist : public Corelist::List<T> {
 			this->cache->position = position;
 		}
 		void clearCache() const { this->changeCacheNode(nullptr, 0); }
-		// Complejidad espacial y temporal peor O(n/2)
-		// Complejidad espacial y temporal mejor O(1)
-		// Complejidad espacial y temporal imprimir O(1)
-		// Complejidad espacial y temporal media O(n/4) (No comprobado->aprox)
-		///virtual T_NODE* getNodo(const len_t& position);
 		// Funcion: Busca el la lista el nodo solicitado
 		// Extra: Guarda el ultimo nodo visitado
 		// Version: Beta
@@ -106,7 +101,28 @@ class AbstractLinkedlist : public Corelist::List<T> {
 			}
 			return resultado;
 		}
-		virtual ll_bool_t remove(const len_t& pos) override {
+		virtual T* get(const len_t& pos) const override {
+			T* item = nullptr;
+			if(this->validPos(pos))
+				item = this->getNodoCache(pos)->get_0();
+			return item;
+		}
+		virtual T* operator[](const len_t& pos) override { return this->get(pos); }
+		virtual ll_bool_t clear() override {
+			delete this->cache;
+			this->raiz->deleteRecursivo(nullptr);
+			return Corelist::List<T>::clear();
+		}
+		// Funcion: Elimina un item de la lista
+		// Extra: Si esta seteado como liberable, eliminara el objeto
+		// Version: Final
+		// Precondiciones:
+		//		pos < len
+		// Retorno:
+		//		 true: Si se ha eliminado el objeto con exito
+		//		false: Si no se ha eliminado el objeto con exito
+		// Complejidad temporal y espacial: O(1) y M(1)
+		virtual ll_bool_t remove(const len_t& pos)  {
 			bool resultado = false;
 			if (this->validPos(pos)) {
 				// Nodes a modificar
@@ -137,20 +153,8 @@ class AbstractLinkedlist : public Corelist::List<T> {
 			}
 			return resultado;
 		}
-		virtual T* get(const len_t& pos) const override {
-			T* item = nullptr;
-			if(this->validPos(pos))
-				item = this->getNodoCache(pos)->get_0();
-			return item;
-		}
-		virtual T* operator[](const len_t& pos) override {
-			return nullptr;
-		}
-		virtual ll_bool_t clear() override {
-			delete this->cache;
-			this->raiz->deleteRecursivo(nullptr);
-			return Corelist::List<T>::clear();
-		}
+		// Funcion: Por defecto llama a remove()
+		ll_bool_t del(const len_t& pos) { return this->remove(pos); }
 };
 
 } /* namespace Linkedlist */

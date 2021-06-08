@@ -10,6 +10,8 @@ using namespace Llanylib::Listlib::Linkedlists;
 int main(int argc, char **argv) {
 	SmartLinkedlist<int>* list = new SmartLinkedlist<int>();
 
+	//list->add(nullptr);
+
 	for (int i = 0; i < 10; ++i) list->add(new int(i));
 
 	int* temp;
