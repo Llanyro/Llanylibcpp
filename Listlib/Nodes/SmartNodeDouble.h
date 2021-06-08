@@ -19,9 +19,8 @@ namespace Nodes {
 template<class T>
 class NDUSO : public NodeDouble<NDUSO<T>>, public CONTAINER::SmartContainer<T> {
 	public:
-		NDUSO() : NodeDouble<NDUSO>(), CONTAINER::SmartContainer<T>() {}
-		NDUSO(T* item_0, Destructor destructor_0) :
-			NodeDouble<NDUSO>(),
+		NDUSO() : NodeDouble<NDUSO<T>>(), CONTAINER::SmartContainer<T>() {}
+		NDUSO(T* item_0, Destructor destructor_0) : NodeDouble<NDUSO<T>>(),
 			CONTAINER::SmartContainer<T>(item_0, destructor_0) {}
 		virtual ~NDUSO() {}
 };

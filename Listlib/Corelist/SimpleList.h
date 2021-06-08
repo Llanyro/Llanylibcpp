@@ -61,6 +61,7 @@ class Simplelist : public Core::Classes::LlanyCore {
 		virtual ll_bool_t remove(const len_t& pos) { return false; }
 		virtual T* operator[](const len_t& pos) { return nullptr; }
 		virtual ll_bool_t contains(const T* item, Compare_bool compare) const { return false; }
+		virtual ll_bool_t swap(const len_t& posObject1, const len_t& posObject2) { return false; }
 
 		#pragma endregion
 		#pragma region Funciones nuevas no heredables

@@ -1,12 +1,12 @@
 /*
- * LinkedlistPre.h
+ * AbstractLinkedlist.h
  *
  *  Created on: May 30, 2021
  *      Author: llanyro
  */
 
-#ifndef LISTLIB_LINKEDLISTS_LINKEDLISTPRE_H_
-#define LISTLIB_LINKEDLISTS_LINKEDLISTPRE_H_
+#ifndef LISTLIB_LINKEDLISTS_ABSTRACTLINKEDLIST_H_
+#define LISTLIB_LINKEDLISTS_ABSTRACTLINKEDLIST_H_
 
 #include "../Corelist/List.h"
 
@@ -15,16 +15,16 @@ namespace Listlib {
 namespace Linkedlists {
 
 template<class T, class T_NODE>
-class LinkedlistPre : public Corelist::List<T> {
+class AbstractLinkedlist : public Corelist::List<T> {
 	protected:
 		T_NODE* raiz;
 		BASIC_STRUCTS::cachelist<T_NODE*, len_t>* cache;
 	protected:
-		LinkedlistPre() : Corelist::List<T>() {
+		AbstractLinkedlist() : Corelist::List<T>() {
 			this->raiz = nullptr;
 			this->cache = new BASIC_STRUCTS::cachelist<T_NODE*, len_t>();
 		}
-		virtual ~LinkedlistPre() { this->clear(); }
+		virtual ~AbstractLinkedlist() { this->clear(); }
 		void changeCacheNode(T_NODE* node, const len_t& position) const {
 			this->cache->cache = node;
 			this->cache->position = position;
@@ -157,4 +157,4 @@ class LinkedlistPre : public Corelist::List<T> {
 } /* namespace Listlib */
 } /* namespace Llanylib */
 
-#endif /* LISTLIB_LINKEDLISTS_LINKEDLISTPRE_H_ */
+#endif /* LISTLIB_LINKEDLISTS_ABSTRACTLINKEDLIST_H_ */

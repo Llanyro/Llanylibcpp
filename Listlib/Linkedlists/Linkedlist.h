@@ -8,7 +8,7 @@
 #ifndef LLANYLIB_CORE_LISTLIB_LINKEDLIST_LINKEDLIST_H_
 #define LLANYLIB_CORE_LISTLIB_LINKEDLIST_LINKEDLIST_H_
 
-#include "../Linkedlists/LinkedlistPre.h"
+#include "../Linkedlists/AbstractLinkedlist.h"
 #include "../Nodes/NodeDouble.h"
 
 namespace Llanylib {
@@ -16,9 +16,9 @@ namespace Listlib {
 namespace Linkedlists {
 
 template<class T>
-class Linkedlist : public LinkedlistPre<T, Nodes::NDUO<T>> {
+class Linkedlist : public AbstractLinkedlist<T, Nodes::NDUO<T>> {
 	public:
-		Linkedlist() : LinkedlistPre<T, Nodes::NDUO<T>>() {}
+		Linkedlist() : AbstractLinkedlist<T, Nodes::NDUO<T>>() {}
 		virtual ~Linkedlist() {}
 
 		virtual void add(const T& object) {
@@ -53,7 +53,6 @@ class Linkedlist : public LinkedlistPre<T, Nodes::NDUO<T>> {
 			else result = false;
 			return result;
 		}
-
 };
 
 } /* namespace Linkedlist */
