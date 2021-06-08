@@ -15,132 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Mathlib\VectorSpace\X.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Mathlib\VectorSpace\Y.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Mathlib\VectorSpace\Z.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Mathlib\VectorSpace\Vector.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Mathlib\VectorSpace\Vector2.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Mathlib\VectorSpace\Vector3.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Mathlib\VectorSpace\Point.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Mathlib\VectorSpace\Point2.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Mathlib\VectorSpace\Point3.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Llanylibcpp.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Structs\llanystring.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Structs\stringtype.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\memlib.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\nolibfunctions.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\randomlib.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\stringlib.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\filelib.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\mathlib.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\charslib.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Classes\Countable.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Classes\LlanyCore.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Classes\Containers\DynamicContainer.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Mathlib\VectorSpace\Vector3.h">
+    <ClInclude Include="..\..\Core\Classes\Containers\SmartContainers.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Mathlib\VectorSpace\X.h">
+    <ClInclude Include="..\..\Core\Libs\llanymathtypeslib.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Mathlib\VectorSpace\Y.h">
+    <ClInclude Include="..\..\Core\Classes\Containers\DynamicContainer.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Mathlib\VectorSpace\Z.h">
+    <ClInclude Include="..\..\Core\Classes\Countable.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Mathlib\VectorSpace\Point3.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Mathlib\VectorSpace\Vector.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Mathlib\VectorSpace\Vector2.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Mathlib\VectorSpace\Point.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Mathlib\VectorSpace\Point2.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Listlib\Nodes\NodeDouble.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Listlib\Nodes\Nodes.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Listlib\Linkedlists\SmartLinkedlist.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Listlib\Nodes\SmartNodeDouble.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Listlib\Staticlist\StaticList.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Listlib\Linkedlists\Linkedlist.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Listlib\Linkedlists\LinkedlistPre.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Listlib\Corelist\List.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Listlib\Corelist\SimpleList.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Listlib\Dynamiclist\Vector.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Listlib\Dynamiclist\VectorResize.h">
+    <ClInclude Include="..\..\Core\Classes\Containers\Containers.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Core\Structs\basicstructs.h">
@@ -170,9 +57,6 @@
     <ClInclude Include="..\..\Core\Libs\filelib.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\llanymathtypeslib.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Core\Libs\llanysimpleprint.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
@@ -188,20 +72,49 @@
     <ClInclude Include="..\..\Core\Libs\charslib.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\Countable.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Core\Classes\LlanyCore.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\Containers\Containers.h">
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Core\Classes\Countable.cpp">
       <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\Containers\DynamicContainer.h">
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Structs\llanystring.cpp">
       <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\Containers\SmartContainers.h">
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Structs\stringtype.cpp">
       <Filter>Archivos de recursos</Filter>
-    </ClInclude>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Libs\memlib.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Libs\nolibfunctions.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Libs\randomlib.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Libs\stringlib.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Libs\filelib.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Libs\mathlib.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Libs\charslib.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Classes\LlanyCore.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Classes\Containers\DynamicContainer.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Llanylibcpp.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

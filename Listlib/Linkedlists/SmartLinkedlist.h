@@ -12,18 +12,17 @@
 
 #include "../Nodes/SmartNodeDouble.h"
 #include "AbstractLinkedlist.h"
-#include "../Corelist/AbstractSmartList.h"
 
 namespace Llanylib {
 namespace Listlib {
 namespace Linkedlists {
 
 template<class T>
-class SmartLinkedlist : public Corelist::AbstractSmartList<T>, public AbstractLinkedlist<T, Nodes::NDUSO<T>> {
+class SmartLinkedlist : public AbstractLinkedlist<T, Nodes::NDUSO<T>> {
 	public:
-		SmartLinkedlist() : AbstractLinkedlist<T, Nodes::NDUSO<T>>(), Corelist::AbstractSmartList<T>() {}
+		SmartLinkedlist() : AbstractLinkedlist<T, Nodes::NDUSO<T>>() {}
 		virtual ~SmartLinkedlist() {}
-		virtual void add(T* object, Destructor destructor) override {
+		virtual void add(T* object, Destructor destructor)  {
 			// Creamos el nodo
 			Nodes::NDUSO<T>* nuevoNodo = new Nodes::NDUSO<T>(object, destructor);
 
@@ -49,29 +48,35 @@ class SmartLinkedlist : public Corelist::AbstractSmartList<T>, public AbstractLi
 			// Incrementamos el tama�o
 			this->length++;
 		}
-		virtual ll_bool_t set(T* object, Destructor destructor, const len_t& position, const ll_bool_t& smart) const override {
+		virtual ll_bool_t set(T* object, Destructor destructor, const len_t& position, const ll_bool_t& smart) const {
 			ll_bool_t result = true;
 			if(this->validPos(position)) {
 				if(smart)
 					this->getNodoCache(position)->setSmart_0(object, destructor);
 				else
-					this->getNodoCache(position)->set0(object, destructor);
+					this->getNodoCache(position)->set_0(object, destructor);
 			}
 			else result = false;
 			return result;
 		}
-		virtual ll_bool_t remove(const len_t& pos, const ll_bool_t& smart) override {
+		virtual ll_bool_t remove(const len_t& position, const ll_bool_t& smart) {
 			ll_bool_t result = false;
 
 			// If smart is up -> then remove normally
 			// If smart is down -> set node to not smart and delete it
-			if(this->validPos(pos)) {
+			if(this->validPos(position)) {
 				if(!smart)
 					this->getNodoCache(position)->setDestructor_0(nullptr);
-				result = AbstractLinkedlist<T, Nodes::NDUSO<T>>::remove(pos);
+				result = AbstractLinkedlist<T, Nodes::NDUSO<T>>::remove(position);
 			}
 			return result;
 		}
+
+		void add(T* object) { this->add(object, MEM_LIB::__delete__); }
+		ll_bool_t set(T* object, const len_t& position, const ll_bool_t& smart) const { return this->set(object, MEM_LIB::__delete__, position, smart); }
+		ll_bool_t set(T* object, const len_t& position) const { return this->set(object, MEM_LIB::__delete__, position, true); }
+		ll_bool_t set(T* object, Destructor destructor, const len_t& position) const { return this->set(object, destructor, position, true); }
+		virtual ll_bool_t remove(const len_t& pos) { return this->remove(pos, true); }
 };
 
 } /* namespace Linkedlist */
