@@ -11,7 +11,6 @@
 #include "../Corelist/List.h"
 
 namespace Llanylib {
-namespace Core {
 namespace Listlib {
 namespace Staticlist {
 
@@ -78,7 +77,6 @@ class Staticlist : public Corelist::List<T> {
 
 } /* namespace Staticlist */
 } /* namespace Listlib */
-} /* namespace Core */
 } /* namespace Llanylib */
 
 #endif /* LLANYLIB_CORE_LISTLIB_STATICLIST_STATICVECTOR_H_ */

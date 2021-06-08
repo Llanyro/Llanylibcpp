@@ -10,8 +10,8 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <time.h>
-//#include <float.h>
-//#include <math.h>
+#include <float.h>
+#include <math.h>
 
 //#include "llanymathtypeslib.h"
 #include "asciidefines.h"
@@ -85,7 +85,7 @@ char randomCharNumber() { return getRandomChar(CHARS_NUMS, CHARS_NUMS_LEN); }
 char randomCharAbecedarioOrNumber() { return getRandomChar(ABECEDARIO_NUMS_1, ABECEDARIO_NUMS_1_LEN); }
 char randomCharVisible() { return getRandomChar(VISIBLE_CHARS, VISIBLE_CHARS_LEN); }
 
-std::list<ll_float_t>* randomBoxMuller() {
+Classes::FixedVector<ll_float_t, 4>* randomBoxMuller() {
     /*do {
         result.results[0] = randomf();
         result.results[1] = randomf();
@@ -102,27 +102,26 @@ std::list<ll_float_t>* randomBoxMuller() {
 	 * result.results[2] = r * cos(FI) = sqrt(-2 * ln(U1)) * cos(2 * PI * U2);
 	 * result.results[3] = r * sin(FI) = sqrt(-2 * ln(U1)) * sin(2 * PI * U2);
 	 **/
-	std::list<ll_float_t>* result = new std::list<ll_float_t>();
-	//randomBoxMuller(result);
+	Classes::FixedVector<ll_float_t, 4>* result = new Classes::FixedVector<ll_float_t, 4>();
+	randomBoxMuller(result);
 	return result;
 }
-/*ll_bool_t randomBoxMuller(std::list<ll_float_t>* values) {
+ll_bool_t randomBoxMuller(Classes::FixedVector<ll_float_t, 4>* values) {
 	ll_bool_t resultado = false;
 	if(values != nullptr) {
 	    do {
-	    	values->
-	    	values->results[0] = randomf();
-	    	values->results[1] = randomf();
-	    } while (values->results[0] <= FLT_MIN);
+	    	values->set(randomf(), 0);
+	    	values->set(randomf(), 1);
+	    } while (values->operator[](0) <= FLT_MIN);
 
-		ll_float_t raiz = sqrt(-2 * log(values->results[0]));
-		ll_float_t two_pi_u2 = TWO_PI_VAL * values->results[1];
+		ll_float_t raiz = sqrt(-2 * log(values->operator [](0)));
+		ll_float_t two_pi_u2 = TWO_PI_VAL * values->operator[](1);
 
-		values->results[2] = raiz * cos(two_pi_u2);
-		values->results[3] = raiz * sin(two_pi_u2);
+		values->set(raiz * cos(two_pi_u2), 2);
+		values->set(raiz * sin(two_pi_u2), 3);
 	}
 	return resultado;
-}*/
+}
 
 
 } /* namespace Random */

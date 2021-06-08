@@ -13,7 +13,7 @@
 
 using namespace Llanylib::Core::Structs;
 
-#define NUM 9999
+/*#define NUM 9999
 
 void test_func() {
 	/*SmartLinkedlist<int>* list = new SmartLinkedlist<int>();
@@ -26,7 +26,7 @@ void test_func() {
 		if (temp != nullptr) PRINT2LN("Num:", *temp);
 	}
 
-	delete list;*/
+	delete list;*
 
 	BASIC_STRUCTS::llanyList<ll_uint64_t>* list_2 = BASIC_STRUCTS::newlist<ll_uint64_t>();
 
@@ -43,7 +43,7 @@ void test_func() {
 		temp = BASIC_STRUCTS::getValue(list_2, i);
 		if (temp != nullptr) std::cout << *temp << ", ";
 	}
-	std::cout << "};\n";*/
+	std::cout << "};\n";*
 
 	BASIC_STRUCTS::removelist(&list_2);
 }
@@ -60,28 +60,24 @@ void test_func_std() {
 
 	/*std::cout << "l = { ";
 	for (int n : (*list)) std::cout << n << ", ";
-	std::cout << "};\n";*/
+	std::cout << "};\n";*
 
 	delete list;
-}
+}*/
 
-
-
-int main(int argc, char **argv) {
+void execute_test(void* func(void)) {
 	std::cout << "Start\n";
 	auto t1 = std::chrono::high_resolution_clock::now();
-	test_func();
+	func();
 	auto t2 = std::chrono::high_resolution_clock::now();
 	std::cout << "test_func function took "
 		<< std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count()
 		<< " milliseconds\n";
+}
 
-	auto t3 = std::chrono::high_resolution_clock::now();
-	test_func_std();
-	auto t4 = std::chrono::high_resolution_clock::now();
-	std::cout << "test_func_std function took "
-		<< std::chrono::duration_cast<std::chrono::milliseconds>(t4 - t3).count()
-		<< " milliseconds\n";
+
+int main(int argc, char **argv) {
+
 
 	return 0;
 }

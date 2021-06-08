@@ -26,6 +26,16 @@ class Countable : protected Structs::llanyLen, public LlanyCore {
 		len_t count() const;
 		len_t len() const;
 		len_t size() const;
+		// Funcion: Comprueba si la posicion dada se puede encontrar en la lista
+		// Version: Final
+		// Precondiciones:
+		//		Ninguna
+		// Retorno:
+		//		 true: Si la posicion dada esta en la lista
+		//		false: Si la posicion dada no esta en la lista
+		// Complejidad temporal y espacial: O(1) y M(1)
+		ll_bool_t in_range(const len_t& position) const;
+
 };
 
 } /* namespace Classes */

@@ -9,7 +9,7 @@
 #define LLANYLIB_BASIC_SIMPLELIBS_RANDOMLIB_H_
 
 #include "llanytypeslib.h"
-#include <list>
+#include "../Classes/Vector.h"
 
 #define RANDOM_LIB Llanylib::Core::Libs::Random
 
@@ -65,25 +65,9 @@ char randomCharNumber();
 char randomCharAbecedarioOrNumber();
 char randomCharVisible();
 
-//std::list<ll_float_t>* randomBoxMuller();
+Classes::FixedVector<ll_float_t, 4>* randomBoxMuller();
 // Sobrescribe un grupo de valores anteriormente usado para no regenerar la memoria
-//ll_bool_t randomBoxMuller(std::list<ll_float_t>* values);
-
-
-/*
-namespace SimpleStructs {
-	namespace MultiReturn {
-		namespace TypeOne {
-			template<class T, const len_t numReturns>
-			struct multireturn;
-		}
-	}
-}
-SimpleStructs::MultiReturn::TypeOne::multireturn<ll_float_t, 4> randomBoxMuller();
-// Sobrescribe un grupo de valores anteriormente usado para no regenerar la memoria
-ll_bool_t randomBoxMuller(SimpleStructs::MultiReturn::TypeOne::multireturn<ll_float_t, 4>* values);
-*/
-
+ll_bool_t randomBoxMuller(Classes::FixedVector<ll_float_t, 4>* values);
 
 
 } /* namespace Random */
