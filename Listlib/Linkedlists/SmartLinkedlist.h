@@ -8,21 +8,22 @@
 #ifndef LISTLIB_LINKEDLISTS_SMARTLINKEDLIST_H_
 #define LISTLIB_LINKEDLISTS_SMARTLINKEDLIST_H_
 
-#include "../../Core/Libs/memlib.h"
+
 
 #include "../Nodes/SmartNodeDouble.h"
 #include "AbstractLinkedlist.h"
+#include "../Corelist/AbstractSmartList.h"
 
 namespace Llanylib {
 namespace Listlib {
 namespace Linkedlists {
 
 template<class T>
-class SmartLinkedlist : public AbstractLinkedlist<T, Nodes::NDUSO<T>> {
+class SmartLinkedlist : public AbstractLinkedlist<T, Nodes::NDUSO<T>>, public Corelist::AbstractSmartList<T> {
 	public:
 		SmartLinkedlist() : AbstractLinkedlist<T, Nodes::NDUSO<T>>() {}
 		virtual ~SmartLinkedlist() {}
-		virtual void add(T* object, Destructor destructor)  {
+		virtual void add(T* object, Destructor destructor) override {
 			// Creamos el nodo
 			Nodes::NDUSO<T>* nuevoNodo = new Nodes::NDUSO<T>(object, destructor);
 
@@ -48,7 +49,7 @@ class SmartLinkedlist : public AbstractLinkedlist<T, Nodes::NDUSO<T>> {
 			// Incrementamos el tama�o
 			this->length++;
 		}
-		virtual ll_bool_t set(T* object, Destructor destructor, const len_t& position, const ll_bool_t& smart) const {
+		virtual ll_bool_t set(T* object, Destructor destructor, const len_t& position, const ll_bool_t& smart) const override {
 			ll_bool_t result = true;
 			if(this->validPos(position)) {
 				if(smart)
@@ -59,7 +60,7 @@ class SmartLinkedlist : public AbstractLinkedlist<T, Nodes::NDUSO<T>> {
 			else result = false;
 			return result;
 		}
-		virtual ll_bool_t remove(const len_t& position, const ll_bool_t& smart) {
+		virtual ll_bool_t remove(const len_t& position, const ll_bool_t& smart) override {
 			ll_bool_t result = false;
 
 			// If smart is up -> then remove normally
@@ -71,12 +72,6 @@ class SmartLinkedlist : public AbstractLinkedlist<T, Nodes::NDUSO<T>> {
 			}
 			return result;
 		}
-
-		void add(T* object) { this->add(object, MEM_LIB::__delete__); }
-		ll_bool_t set(T* object, const len_t& position, const ll_bool_t& smart) const { return this->set(object, MEM_LIB::__delete__, position, smart); }
-		ll_bool_t set(T* object, const len_t& position) const { return this->set(object, MEM_LIB::__delete__, position, true); }
-		ll_bool_t set(T* object, Destructor destructor, const len_t& position) const { return this->set(object, destructor, position, true); }
-		virtual ll_bool_t remove(const len_t& pos) { return this->remove(pos, true); }
 };
 
 } /* namespace Linkedlist */
