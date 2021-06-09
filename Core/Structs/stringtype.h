@@ -13,6 +13,7 @@
 namespace Llanylib {
 namespace Core {
 namespace Structs {
+namespace StringType {
 
 enum class StringType {
 	String,
@@ -36,6 +37,7 @@ stringType  getStringType(const char* str);
 
 
 
+} /* namespace StringType */
 } /* namespace Structs */
 } /* namespace Core */
 } /* namespace Llanylib */

@@ -35,6 +35,7 @@ class Countable : protected Structs::llanyLen, public LlanyCore {
 		//		false: Si la posicion dada no esta en la lista
 		// Complejidad temporal y espacial: O(1) y M(1)
 		ll_bool_t in_range(const len_t& position) const;
+		virtual void clear() override;
 
 };
 

@@ -13,19 +13,20 @@
 namespace Llanylib {
 namespace Core {
 namespace Structs {
+namespace String {
 
-llanystring* newLlanyString(const len_t& len) {
-	llanystring* str = new llanystring();
+string* newLlanyString(const len_t& len) {
+	string* str = new string();
 	str->len = len + 1;
 	str->free = true;
 	str->str = new char[len + 1];
 	fixLlanyString(str);
 	return str;
 }
-llanystring* newLlanyString(char const* const conststr) {
-	llanystring* str = nullptr;
+string* newLlanyString(char const* const conststr) {
+	string* str = nullptr;
 	if (conststr != nullptr) {
-		str = new llanystring();
+		str = new string();
 		//str->len = Simplelibs::String::stringlen(conststr, false) + 1;
 		str->len = STRLEN_DEFINED_STRING(conststr) + 1;
 		//str->len = (len_t)strlen(conststr) + 1;
@@ -35,12 +36,12 @@ llanystring* newLlanyString(char const* const conststr) {
 	}
 	return str;
 }
-void fixLlanyString(llanystring* str) {
+void fixLlanyString(string* str) {
 	// Si existe el string y es modificable
 	if (str != nullptr && str->free)
 		str->str[str->len - 1] = '\0';
 }
-void deleteLlanyString(llanystring* str) {
+void deleteLlanyString(string* str) {
 	// Si existe el string
 	if (str != nullptr) {
 		// Es modificable y no contiene un nullptr
@@ -49,8 +50,8 @@ void deleteLlanyString(llanystring* str) {
 		delete str;
 	}
 }
-llanystring* cloneLlanyString(const llanystring* str) {
-	llanystring* newstr = new llanystring();
+string* cloneLlanyString(const string* str) {
+	string* newstr = new string();
 	newstr->len = str->len;
 	newstr->free = str->free;
 	// Si no hay que liberar nada
@@ -58,10 +59,11 @@ llanystring* cloneLlanyString(const llanystring* str) {
 	else newstr->str = (char*)MEM_LIB::reservarYCopiar(str->str, 0, str->len, sizeof(char));
 	return newstr;
 }
-ll_bool_t compareLlanyString(llanystring* str, llanystring* str2) {
+ll_bool_t compareLlanyString(string* str, string* str2) {
 	return STRING_LIB::strcmp(str->str, str->len, str2->str, str2->len);
 }
 
+} /* namespace String */
 } /* namespace Structs */
 } /* namespace Core */
 } /* namespace Llanylib */

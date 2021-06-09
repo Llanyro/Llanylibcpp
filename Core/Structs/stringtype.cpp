@@ -10,9 +10,12 @@
 #include "../Libs/asciidefines.h"
 #include "../Libs/stringlib.h"
 
+#define LLANY_STRING_TYPE Llanylib::Core::Structs::StringType
+
 namespace Llanylib {
 namespace Core {
 namespace Structs {
+namespace StringType {
 
 stringType getStringType(const char* str, const len_t& len) {
 	return stringType();
@@ -42,6 +45,7 @@ stringType getStringType(const char* str) {
 	return result;
 }
 
+} /* namespace StringType */
 } /* namespace Structs */
 } /* namespace Core */
 } /* namespace Llanylib */

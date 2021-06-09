@@ -13,7 +13,7 @@
 //#include "Listlib/Linkedlists/SmartLinkedlist.h"
 //#include "Listlib/Linkedlists/Linkedlist.h"
 
-using namespace Llanylib::Core::Structs;
+//using namespace Llanylib::Core::Structs;
 
 #define STR "./Folder/Folder2/Test"
 
@@ -80,8 +80,18 @@ void execute_test(void* func(void)) {
 		<< " milliseconds\n";
 }
 
+#include "Core/Classes/Containers/SmartPointer.h"
+
+using namespace Llanylib::Core::Classes::Containers;
+
+void testSmart() {
+	SmartPointer<int> s = SmartPointer<int>(new int(5));
+
+
+}
+
 
 int main(int argc, char **argv) {
-	FILE_LIB::dir_exist_create(STR, STRLEN_DEFINED_STRING(STR));
+	//FILE_LIB::dir_exist_create(STR, STRLEN_DEFINED_STRING(STR));
 	return 0;
 }

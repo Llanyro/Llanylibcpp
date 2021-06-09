@@ -5,14 +5,15 @@
  *      Author: llanyro
  */
 
-#ifndef CORE_CLASSES_VECTOR_H_
-#define CORE_CLASSES_VECTOR_H_
+#ifndef CORE_CLASSES_SIMPLELISTS_VECTOR_H_
+#define CORE_CLASSES_SIMPLELISTS_VECTOR_H_
 
-#include "Countable.h"
+#include "../Countable.h"
 
 namespace Llanylib {
 namespace Core {
 namespace Classes {
+namespace SimpleLists {
 
 template<class T>
 class Vector : public Countable {
@@ -77,8 +78,9 @@ class FixedVector : public Vector<T> {
 		virtual ~FixedVector() {}
 };
 
+} /* namespace SimpleLists */
 } /* namespace Classes */
 } /* namespace Core */
 } /* namespace Llanylib */
 
-#endif /* CORE_CLASSES_VECTOR_H_ */
+#endif /* CORE_CLASSES_SIMPLELISTS_VECTOR_H_ */

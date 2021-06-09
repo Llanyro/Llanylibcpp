@@ -10,13 +10,14 @@
 
 #include "../Libs/llanytypeslib.h"
 
-#define LLANY_STRING Llanylib::Core::Structs
+#define LLANY_STRING Llanylib::Core::Structs::String
 
 namespace Llanylib {
 namespace Core {
 namespace Structs {
+namespace String {
 
-struct llanystring {
+struct string {
 	char* str = nullptr;
 	len_t len = 0;
 	ll_bool_t free = false; // Comentario
@@ -27,7 +28,7 @@ struct llanystring {
 // Version: Final
 // Retorno: SimpleString con tamaño solicitado
 // Complejidad temporal y espacial: O(1) y M(n + 1)
-llanystring* newLlanyString(const len_t& len);
+string* newLlanyString(const len_t& len);
 // Funcion: Genera un SimpleString, apuntando el contenido a conststr
 // Extra: Recuerda que el contenido consta como constante por lo que no se libera
 // Version: Final
@@ -35,19 +36,20 @@ llanystring* newLlanyString(const len_t& len);
 //		conststr != nullptr
 // Retorno: SimpleString con el str y el tamaño apuntados
 // Complejidad temporal y espacial: O(1) y M(1)
-llanystring* newLlanyString(char const* const conststr);
+string* newLlanyString(char const* const conststr);
 // Funcion: Setea el valor de la ultima posicion a '\0'
 // Version: Final
 // Complejidad temporal y espacial: O(1) y M(1)
-void fixLlanyString(llanystring* str);
+void fixLlanyString(string* str);
 // Funcion: Elimina el objeto y libera el string contenido
 // Version: Final
 // Complejidad temporal y espacial: O(1) y M(1)
-void deleteLlanyString(llanystring* str);
+void deleteLlanyString(string* str);
 
-llanystring* cloneLlanyString(const llanystring* str);
-ll_bool_t compareLlanyString(llanystring* str, llanystring* str2);
+string* cloneLlanyString(const string* str);
+ll_bool_t compareLlanyString(string* str, string* str2);
 
+} /* namespace String */
 } /* namespace Structs */
 } /* namespace Core */
 } /* namespace Llanylib */
