@@ -27,13 +27,13 @@ stringType getStringType(const char* str) {
 		else if (str[i] == '.')
 			result.numPoints++;
 		// Si contiene un numero
-		else if (STRING_LIB::containsChar(CHARS_NUMS, CHARS_NUMS_LEN, str + i))
+		else if (STRING_LIB::contains_char(CHARS_NUMS, CHARS_NUMS_LEN, str + i))
 			result.numNumbers++;
 		// Si contiene un caracter mayus
-		else if (STRING_LIB::containsChar(ABECEDARIO_2, ABECEDARIO_2_LEN, str + i))
+		else if (STRING_LIB::contains_char(ABECEDARIO_2, ABECEDARIO_2_LEN, str + i))
 			result.numCharsMayus++;
 		// Si contiene un caracter minus
-		else if (STRING_LIB::containsChar(ABECEDARIO_3, ABECEDARIO_3_LEN, str + i))
+		else if (STRING_LIB::contains_char(ABECEDARIO_3, ABECEDARIO_3_LEN, str + i))
 			result.numCharsMinus++;
 		else
 			result.numUnknownChars++;

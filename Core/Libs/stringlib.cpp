@@ -5,8 +5,6 @@
  *      Author: llanyro
  */
 
-#define STRLEN_DEF stringlen
-
 #include <stdlib.h>
 
 #include "stringlib.h"
@@ -21,17 +19,15 @@ namespace Core {
 namespace Libs {
 namespace String {
 
-ll_bool_t isNumber(const char* str) { return isNumber(str, STRLEN_DEF(str)); }
-ll_bool_t isFloat(const char* str) { return isFloat(str, STRLEN_DEF(str)); }
-ll_bool_t isNumber(const char* str, const ll_bool_t isDynamic) { return isNumber(str, STRLEN_DEF(str, isDynamic)); }
-ll_bool_t isFloat(const char* str, const ll_bool_t isDynamic) { return isFloat(str, STRLEN_DEF(str, isDynamic)); }
-ll_bool_t strcmp(const char* str_1, const char* str_2) { return strcmp(str_1, STRLEN_DEF(str_1), str_2, STRLEN_DEF(str_2)); }
-ll_bool_t strcmp(const char* str_1, const len_t& len, const char* str_2) { return strcmp(str_1, len, str_2, STRLEN_DEF(str_2)); }
-ll_bool_t strcmp(const char* str_1, const char* str_2, const len_t& len) { return strcmp(str_1, STRLEN_DEF(str_1), str_2, len); }
-ll_bool_t strcmpSimilar(const char* str_1, const char* str_2) { return strcmpSimilar(str_1, STRLEN_DEF(str_1), str_2, STRLEN_DEF(str_2)); }
-ll_bool_t strcmpSimilar(const char* str_1, const len_t& len, const char* str_2) { return strcmpSimilar(str_1, len, str_2, STRLEN_DEF(str_2)); }
-ll_bool_t strcmpSimilar(const char* str_1, const char* str_2, const len_t& len) { return strcmpSimilar(str_1, STRLEN_DEF(str_1), str_2, len); }
-ll_bool_t containsChar(const char* str, const char* character) { return containsChar(str, STRLEN_DEF(str), character); }
+ll_bool_t strcmp(const char* str_1, const char* str_2) { return strcmp(str_1, stringlenght(str_1), str_2, stringlenght(str_2)); }
+ll_bool_t strcmp(const char* str_1, const len_t& len, const char* str_2) { return strcmp(str_1, len, str_2, stringlenght(str_2)); }
+ll_bool_t strcmp(const char* str_1, const char* str_2, const len_t& len) { return strcmp(str_1, stringlenght(str_1), str_2, len); }
+
+ll_bool_t strcmp_similar(const char* str_1, const char* str_2) { return strcmp_similar(str_1, stringlenght(str_1), str_2, stringlenght(str_2)); }
+ll_bool_t strcmp_similar(const char* str_1, const len_t& len, const char* str_2) { return strcmp_similar(str_1, len, str_2, stringlenght(str_2)); }
+ll_bool_t strcmp_similar(const char* str_1, const char* str_2, const len_t& len) { return strcmp_similar(str_1, stringlenght(str_1), str_2, len); }
+
+ll_bool_t contains_char(const char* str, const char* character) { return contains_char(str, stringlenght(str), character); }
 
 ll_bool_t strcmp(const char* str_1, const len_t& len_1, const char* str_2, const len_t len_2) {
 	ll_bool_t result = true;
@@ -41,7 +37,7 @@ ll_bool_t strcmp(const char* str_1, const len_t& len_1, const char* str_2, const
 			result = (str_1[i] == str_2[i]);
 	return result;
 }
-ll_bool_t strcmpSimilar(const char* str_1, const len_t& len_1, const char* str_2, const len_t len_2) {
+ll_bool_t strcmp_similar(const char* str_1, const len_t& len_1, const char* str_2, const len_t len_2) {
 	ll_bool_t result = true;
 	if (len_1 != len_2) result = false;
 	else
@@ -49,7 +45,7 @@ ll_bool_t strcmpSimilar(const char* str_1, const len_t& len_1, const char* str_2
 			result = (CHARS_LIB::compareCharSimilar(str_1 + i, str_2 + i) == 0);
 	return result;
 }
-ll_bool_t startWith(const char* str_1, const len_t& len_1, const char* str_2, const len_t len_2) {
+ll_bool_t start_with(const char* str_1, const len_t& len_1, const char* str_2, const len_t len_2) {
 	ll_bool_t result = true;
 	len_t len = len_1;
 	if(len_1 > len_2) len = len_2;
@@ -57,7 +53,7 @@ ll_bool_t startWith(const char* str_1, const len_t& len_1, const char* str_2, co
 		result = (str_1[i] == str_2[i]);
 	return result;
 }
-ll_bool_t startWithSimilar(const char* str_1, const len_t& len_1, const char* str_2, const len_t len_2) {
+ll_bool_t start_with_similar(const char* str_1, const len_t& len_1, const char* str_2, const len_t len_2) {
 	ll_bool_t result = true;
 	len_t len = len_1;
 	if(len_1 > len_2) len = len_2;
@@ -66,32 +62,26 @@ ll_bool_t startWithSimilar(const char* str_1, const len_t& len_1, const char* st
 	return result;
 }
 
-ll_bool_t containsChar(const char* str, const len_t& len, const char* character) {
+ll_bool_t contains_char(const char* str, const len_t& len, const char* character) {
 	ll_bool_t result = false;
 	for (len_t i = 0; i < len && !result; ++i)
 		result = (str[i] == *character);
 	return result;
 }
-ll_bool_t isNumber(const char* str, const len_t& len) {
+ll_bool_t is_number(const char* str, const len_t& len) {
 	ll_bool_t result = true;
 	for (len_t i = 0; i < len && result; ++i)
-		result = containsChar(CHARS_NUMS, CHARS_NUMS_LEN, str + i);
+		result = contains_char(CHARS_NUMS, CHARS_NUMS_LEN, str + i);
 	return result;
 }
-ll_bool_t isFloat(const char* str, const len_t& len) {
+ll_bool_t is_float(const char* str, const len_t& len) {
 	ll_bool_t result = true;
 	for (len_t i = 0; i < len && result; ++i)
-		result = containsChar(IP_CHARS, CHARS_NUMS_LEN, str + i);
+		result = contains_char(IP_CHARS, CHARS_NUMS_LEN, str + i);
 	return result;
 }
 
-len_t stringlen(const char* str, const ll_bool_t isDynamic) {
-	len_t result = 0;
-	if (isDynamic) result = stringlen(str);
-	else result = STRLEN_DEFINED_STRING(str);
-	return result;
-}
-len_t stringlen(const char* str) {
+len_t stringlenght(const char* str) {
 	len_t result = MEM_LIB::sizeBlock_b((void*)str);
 	if (result >= 24) result -= 24;
 	while (str[result] != '\0') result++;
@@ -99,7 +89,7 @@ len_t stringlen(const char* str) {
 }
 /* Return the length of the null-terminated string STR.  Scan for
    the null terminator quickly by testing four bytes at a time.  */
-len_t stringlen_low(const char* str) {
+len_t stringlenght_low(const char* str) {
 	const char* char_ptr;
 	const unsigned long int* longword_ptr;
 	unsigned long int longword, himagic, lomagic;

@@ -17,10 +17,10 @@ namespace Core {
 namespace Libs {
 namespace File {
 
-ll_bool_t directory_exist(char const* const dirname);
-ll_bool_t file_exist(char const* const dirname);
-ll_bool_t dir_exist_create(char const* const dirname);
-ll_bool_t remove_file(char const* const filename);
+ll_bool_t directory_exist(const char* dirname);
+ll_bool_t file_exist(const char* filename);
+ll_bool_t dir_exist_create(const char* dirname, const len_t& lenght);
+ll_bool_t remove_file(const char* filename);
 
 } /* namespace File */
 } /* namespace Libs */

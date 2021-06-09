@@ -7,12 +7,15 @@
 
 #include "Core/Libs/randomlib.h"
 #include "Core/Libs/filelib.h"
+#include "Core/Libs/stringlib.h"
 
 //#include "Core/Structs/llanylinkedlist.h"
 //#include "Listlib/Linkedlists/SmartLinkedlist.h"
 //#include "Listlib/Linkedlists/Linkedlist.h"
 
 using namespace Llanylib::Core::Structs;
+
+#define STR "./Folder/Folder2/Test"
 
 /*#define NUM 9999
 
@@ -59,7 +62,8 @@ void test_func_std() {
 	//std::cout << std::endl;
 
 
-	/*std::cout << "l = { ";
+	/*
+	std::cout << "l = { ";
 	for (int n : (*list)) std::cout << n << ", ";
 	std::cout << "};\n";*
 
@@ -78,6 +82,6 @@ void execute_test(void* func(void)) {
 
 
 int main(int argc, char **argv) {
-	std::cout << FILE_LIB::dir_exist_create("/FolderFolder2/Test") << std::endl;
+	FILE_LIB::dir_exist_create(STR, STRLEN_DEFINED_STRING(STR));
 	return 0;
 }

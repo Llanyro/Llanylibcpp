@@ -1,6 +1,6 @@
 
 
-#include "../Structs/llanystring.h"
+#include "../../Structs/llanystring.h"
 
 namespace Llanylib {
 namespace Core {
