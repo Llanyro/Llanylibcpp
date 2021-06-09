@@ -14,7 +14,6 @@ namespace Classes {
 namespace SimpleLists {
 
 #include "../Countable.h"
-#include "../../Structs/basicstructs.h"
 
 template<class T>
 class Node {
@@ -32,7 +31,7 @@ class Node {
 };
 
 template<class T>
-class List : Countable {
+class List : public Classes::Countable {
 	protected:
 		Node<T>* root;
 		BASIC_STRUCTS::cachelist<Node<T>, len_t>* cache_node;
@@ -98,7 +97,7 @@ class List : Countable {
 			return nodeActual;
 		}
 	public:
-		List() : Countable() {
+		List() : Classes::Countable() {
 			this->root = nullptr;
 			this->cache_node = new BASIC_STRUCTS::cachelist<Node<T>, len_t>();
 			this->set_cache_node(nullptr, 0);
@@ -107,7 +106,7 @@ class List : Countable {
 			this->clear();
 			delete this->cache_node;
 		}
-		virtual void clear() {
+		virtual ll_bool_t clear() override {
 			Node<T>* temp = nullptr;
 			Node<T>* nodeRemove = this->root->prev;
 			while (nodeRemove != this->root) {
@@ -118,35 +117,35 @@ class List : Countable {
 			delete this->root;
 			this->cache_node->cache = nullptr;
 			this->cache_node->position = 0;
-			Countable::clear();
+			return Classes::Countable::clear();
 		}
 		virtual void set_cache_node(Node<T>* node, const len_t& position) const {
 			this->cache_node->cache = node;
 			this->cache_node->position = position;
 		}
-		virtual ll_bool_t contains(const T* item, Compare_bool compare) const override {
+		virtual ll_bool_t contains(const T* item, Compare_bool compare) const {
 			ll_bool_t result = false;
 			Node<T>* node = this->root;
 			// Si tenemos la funcion de comparacion
 			if(compare != nullptr) {
 				for (len_t i = 0; !result && i < this->length; i++) {
-					result = compare(item, node->object);
+					result = compare(item, &node->object);
 					node = node->next;
 				}
 			}
 			// Si no tenemos, usamos ==
 			else {
 				for (len_t i = 0; !result && i < this->length; i++) {
-					result = (*item == *node->object);
+					result = (*item == node->object);
 					node = node->next;
 				}
 			}
 			return result;
 		}
-		virtual T* get(const len_t& pos) const override {
+		virtual T* get(const len_t& pos) const {
 			T* item = nullptr;
 			if(this->valid_pos(pos))
-				item = this->get_node_cache(pos)->object;
+				item = &this->get_node_cache(pos)->object;
 			return item;
 		}
 		// Funcion: Elimina un item de la lista

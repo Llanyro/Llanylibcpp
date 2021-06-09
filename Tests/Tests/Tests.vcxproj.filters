@@ -15,6 +15,48 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Core\Structs\stringtype.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Structs\llanystring.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Libs\llanytypeslib.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Classes\String.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Classes\Socket\ClientSocket.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Classes\SimpleLists\Vector.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Classes\SimpleLists\List.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Classes\Countable.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Classes\Containers\Test.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Classes\Containers\SmartPointer.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Libs\stringlib.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Libs\filelib.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Libs\randomlib.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\Structs\basicstructs.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Core\Classes\Containers\SmartContainers.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
@@ -24,25 +66,7 @@
     <ClInclude Include="..\..\Core\Classes\Containers\DynamicContainer.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\Countable.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Core\Classes\Containers\Containers.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Structs\basicstructs.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Structs\llanylinkedlist.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Structs\llanystring.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\stringlib.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Structs\stringtype.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Core\Libs\memlib.h">
@@ -51,16 +75,7 @@
     <ClInclude Include="..\..\Core\Libs\nolibfunctions.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\randomlib.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\filelib.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Core\Libs\llanysimpleprint.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\llanytypeslib.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Core\Libs\mathlib.h">
@@ -77,28 +92,34 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Core\Classes\Countable.cpp">
+    <ClCompile Include="..\..\Core\Structs\stringtype.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Core\Structs\llanystring.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Core\Structs\stringtype.cpp">
+    <ClCompile Include="..\..\Core\Classes\String.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\memlib.cpp">
+    <ClCompile Include="..\..\Core\Classes\Socket\ClientSocket.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\nolibfunctions.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\randomlib.cpp">
+    <ClCompile Include="..\..\Core\Classes\Countable.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Core\Libs\stringlib.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Core\Libs\filelib.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Libs\randomlib.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Libs\memlib.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\Libs\nolibfunctions.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Core\Libs\mathlib.cpp">

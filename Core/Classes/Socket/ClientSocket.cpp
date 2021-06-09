@@ -46,7 +46,7 @@ connect_result ClientSocket::connectServer(const char* ip, ll_int_t port) {
 	// IF windows
 	WSADATA wsa;
 	if (WSAStartup(MAKEWORD(2, 2),&wsa) != 0)
-		result = connectResults::ErrorWinsock;
+		result = connect_result::ErrorWinsock;
 	#endif
 
 	//Create a socket

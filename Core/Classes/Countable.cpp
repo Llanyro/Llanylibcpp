@@ -21,7 +21,7 @@ len_t Countable::count() const { return this->length; }
 len_t Countable::len() const { return this->length; }
 len_t Countable::size() const { return this->length; }
 ll_bool_t Countable::in_range(const len_t& position) const { return position < this->length; }
-void Countable::clear() { this->length = 0; }
+ll_bool_t Countable::clear() { this->length = 0; return true; }
 
 } /* namespace Classes */
 } /* namespace Core */

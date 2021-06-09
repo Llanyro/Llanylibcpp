@@ -15,7 +15,14 @@
 
 namespace Llanylib {
 namespace Core {
-namespace Structs { template<class T> struct llanyList; }
+
+namespace Classes {
+	namespace SimpleLists {
+		template<class T>
+		class List;
+	}
+}
+
 namespace Libs {
 namespace Math {
 
@@ -199,7 +206,7 @@ ll_float_t linearDeriv(const ll_float_t& value);
 
 /* Funciones complejas propias O(1) */
 // Si devuelve len 0 -> es un numero primo
-Structs::llanyList<ll_uint64_t>* uniqueDivisors(const ll_uint64_t& base);
+//Classes::SimpleLists::FixedVector<ll_float_t, 4>* uniqueDivisors(const ll_uint64_t& base);
 ll_uint64_t eulerFi(const ll_uint64_t& base);
 
 

@@ -10,7 +10,8 @@
 #include <math.h>
 #include <assert.h>
 
-#include "../Structs/llanylinkedlist.h"
+//#include "../Structs/llanylinkedlist.h"
+#include "../Classes/SimpleLists/List.h"
 
 namespace Llanylib {
 namespace Core {
@@ -155,15 +156,15 @@ ll_float_t getTanHDeriv(const ll_float_t& value) { return 1 - (value * value); }
 ll_float_t linearDeriv(const ll_float_t& value) { return 1.0; }
 
 /* Funciones complejas propias O(1)*/
-SIMPLE_STRUCTS::llanyList<ll_uint64_t>* uniqueDivisors(const ll_uint64_t& num) {
+Classes::SimpleLists::List<ll_uint64_t>* uniqueDivisors(const ll_uint64_t& num) {
 	assert(num != 0);
 
-	SIMPLE_STRUCTS::llanyList<ll_uint64_t>* l = SIMPLE_STRUCTS::newlist<ll_uint64_t>();
+	Classes::SimpleLists::List<ll_uint64_t>* l = new Classes::SimpleLists::List<ll_uint64_t>();
 	ll_bool_t continuar = true;
 	ll_uint64_t temp = 0, modVal = num;
 
 	// Agregamos el numero propio como divisor
-	SIMPLE_STRUCTS::add(l, num);
+	l->add(num);
 
 	while (continuar) {
 		// Encontramos un divisor cualquiera
@@ -182,14 +183,14 @@ SIMPLE_STRUCTS::llanyList<ll_uint64_t>* uniqueDivisors(const ll_uint64_t& num) {
 			while (modVal % temp == 0) modVal /= temp;
 		// Si el numero es primo
 		else {
-			if(temp != modVal && modVal != num)
+			if (temp != modVal && modVal != num)
 				// Agregamos el numero a la lista
-				SIMPLE_STRUCTS::add(l, modVal);
+				l->add(modVal);
 			continuar = false;
 		}
 
 		// Agregamos el numero a la lista
-		SIMPLE_STRUCTS::add(l, temp);
+		l->add(temp);
 	}
 
 	return l;
@@ -249,9 +250,9 @@ ll_uint64_t eulerFi(const ll_uint64_t& num) {
 	// El resultado es num - 1
 	// Else FI = num * (1 - (1 / div_1)) ... * (1 - (1 / div_n))
 	ll_uint64_t result = 0;
-	SIMPLE_STRUCTS::llanyList<ll_uint64_t>* l = uniqueDivisors(num);
+	Classes::SimpleLists::List<ll_uint64_t>* l = uniqueDivisors(num);
 
-	if (l->length == 0)
+	if (l->len() == 0)
 		result = num - 1;
 	else {
 		result = 1;

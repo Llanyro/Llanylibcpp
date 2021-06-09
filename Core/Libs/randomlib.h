@@ -9,12 +9,19 @@
 #define LLANYLIB_BASIC_SIMPLELIBS_RANDOMLIB_H_
 
 #include "llanytypeslib.h"
-#include "../Classes/Vector.h"
 
 #define RANDOM_LIB Llanylib::Core::Libs::Random
 
 namespace Llanylib {
 namespace Core {
+
+namespace Classes {
+	namespace SimpleLists {
+		template<class T, const len_t lenght>
+		class FixedVector;
+	}
+}
+
 namespace Libs {
 namespace Random {
 
@@ -65,9 +72,9 @@ char randomCharNumber();
 char randomCharAbecedarioOrNumber();
 char randomCharVisible();
 
-Classes::FixedVector<ll_float_t, 4>* randomBoxMuller();
+Classes::SimpleLists::FixedVector<ll_float_t, 4>* randomBoxMuller();
 // Sobrescribe un grupo de valores anteriormente usado para no regenerar la memoria
-ll_bool_t randomBoxMuller(Classes::FixedVector<ll_float_t, 4>* values);
+ll_bool_t randomBoxMuller(Classes::SimpleLists::FixedVector<ll_float_t, 4>* values);
 
 
 } /* namespace Random */

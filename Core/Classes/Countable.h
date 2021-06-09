@@ -16,7 +16,7 @@ namespace Llanylib {
 namespace Core {
 namespace Classes {
 
-class Countable : protected Structs::llanyLen, public LlanyCore {
+class Countable : public Classes::LlanyCore, protected Structs::llanyLen {
 	public:
 		Countable();
 		Countable(const len_t& length);
@@ -35,8 +35,7 @@ class Countable : protected Structs::llanyLen, public LlanyCore {
 		//		false: Si la posicion dada no esta en la lista
 		// Complejidad temporal y espacial: O(1) y M(1)
 		ll_bool_t in_range(const len_t& position) const;
-		virtual void clear() override;
-
+		virtual ll_bool_t clear() override;
 };
 
 } /* namespace Classes */

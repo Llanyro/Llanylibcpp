@@ -16,6 +16,7 @@
 //#include "llanymathtypeslib.h"
 #include "asciidefines.h"
 #include "memlib.h"
+#include "../Classes/SimpleLists/Vector.h"
 
 //#include "../SimpleStructs/llanymultireturn.h"
 
@@ -85,7 +86,7 @@ char randomCharNumber() { return getRandomChar(CHARS_NUMS, CHARS_NUMS_LEN); }
 char randomCharAbecedarioOrNumber() { return getRandomChar(ABECEDARIO_NUMS_1, ABECEDARIO_NUMS_1_LEN); }
 char randomCharVisible() { return getRandomChar(VISIBLE_CHARS, VISIBLE_CHARS_LEN); }
 
-Classes::FixedVector<ll_float_t, 4>* randomBoxMuller() {
+Classes::SimpleLists::FixedVector<ll_float_t, 4>* randomBoxMuller() {
     /*do {
         result.results[0] = randomf();
         result.results[1] = randomf();
@@ -102,11 +103,11 @@ Classes::FixedVector<ll_float_t, 4>* randomBoxMuller() {
 	 * result.results[2] = r * cos(FI) = sqrt(-2 * ln(U1)) * cos(2 * PI * U2);
 	 * result.results[3] = r * sin(FI) = sqrt(-2 * ln(U1)) * sin(2 * PI * U2);
 	 **/
-	Classes::FixedVector<ll_float_t, 4>* result = new Classes::FixedVector<ll_float_t, 4>();
+	Classes::SimpleLists::FixedVector<ll_float_t, 4>* result = new Classes::SimpleLists::FixedVector<ll_float_t, 4>();
 	randomBoxMuller(result);
 	return result;
 }
-ll_bool_t randomBoxMuller(Classes::FixedVector<ll_float_t, 4>* values) {
+ll_bool_t randomBoxMuller(Classes::SimpleLists::FixedVector<ll_float_t, 4>* values) {
 	ll_bool_t resultado = false;
 	if(values != nullptr) {
 	    do {

@@ -12,11 +12,11 @@
 
 namespace Llanylib {
 namespace Core {
-namespace Structs { struct llanystring; }
+namespace Classes { class String; }
 namespace Libs {
 namespace Nolib {
 
-Structs::llanystring* getCommandsMain(int argc, char** argv, const ll_bool_t& ignoreFirst);
+Classes::String* getCommandsMain(int argc, char** argv, const ll_bool_t& ignoreFirst);
 
 } /* namespace Nolib */
 } /* namespace Libs */

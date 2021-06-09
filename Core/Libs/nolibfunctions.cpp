@@ -9,13 +9,14 @@
 
 #include "memlib.h"
 #include "../Structs/llanystring.h"
+#include "../Classes/String.h"
 
 namespace Llanylib {
 namespace Core {
 namespace Libs {
 namespace Nolib {
 
-LLANY_STRING::llanystring* getCommandsMain(int argc, char** argv, const ll_bool_t& ignoreFirst) {
+Classes::String* getCommandsMain(int argc, char** argv, const ll_bool_t& ignoreFirst) {
 	/*len_t len = 0;
 	// Obtenemos el comando a ejecutar...
 	for (len_t i = 0 + ignoreFirst; i < argc; i++) {
