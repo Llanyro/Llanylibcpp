@@ -48,7 +48,7 @@ class SmartPointer {
 			return (*this->object == *other.object);
 		}
 		inline ll_bool_t operator!=(const SmartPointer& other) const {
-			return !this->operator ==(other);
+			return !this->operator==(other);
 		}
 };
 
