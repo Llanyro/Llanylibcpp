@@ -36,7 +36,7 @@ class SmartNode {
 		SmartNode<T>* next;
 		SmartNode<T>* prev;
 	public:
-		SmartNode(const T& item) {
+		SmartNode(T* item) {
 			this->object = item;
 			this->next = nullptr;
 			this->prev = nullptr;
@@ -339,14 +339,14 @@ class SmartList : public Countable {
 			// Si tenemos la funcion de comparacion
 			if(compare != nullptr) {
 				for (len_t i = 0; !result && i < this->length; i++) {
-					result = compare(item, &node->object);
+					result = compare(item, node->object);
 					node = node->next;
 				}
 			}
 			// Si no tenemos, usamos ==
 			else {
 				for (len_t i = 0; !result && i < this->length; i++) {
-					result = (*item == node->object);
+					result = (*item == *node->object);
 					node = node->next;
 				}
 			}
@@ -400,7 +400,7 @@ class SmartList : public Countable {
 		}
 		// Funcion: Por defecto llama a remove()
 		ll_bool_t del(const len_t& pos) { return this->remove(pos); }
-		virtual void add(const T* object) {
+		virtual void add(T* object) {
 			// Creamos el nodo
 			SmartNode<T>* node = new SmartNode<T>(object);
 			// Caso especial de que la lista este vacia
@@ -425,7 +425,7 @@ class SmartList : public Countable {
 			// Incrementamos el tama�o
 			this->length++;
 		}
-		virtual ll_bool_t set(const T& object, const len_t& position) {
+		virtual ll_bool_t set(T* object, const len_t& position) {
 			ll_bool_t result = true;
 			if(this->valid_pos(position))
 				this->get_node_cache(position)->object = object;

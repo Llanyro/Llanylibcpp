@@ -151,7 +151,7 @@ ll_float_t getSigmoid(const ll_float_t& value) {
 ll_float_t getSigmoidDeriv(const ll_float_t& value) { return (value * (1 - value)); }
 ll_float_t getMaxVSZero(const ll_float_t& value) { return GET_MAX(0, value); }
 ll_float_t isHigherThanZero(const ll_float_t& value) { return value > 0; }
-ll_float_t getTanH(const ll_float_t& value) { return tanh(value); }
+ll_double_t getTanH(const ll_double_t& value) { return tanh(value); }
 ll_float_t getTanHDeriv(const ll_float_t& value) { return 1 - (value * value); }
 ll_float_t linearDeriv(const ll_float_t& value) { return 1.0; }
 

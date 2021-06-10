@@ -200,7 +200,7 @@ ll_float_t getSigmoid(const ll_float_t& value);
 ll_float_t getSigmoidDeriv(const ll_float_t& value);
 ll_float_t getMaxVSZero(const ll_float_t& value);
 ll_float_t isHigherThanZero(const ll_float_t& value);
-ll_float_t getTanH(const ll_float_t& value);
+ll_double_t getTanH(const ll_double_t& value);
 ll_float_t getTanHDeriv(const ll_float_t& value);
 ll_float_t linearDeriv(const ll_float_t& value);
 

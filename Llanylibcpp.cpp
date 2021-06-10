@@ -75,7 +75,7 @@ void test_func_std() {
 	delete list;
 }*/
 
-void execute_test(void* func(void)) {
+void execute_test(void func(void)) {
 	std::cout << "Start\n";
 	auto t1 = std::chrono::high_resolution_clock::now();
 	func();
@@ -97,21 +97,77 @@ void testSmart() {
 	SmartPointer<int> s = tests();
 }
 
+
+#define SIZE_TEST 9999
+
 void testSmartList() {
-	SmartList<int>* list = new SmartList<int>();
+	SmartList<len_t>* list = new SmartList<len_t>();
+	for (len_t i = 0; i < SIZE_TEST; i++)
+		list->add(new len_t(i));
+	len_t* temp;
+	for (len_t i = 0; i < list->len(); i++) {
+		temp = list->get(i);
+		//std::cout << *temp << ", ";
+	}
+	delete list;
+}
+void testSmartListSTD() {
+	std::list<std::unique_ptr<len_t>>* list = new std::list<std::unique_ptr<len_t>>();
 
+	for (len_t i = 0; i < SIZE_TEST; i++)
+		list->push_back(std::unique_ptr<len_t>(new len_t(i)));
 
+	len_t* temp;
+	std::list<std::unique_ptr<len_t>>::iterator it = list->begin();
+	while (it != list->end()) {
+		temp = (*it).get();
+		//std::cout << *temp << ", ";
+		std::advance(it, 1);
+	}
 
+	delete list;
 }
 
+template<class T>
 struct data_pack {
-
-
+	T data;
+	std::list<std::unique_ptr<void*>> containers;
 };
+std::list<data_pack<len_t>>* list_pointers = new std::list<data_pack<len_t>>();
+
+template<class T>
+T* not_new() {
+
+}
+template<class T>
+void testMem(T** container) {
+	data_pack<T> data;
+	data.data = T();
+	//data.containers.push_back(container);
+	list_pointers->push_back(data);
+
+
+	delete list_pointers;
+}
+
+void testmem(void* mem) {
+	printf("%p\n", mem);
+}
+void testmem2() {
+	int a = 7;
+	printf("%p\n", &a);
+	testmem(&a);
+}
+
 
 
 int main(int argc, char **argv) {
-	testSmart();
+	//testSmart();
 	//FILE_LIB::dir_exist_create(STR, STRLEN_DEFINED_STRING(STR));
+
+	//execute_test(testSmartList);
+	//execute_test(testSmartListSTD);
+	testmem2();
+
 	return 0;
 }
