@@ -19,6 +19,8 @@ class String : public SimpleLists::Vector<char> {
 		String();
 		String(const len_t& lenght);
 		virtual ~String();
+		inline ll_bool_t operator==(const String& other) const;
+		inline ll_bool_t operator!=(const String& other) const;
 };
 
 template<const len_t lenght>

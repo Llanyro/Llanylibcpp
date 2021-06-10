@@ -30,7 +30,7 @@ class SmartPointer {
 			return this;
 		}
 		inline SmartPointer<T>& operator=(const SmartPointer<T> &other) {
-			return this;
+			return *this;
 		}
 		inline SmartPointer(SmartPointer<T> &&other) : SmartPointer() {
 			this->object = nullptr;
@@ -44,6 +44,12 @@ class SmartPointer {
 				delete this->object;
 		}
 		inline T* operator->(){ return this->object; }
+		inline ll_bool_t operator==(const SmartPointer& other) const {
+			return (*this->object == *other.object);
+		}
+		inline ll_bool_t operator!=(const SmartPointer& other) const {
+			return !this->operator ==(other);
+		}
 };
 
 } /* namespace Containers */

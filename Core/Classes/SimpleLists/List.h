@@ -8,12 +8,12 @@
 #ifndef CORE_CLASSES_SIMPLELISTS_LIST_H_
 #define CORE_CLASSES_SIMPLELISTS_LIST_H_
 
+#include "../Countable.h"
+
 namespace Llanylib {
 namespace Core {
 namespace Classes {
 namespace SimpleLists {
-
-#include "../Countable.h"
 
 template<class T>
 class Node {
@@ -31,10 +31,10 @@ class Node {
 };
 
 template<class T>
-class List : public Classes::Countable {
+class List : public Countable {
 	protected:
 		Node<T>* root;
-		BASIC_STRUCTS::cachelist<Node<T>, len_t>* cache_node;
+		BASIC_STRUCTS::cachelist<Node<T>*, len_t>* cache_node;
 	protected:
 		// Funcion: Comprueba si la posicion dada se puede encontrar en la lista
 		// Version: Final
@@ -97,9 +97,9 @@ class List : public Classes::Countable {
 			return nodeActual;
 		}
 	public:
-		List() : Classes::Countable() {
+		List() : Countable() {
 			this->root = nullptr;
-			this->cache_node = new BASIC_STRUCTS::cachelist<Node<T>, len_t>();
+			this->cache_node = new BASIC_STRUCTS::cachelist<Node<T>*, len_t>();
 			this->set_cache_node(nullptr, 0);
 		}
 		virtual ~List() {
