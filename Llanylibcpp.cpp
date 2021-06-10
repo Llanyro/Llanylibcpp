@@ -4,16 +4,21 @@
 #include <list>
 
 #include "Core/Libs/llanysimpleprint.h"
-
 #include "Core/Libs/randomlib.h"
 #include "Core/Libs/filelib.h"
 #include "Core/Libs/stringlib.h"
+
+#include "Core/Classes/Containers/SmartPointer.h"
+#include "Core/Classes/SimpleLists/List.h"
 
 //#include "Core/Structs/llanylinkedlist.h"
 //#include "Listlib/Linkedlists/SmartLinkedlist.h"
 //#include "Listlib/Linkedlists/Linkedlist.h"
 
 //using namespace Llanylib::Core::Structs;
+
+using namespace Llanylib::Core::Classes::SimpleLists;
+using namespace Llanylib::Core::Classes::Containers;
 
 #define STR "./Folder/Folder2/Test"
 
@@ -80,18 +85,29 @@ void execute_test(void* func(void)) {
 		<< " milliseconds\n";
 }
 
-#include "Core/Classes/Containers/SmartPointer.h"
 
-using namespace Llanylib::Core::Classes::Containers;
+
+
 
 SmartPointer<int> tests() {
 	SmartPointer<int> s(new int(7));
 	return s;
 }
-
 void testSmart() {
 	SmartPointer<int> s = tests();
 }
+
+void testSmartList() {
+	SmartList<int>* list = new SmartList<int>();
+
+
+
+}
+
+struct data_pack {
+
+
+};
 
 
 int main(int argc, char **argv) {
