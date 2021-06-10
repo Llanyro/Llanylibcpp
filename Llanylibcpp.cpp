@@ -92,6 +92,7 @@ void testSmart() {
 
 
 int main(int argc, char **argv) {
+	testSmart();
 	//FILE_LIB::dir_exist_create(STR, STRLEN_DEFINED_STRING(STR));
 	return 0;
 }

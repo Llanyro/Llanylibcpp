@@ -45,7 +45,7 @@ class SmartPointer {
 		}
 		inline T* operator->(){ return this->object; }
 		inline ll_bool_t operator==(const SmartPointer& other) const {
-			return (*this->object == *other.object);
+			return false;//(*this->object == *other.object);
 		}
 		inline ll_bool_t operator!=(const SmartPointer& other) const {
 			return !this->operator==(other);
