@@ -84,10 +84,13 @@ void execute_test(void* func(void)) {
 
 using namespace Llanylib::Core::Classes::Containers;
 
+SmartPointer<int> tests() {
+	SmartPointer<int> s(new int(7));
+	return s;
+}
+
 void testSmart() {
-	SmartPointer<int> s = SmartPointer<int>(new int(5));
-
-
+	SmartPointer<int> s = tests();
 }
 
 
