@@ -90,6 +90,9 @@
     <ClInclude Include="..\..\Core\Classes\LlanyCore.h">
       <Filter>Archivos de recursos</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Core\testlist.h">
+      <Filter>Archivos de recursos</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Core\Structs\stringtype.cpp">
