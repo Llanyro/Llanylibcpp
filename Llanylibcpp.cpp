@@ -2,23 +2,24 @@
 #include <iostream>
 #include <chrono>
 #include <list>
+#include <memory>
 
 #include "Core/Libs/llanysimpleprint.h"
 #include "Core/Libs/randomlib.h"
 #include "Core/Libs/filelib.h"
 #include "Core/Libs/stringlib.h"
 
-#include "Core/Classes/Containers/SmartPointer.h"
-#include "Core/Classes/SimpleLists/List.h"
+//#include "Core/Classes/Containers/SmartPointer.h"
+//#include "Core/Classes/SimpleLists/List.h"
 
 //#include "Core/Structs/llanylinkedlist.h"
-//#include "Listlib/Linkedlists/SmartLinkedlist.h"
+#include "../OldMoludes/Listlib/Linkedlists/SmartLinkedlist.h"
 //#include "Listlib/Linkedlists/Linkedlist.h"
 
 //using namespace Llanylib::Core::Structs;
-
 using namespace Llanylib::Core::Classes::SimpleLists;
-using namespace Llanylib::Core::Classes::Containers;
+using namespace Llanylib::Listlib::Linkedlists;
+//using namespace Llanylib::Core::Classes::Containers;
 
 #define STR "./Folder/Folder2/Test"
 
@@ -86,22 +87,19 @@ void execute_test(void func(void)) {
 }
 
 
-
-
-
-SmartPointer<int> tests() {
+/*SmartPointer<int> tests() {
 	SmartPointer<int> s(new int(7));
 	return s;
 }
 void testSmart() {
 	SmartPointer<int> s = tests();
-}
+}*/
 
 
-#define SIZE_TEST 9999
+#define SIZE_TEST 99999
 
 void testSmartList() {
-	SmartList<len_t>* list = new SmartList<len_t>();
+	SmartLinkedlist<len_t>* list = new SmartLinkedlist<len_t>();
 	for (len_t i = 0; i < SIZE_TEST; i++)
 		list->add(new len_t(i));
 	len_t* temp;
@@ -128,7 +126,7 @@ void testSmartListSTD() {
 	delete list;
 }
 
-template<class T>
+/*template<class T>
 struct data_pack {
 	T data;
 	std::list<std::unique_ptr<void*>> containers;
@@ -159,15 +157,15 @@ void testmem2() {
 	testmem(&a);
 }
 
-
+*/
 
 int main(int argc, char **argv) {
 	//testSmart();
 	//FILE_LIB::dir_exist_create(STR, STRLEN_DEFINED_STRING(STR));
 
-	//execute_test(testSmartList);
-	//execute_test(testSmartListSTD);
-	testmem2();
+	execute_test(testSmartList);
+	execute_test(testSmartListSTD);
+	//testmem2();
 
 	return 0;
 }
