@@ -8,7 +8,7 @@
 #ifndef LLANYLIB_CORE_CLASSES_NODES_NODES_H_
 #define LLANYLIB_CORE_CLASSES_NODES_NODES_H_
 
-#include "../../Core/Classes/LlanyCore.h"
+#include "../../Classes/LlanyCore.h"
 
 namespace Llanylib {
 namespace Listlib {

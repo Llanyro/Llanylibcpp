@@ -13,7 +13,7 @@
 //#include "Core/Classes/SimpleLists/List.h"
 
 //#include "Core/Structs/llanylinkedlist.h"
-#include "../OldMoludes/Listlib/Linkedlists/SmartLinkedlist.h"
+#include "Core/Listlib/Linkedlists/SmartLinkedlist.h"
 //#include "Listlib/Linkedlists/Linkedlist.h"
 
 //using namespace Llanylib::Core::Structs;
@@ -98,6 +98,17 @@ void testSmart() {
 
 #define SIZE_TEST 99999
 
+/*
+* Windows:
+Start
+test_func function took 205 milliseconds
+Start
+test_func function took 224 milliseconds
+
+Unix:
+
+
+*/
 void testSmartList() {
 	SmartLinkedlist<len_t>* list = new SmartLinkedlist<len_t>();
 	for (len_t i = 0; i < SIZE_TEST; i++)

@@ -8,7 +8,7 @@
 #ifndef LISTLIB_CORELIST_ABSTRACTSMARTLIST_H_
 #define LISTLIB_CORELIST_ABSTRACTSMARTLIST_H_
 
-#include "../../Core/Libs/memlib.h"
+#include "Core/Libs/memlib.h"
 
 namespace Llanylib {
 namespace Listlib {

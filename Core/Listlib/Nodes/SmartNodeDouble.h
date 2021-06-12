@@ -9,7 +9,7 @@
 #define LLANYLIB_CORE_CLASSES_NODES_SMARTNODEDOUBLE_H_
 
 #include "Nodes.h"
-#include "../../Core/Classes/Containers/SmartContainers.h"
+#include "../../Classes/Containers/SmartContainers.h"
 
 namespace Llanylib {
 namespace Listlib {

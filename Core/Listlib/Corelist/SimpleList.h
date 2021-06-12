@@ -8,7 +8,7 @@
 #ifndef LLANYLIB_CORE_LISTLIB_CORELIST_SIMPLELIST_H_
 #define LLANYLIB_CORE_LISTLIB_CORELIST_SIMPLELIST_H_
 
-#include "../../Core/Classes/LlanyCore.h"
+#include "../../Classes/LlanyCore.h"
 
 // Contiene todas las funciones generales de las listas
 // Pero no contiene el size
