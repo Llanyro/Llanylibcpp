@@ -20,7 +20,6 @@ class Linkedlist : public AbstractLinkedlist<T, Nodes::NDUO<T>> {
 	public:
 		Linkedlist() : AbstractLinkedlist<T, Nodes::NDUO<T>>() {}
 		virtual ~Linkedlist() {}
-
 		virtual void add(const T& object) {
 			// Creamos el nodo
 			Nodes::NDUO<T>* nuevoNodo = new Nodes::NDUO<T>(object);

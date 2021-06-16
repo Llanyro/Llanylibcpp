@@ -106,7 +106,10 @@ Start
 test_func function took 224 milliseconds
 
 Unix:
-
+Start
+test_func function took 21 milliseconds
+Start
+test_func function took 30 milliseconds
 
 */
 void testSmartList() {

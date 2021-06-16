@@ -23,13 +23,16 @@ class AbstractLinkedlist : public Corelist::List<T> {
 		AbstractLinkedlist() : Corelist::List<T>() {
 			this->raiz = nullptr;
 			this->cache = new BASIC_STRUCTS::cachelist<T_NODE*, len_t>();
+			this->setCacheNode(nullptr, 0);
 		}
-		virtual ~AbstractLinkedlist() { this->clear(); }
-		void changeCacheNode(T_NODE* node, const len_t& position) const {
+		virtual ~AbstractLinkedlist() {
+			this->clear();
+			delete this->cache;
+		}
+		void setCacheNode(T_NODE* node, const len_t& position) const {
 			this->cache->cache = node;
 			this->cache->position = position;
 		}
-		void clearCache() const { this->changeCacheNode(nullptr, 0); }
 		// Funcion: Busca el la lista el nodo solicitado
 		// Extra: Guarda el ultimo nodo visitado
 		// Version: Beta
@@ -48,7 +51,7 @@ class AbstractLinkedlist : public Corelist::List<T> {
 					for (len_t i = 0; i < this->length - position; i++)
 						nodoActual = nodoActual->getAnteriorNodo();
 				// Guardamos el ultimo accedido
-				this->changeCacheNode(nodoActual, position);
+				this->setCacheNode(nodoActual, position);
 			}
 			return nodoActual;
 		}
@@ -75,7 +78,7 @@ class AbstractLinkedlist : public Corelist::List<T> {
 						for (len_t i = 0; i < this->cache->position - position; i++)
 							nodoActual = nodoActual->getAnteriorNodo();
 					// Guardamos el ultimo accedido
-					this->changeCacheNode(nodoActual, position);
+					this->setCacheNode(nodoActual, position);
 				}
 				else nodoActual = this->getNodoNoCache(position);
 			}
@@ -109,8 +112,6 @@ class AbstractLinkedlist : public Corelist::List<T> {
 		}
 		virtual T* operator[](const len_t& pos) override { return this->get(pos); }
 		virtual ll_bool_t clear() override {
-			delete this->cache;
-			//this->raiz->deleteRecursivo(nullptr);
 			T_NODE* temp = nullptr;
 			T_NODE* nodeRemove = this->raiz->getAnteriorNodo();
 			while (nodeRemove != this->raiz) {
@@ -119,7 +120,6 @@ class AbstractLinkedlist : public Corelist::List<T> {
 				nodeRemove = temp;
 			}
 			delete this->raiz;
-
 			return Corelist::List<T>::clear();
 		}
 		// Funcion: Elimina un item de la lista
@@ -154,7 +154,7 @@ class AbstractLinkedlist : public Corelist::List<T> {
 					// Si es un caso especial
 					if (pos == 0) this->raiz = nodeSiguiente;
 					// Recolocamos el punto intermedio en el nodo siguiente y la posicion actual(que sera la actualizada de este)
-					this->changeCacheNode(nodeSiguiente, pos);
+					this->setCacheNode(nodeSiguiente, pos);
 				}
 				delete(nodoAEliminar);
 				this->length--;
