@@ -11,7 +11,7 @@
 #include "asciidefines.h"
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Libs {
 namespace Chars {
 

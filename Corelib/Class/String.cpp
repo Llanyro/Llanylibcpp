@@ -11,7 +11,7 @@
 
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Classes {
 
 String::String() : Vector(){}

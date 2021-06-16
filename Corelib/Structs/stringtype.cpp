@@ -13,7 +13,7 @@
 #define LLANY_STRING_TYPE Llanylib::Core::Structs::StringType
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Structs {
 namespace StringType {
 

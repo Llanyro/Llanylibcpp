@@ -8,7 +8,7 @@
 #include "Countable.h"
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Classes {
 
 Countable::Countable() { this->length = 0; }
@@ -24,5 +24,5 @@ ll_bool_t Countable::in_range(const len_t& position) const { return position < t
 ll_bool_t Countable::clear() { this->length = 0; return true; }
 
 } /* namespace Classes */
-} /* namespace Core */
+} /* namespace Corelib */
 } /* namespace Llanylib */

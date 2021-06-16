@@ -14,7 +14,7 @@
 #include "../Classes/SimpleLists/List.h"
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Libs {
 namespace Math {
 

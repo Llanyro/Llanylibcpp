@@ -15,7 +15,7 @@
 #include "../Structs/basicstructs.h"
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Libs {
 namespace String {
 

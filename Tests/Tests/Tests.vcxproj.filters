@@ -26,4 +26,95 @@
       <UniqueIdentifier>{9ba2954d-05ed-4110-a6f7-1aa2f6fb9e42}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Corelib\Class\Countable.cpp">
+      <Filter>Archivos de recursos\Corelib\Class</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Corelib\Class\LlanyCore.cpp">
+      <Filter>Archivos de recursos\Corelib\Class</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Corelib\Class\String.cpp">
+      <Filter>Archivos de recursos\Corelib\Class</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Corelib\Libs\charslib.cpp">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Corelib\Libs\filelib.cpp">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Corelib\Libs\mathlib.cpp">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Corelib\Libs\memlib.cpp">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Corelib\Libs\nolibfunctions.cpp">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Corelib\Libs\randomlib.cpp">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Corelib\Libs\stringlib.cpp">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Corelib\Structs\llanystring.cpp">
+      <Filter>Archivos de recursos\Corelib\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Corelib\Structs\stringtype.cpp">
+      <Filter>Archivos de recursos\Corelib\Struct</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Corelib\Class\Countable.h">
+      <Filter>Archivos de recursos\Corelib\Class</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Class\LlanyCore.h">
+      <Filter>Archivos de recursos\Corelib\Class</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Class\String.h">
+      <Filter>Archivos de recursos\Corelib\Class</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Libs\asciidefines.h">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Libs\charslib.h">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Libs\filelib.h">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Libs\llanymathtypeslib.h">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Libs\llanysimpleprint.h">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Libs\llanytypeslib.h">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Libs\mathlib.h">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Libs\memlib.h">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Libs\nolibfunctions.h">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Libs\randomlib.h">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Libs\stringlib.h">
+      <Filter>Archivos de recursos\Corelib\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Structs\basicstructs.h">
+      <Filter>Archivos de recursos\Corelib\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Structs\llanystring.h">
+      <Filter>Archivos de recursos\Corelib\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Corelib\Structs\stringtype.h">
+      <Filter>Archivos de recursos\Corelib\Struct</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

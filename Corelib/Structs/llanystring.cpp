@@ -11,7 +11,7 @@
 #include "../Libs/memlib.h"
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Structs {
 namespace String {
 

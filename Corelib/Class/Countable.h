@@ -5,18 +5,18 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORE_CLASSES_HERITABLES_LEN_H_
-#define LLANYLIB_CORE_CLASSES_HERITABLES_LEN_H_
-
-#include "../Structs/basicstructs.h"
+#ifndef LLANYLIB_CORELIB_CLASSES_HERITABLES_LEN_H_
+#define LLANYLIB_CORELIB_CLASSES_HERITABLES_LEN_H_
 
 #include "LlanyCore.h"
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Classes {
 
-class Countable : public Classes::LlanyCore, protected Structs::llanyLen {
+class Countable : public Classes::LlanyCore {
+	protected:
+		len_t length;
 	public:
 		Countable();
 		Countable(const len_t& length);
@@ -39,7 +39,7 @@ class Countable : public Classes::LlanyCore, protected Structs::llanyLen {
 };
 
 } /* namespace Classes */
-} /* namespace Core */
+} /* namespace Corelib */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORE_CLASSES_HERITABLES_LEN_H_ */
+#endif /* LLANYLIB_CORELIB_CLASSES_HERITABLES_LEN_H_ */

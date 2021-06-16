@@ -19,7 +19,7 @@
 #endif // _WIN32
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Libs {
 namespace File {
 

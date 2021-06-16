@@ -18,6 +18,39 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Corelib\Class\Countable.cpp" />
+    <ClCompile Include="..\..\Corelib\Class\LlanyCore.cpp" />
+    <ClCompile Include="..\..\Corelib\Class\String.cpp" />
+    <ClCompile Include="..\..\Corelib\Libs\charslib.cpp" />
+    <ClCompile Include="..\..\Corelib\Libs\filelib.cpp" />
+    <ClCompile Include="..\..\Corelib\Libs\mathlib.cpp" />
+    <ClCompile Include="..\..\Corelib\Libs\memlib.cpp" />
+    <ClCompile Include="..\..\Corelib\Libs\nolibfunctions.cpp" />
+    <ClCompile Include="..\..\Corelib\Libs\randomlib.cpp" />
+    <ClCompile Include="..\..\Corelib\Libs\stringlib.cpp" />
+    <ClCompile Include="..\..\Corelib\Structs\llanystring.cpp" />
+    <ClCompile Include="..\..\Corelib\Structs\stringtype.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Corelib\Class\Countable.h" />
+    <ClInclude Include="..\..\Corelib\Class\LlanyCore.h" />
+    <ClInclude Include="..\..\Corelib\Class\String.h" />
+    <ClInclude Include="..\..\Corelib\Libs\asciidefines.h" />
+    <ClInclude Include="..\..\Corelib\Libs\charslib.h" />
+    <ClInclude Include="..\..\Corelib\Libs\filelib.h" />
+    <ClInclude Include="..\..\Corelib\Libs\llanymathtypeslib.h" />
+    <ClInclude Include="..\..\Corelib\Libs\llanysimpleprint.h" />
+    <ClInclude Include="..\..\Corelib\Libs\llanytypeslib.h" />
+    <ClInclude Include="..\..\Corelib\Libs\mathlib.h" />
+    <ClInclude Include="..\..\Corelib\Libs\memlib.h" />
+    <ClInclude Include="..\..\Corelib\Libs\nolibfunctions.h" />
+    <ClInclude Include="..\..\Corelib\Libs\randomlib.h" />
+    <ClInclude Include="..\..\Corelib\Libs\stringlib.h" />
+    <ClInclude Include="..\..\Corelib\Structs\basicstructs.h" />
+    <ClInclude Include="..\..\Corelib\Structs\llanystring.h" />
+    <ClInclude Include="..\..\Corelib\Structs\stringtype.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

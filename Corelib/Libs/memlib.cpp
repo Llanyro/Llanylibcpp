@@ -13,7 +13,7 @@
 #include <malloc.h>
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Libs {
 namespace Mem {
 

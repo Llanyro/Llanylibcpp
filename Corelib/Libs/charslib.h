@@ -5,15 +5,15 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORE_SIMPLELIBS_CHARSLIB_H_
-#define LLANYLIB_CORE_SIMPLELIBS_CHARSLIB_H_
+#ifndef LLANYLIB_CORELIB_SIMPLELIBS_CHARSLIB_H_
+#define LLANYLIB_CORELIB_SIMPLELIBS_CHARSLIB_H_
 
 #include "llanymathtypeslib.h"
 
 #define CHARS_LIB Llanylib::Core::Libs::Chars
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Libs {
 namespace Chars {
 
@@ -82,4 +82,4 @@ ll_int_t cambiarMinus(char* caracter);
 } /* namespace Core */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORE_SIMPLELIBS_CHARSLIB_H_ */
+#endif /* LLANYLIB_CORELIB_SIMPLELIBS_CHARSLIB_H_ */

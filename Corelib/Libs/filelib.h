@@ -13,7 +13,7 @@
 #define FILE_LIB Llanylib::Core::Libs::File
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Libs {
 namespace File {
 

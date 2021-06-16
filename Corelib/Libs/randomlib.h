@@ -13,7 +13,7 @@
 #define RANDOM_LIB Llanylib::Core::Libs::Random
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 
 namespace Classes {
 	namespace SimpleLists {

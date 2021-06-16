@@ -11,7 +11,7 @@
 #include "SimpleLists/Vector.h"
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Classes {
 
 class String : public SimpleLists::Vector<char> {

@@ -5,15 +5,15 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORE_SIMPLELIBS_STRINGLIB_H_
-#define LLANYLIB_CORE_SIMPLELIBS_STRINGLIB_H_
+#ifndef LLANYLIB_CORELIBLIB_SIMPLELIBS_STRINGLIB_H_
+#define LLANYLIB_CORELIBLIB_SIMPLELIBS_STRINGLIB_H_
 
 #include "llanymathtypeslib.h"
 
 #define STRING_LIB Llanylib::Core::Libs::String
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Libs {
 namespace String {
 
@@ -52,4 +52,4 @@ len_t stringlenght_low(const char* str);
 } /* namespace Core */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORE_SIMPLELIBS_STRINGLIB_H_ */
+#endif /* LLANYLIB_CORELIBLIB_SIMPLELIBS_STRINGLIB_H_ */

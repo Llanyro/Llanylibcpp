@@ -8,17 +8,18 @@
 #include "LlanyCore.h"
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Classes {
 
 LlanyCore::LlanyCore() {}
 LlanyCore::~LlanyCore() {}
 
 ll_bool_t LlanyCore::clear() { return false; }
-void* LlanyCore::hash() const { return nullptr; }
-void* LlanyCore::toString() const { return nullptr; }
-void* LlanyCore::serialize() const { return nullptr; }
+String* LlanyCore::hash() const { return nullptr; }
+String* LlanyCore::toString() const { return nullptr; }
+String* LlanyCore::serialize() const { return nullptr; }
+void* LlanyCore::clone() const { return nullptr; }
 
 } /* namespace Classes */
-} /* namespace Core */
+} /* namespace Corelib */
 } /* namespace Llanylib */

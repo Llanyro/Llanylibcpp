@@ -12,7 +12,7 @@
 #include "../Classes/String.h"
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Libs {
 namespace Nolib {
 

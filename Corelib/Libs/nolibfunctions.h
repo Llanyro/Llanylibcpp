@@ -5,13 +5,13 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORE_SIMPLELIBS_NOLIBFUNCTIONS_H_
-#define LLANYLIB_CORE_SIMPLELIBS_NOLIBFUNCTIONS_H_
+#ifndef LLANYLIB_CORELIB_SIMPLELIBS_NOLIBFUNCTIONS_H_
+#define LLANYLIB_CORELIB_SIMPLELIBS_NOLIBFUNCTIONS_H_
 
 #include "llanytypeslib.h"
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Classes { class String; }
 namespace Libs {
 namespace Nolib {
@@ -23,4 +23,4 @@ Classes::String* getCommandsMain(int argc, char** argv, const ll_bool_t& ignoreF
 } /* namespace Core */
 } /* namespace Llanylibc */
 
-#endif /* LLANYLIB_CORE_SIMPLELIBS_NOLIBFUNCTIONS_H_ */
+#endif /* LLANYLIB_CORELIB_SIMPLELIBS_NOLIBFUNCTIONS_H_ */

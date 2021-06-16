@@ -5,8 +5,8 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORE_SIMPLELIBS_MATHLIB_H_
-#define LLANYLIB_CORE_SIMPLELIBS_MATHLIB_H_
+#ifndef LLANYLIB_CORELIB_SIMPLELIBS_MATHLIB_H_
+#define LLANYLIB_CORELIB_SIMPLELIBS_MATHLIB_H_
 
 #include "llanytypeslib.h"
 #include "llanymathtypeslib.h"
@@ -14,7 +14,7 @@
 #define MATH_LIB Llanylib::Core::Libs::Math
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 
 namespace Classes {
 	namespace SimpleLists {
@@ -224,4 +224,4 @@ ll_uint64_t gerneratePrime();
 } /* namespace Core */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORE_SIMPLELIBS_MATHLIB_H_ */
+#endif /* LLANYLIB_CORELIB_SIMPLELIBS_MATHLIB_H_ */

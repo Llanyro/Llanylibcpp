@@ -5,13 +5,13 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORE_STRUCTS_STRINGTYPE_H_
-#define LLANYLIB_CORE_STRUCTS_STRINGTYPE_H_
+#ifndef LLANYLIB_CORELIBLIB_STRUCTS_STRINGTYPE_H_
+#define LLANYLIB_CORELIBLIB_STRUCTS_STRINGTYPE_H_
 
 #include "../Libs/llanytypeslib.h"
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Structs {
 namespace StringType {
 
@@ -42,4 +42,4 @@ stringType  getStringType(const char* str);
 } /* namespace Core */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORE_STRUCTS_STRINGTYPE_H_ */
+#endif /* LLANYLIB_CORELIBLIB_STRUCTS_STRINGTYPE_H_ */

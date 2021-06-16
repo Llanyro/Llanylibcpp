@@ -5,15 +5,15 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORE_SIMPLELIBS_MEMLIB_H_
-#define LLANYLIB_CORE_SIMPLELIBS_MEMLIB_H_
+#ifndef LLANYLIB_CORELIB_SIMPLELIBS_MEMLIB_H_
+#define LLANYLIB_CORELIB_SIMPLELIBS_MEMLIB_H_
 
 #include "llanytypeslib.h"
 
 #define MEM_LIB Llanylib::Core::Libs::Mem
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Libs {
 namespace Mem {
 
@@ -399,4 +399,4 @@ T* typerFunction(void* item) { return (T*)item; }
 } /* namespace Core */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORE_SIMPLELIBS_MEMLIB_H_ */
+#endif /* LLANYLIB_CORELIB_SIMPLELIBS_MEMLIB_H_ */

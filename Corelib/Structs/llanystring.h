@@ -5,15 +5,15 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_BASIC_SIMPLESTRUCTS_LLANYSTRING_H_
-#define LLANYLIB_BASIC_SIMPLESTRUCTS_LLANYSTRING_H_
+#ifndef LLANYLIB_CORELIB_SIMPLESTRUCTS_LLANYSTRING_H_
+#define LLANYLIB_CORELIB_SIMPLESTRUCTS_LLANYSTRING_H_
 
 #include "../Libs/llanytypeslib.h"
 
 #define LLANY_STRING Llanylib::Core::Structs::String
 
 namespace Llanylib {
-namespace Core {
+namespace Corelib {
 namespace Structs {
 namespace String {
 
@@ -54,4 +54,4 @@ ll_bool_t compareLlanyString(string* str, string* str2);
 } /* namespace Core */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_BASIC_SIMPLESTRUCTS_LLANYSTRING_H_ */
+#endif /* LLANYLIB_CORELIB_SIMPLESTRUCTS_LLANYSTRING_H_ */
