@@ -18,51 +18,6 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Core\Classes\Containers\Containers.h" />
-    <ClInclude Include="..\..\Core\Classes\Containers\DynamicContainer.h" />
-    <ClInclude Include="..\..\Core\Classes\Containers\SmartContainers.h" />
-    <ClInclude Include="..\..\Core\Classes\Containers\SmartPointer.h" />
-    <ClInclude Include="..\..\Core\Classes\Containers\Test.h" />
-    <ClInclude Include="..\..\Core\Classes\Countable.h" />
-    <ClInclude Include="..\..\Core\Classes\LlanyCore.h" />
-    <ClInclude Include="..\..\Core\Classes\SimpleLists\List.h" />
-    <ClInclude Include="..\..\Core\Classes\SimpleLists\Vector.h" />
-    <ClInclude Include="..\..\Core\Classes\Socket\ClientSocket.h" />
-    <ClInclude Include="..\..\Core\Classes\String.h" />
-    <ClInclude Include="..\..\Core\Libs\asciidefines.h" />
-    <ClInclude Include="..\..\Core\Libs\charslib.h" />
-    <ClInclude Include="..\..\Core\Libs\filelib.h" />
-    <ClInclude Include="..\..\Core\Libs\llanymathtypeslib.h" />
-    <ClInclude Include="..\..\Core\Libs\llanysimpleprint.h" />
-    <ClInclude Include="..\..\Core\Libs\llanytypeslib.h" />
-    <ClInclude Include="..\..\Core\Libs\mathlib.h" />
-    <ClInclude Include="..\..\Core\Libs\memlib.h" />
-    <ClInclude Include="..\..\Core\Libs\nolibfunctions.h" />
-    <ClInclude Include="..\..\Core\Libs\randomlib.h" />
-    <ClInclude Include="..\..\Core\Libs\stringlib.h" />
-    <ClInclude Include="..\..\Core\Structs\basicstructs.h" />
-    <ClInclude Include="..\..\Core\Structs\llanystring.h" />
-    <ClInclude Include="..\..\Core\Structs\stringtype.h" />
-    <ClInclude Include="..\..\Core\testlist.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Core\Classes\Containers\DynamicContainer.cpp" />
-    <ClCompile Include="..\..\Core\Classes\Countable.cpp" />
-    <ClCompile Include="..\..\Core\Classes\LlanyCore.cpp" />
-    <ClCompile Include="..\..\Core\Classes\Socket\ClientSocket.cpp" />
-    <ClCompile Include="..\..\Core\Classes\String.cpp" />
-    <ClCompile Include="..\..\Core\Libs\charslib.cpp" />
-    <ClCompile Include="..\..\Core\Libs\filelib.cpp" />
-    <ClCompile Include="..\..\Core\Libs\mathlib.cpp" />
-    <ClCompile Include="..\..\Core\Libs\memlib.cpp" />
-    <ClCompile Include="..\..\Core\Libs\nolibfunctions.cpp" />
-    <ClCompile Include="..\..\Core\Libs\randomlib.cpp" />
-    <ClCompile Include="..\..\Core\Libs\stringlib.cpp" />
-    <ClCompile Include="..\..\Core\Structs\llanystring.cpp" />
-    <ClCompile Include="..\..\Core\Structs\stringtype.cpp" />
-    <ClCompile Include="..\..\Llanylibcpp.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

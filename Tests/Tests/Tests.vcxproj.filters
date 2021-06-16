@@ -13,132 +13,17 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Core\Structs\stringtype.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Structs\llanystring.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\llanytypeslib.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\String.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\Socket\ClientSocket.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\SimpleLists\Vector.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\SimpleLists\List.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\Countable.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\Containers\Test.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\Containers\SmartPointer.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\stringlib.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\filelib.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\randomlib.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Structs\basicstructs.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\Containers\SmartContainers.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\llanymathtypeslib.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\Containers\DynamicContainer.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\Containers\Containers.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\memlib.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\nolibfunctions.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\llanysimpleprint.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\mathlib.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\asciidefines.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Libs\charslib.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\Classes\LlanyCore.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Core\testlist.h">
-      <Filter>Archivos de recursos</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Core\Structs\stringtype.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Structs\llanystring.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Classes\String.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Classes\Socket\ClientSocket.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Classes\Countable.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\stringlib.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\filelib.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\randomlib.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\memlib.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\nolibfunctions.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\mathlib.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Libs\charslib.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Classes\LlanyCore.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Core\Classes\Containers\DynamicContainer.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Llanylibcpp.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
+    <Filter Include="Archivos de recursos\Corelib">
+      <UniqueIdentifier>{d16f7ed9-00f7-4116-af55-2a18a151c1e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\Corelib\Class">
+      <UniqueIdentifier>{84b1cfbc-dbbc-4a7c-9b0d-22387736026d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\Corelib\Struct">
+      <UniqueIdentifier>{50381d17-b8b5-483c-8fd5-bcc7b7cffbf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\Corelib\Libs">
+      <UniqueIdentifier>{9ba2954d-05ed-4110-a6f7-1aa2f6fb9e42}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
