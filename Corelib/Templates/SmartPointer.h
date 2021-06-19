@@ -34,10 +34,6 @@ class SmartPointer {
 			this->object = other.object;
 			other.object = nullptr;
 		}
-		/*inline SmartPointer(const SmartPointer<T>& other) : SmartPointer() {
-			this->object = other.object;
-			other.free = false;
-		}*/
 		inline virtual ~SmartPointer() {
 			if(this->object != nullptr) delete this->object;
 		}
