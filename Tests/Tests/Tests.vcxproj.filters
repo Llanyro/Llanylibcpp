@@ -116,5 +116,8 @@
     <ClInclude Include="..\..\Corelib\Structs\stringtype.h">
       <Filter>Archivos de recursos\Corelib\Struct</Filter>
     </ClInclude>
+    <ClInclude Include="Container.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

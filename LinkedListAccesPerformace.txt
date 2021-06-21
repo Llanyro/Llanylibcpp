@@ -1,0 +1,36 @@
+LastUsed vs Median vs Origin vs OriginReverse
+	Devolver en O(1) cual es de los 4 el que menos distancia tiene que recorrer
+
+
+Containers:
+	Hay que rehacerlos
+	Puede contener un objeto de cada tipo indicado(N tipos)
+	Variables:
+		T object_0 ~ TN object_N:
+			Objeto a contener
+	Funciones:
+		getObject(int):
+			devuelve el puntero (void) del objeto que contiene de tipo N
+
+Iterator:
+	Contiene un puntero a un nodo y la posicion que este ocupa en una lista
+	Si contiene un nodo y no esta en una lista, la posicion que indicara siempre es 0
+
+	Funciones:
+		getObject():
+			devuelve el puntero del objeto (void) del nodo contenido
+		getNode():
+			devuelve el puntero del nodo contenido
+		advance(int):
+			modifica el nodo contenido a la posicion indicada
+		advanceReverse(int):
+			igual que advance, pero a la inversa
+
+
+
+Los objetos que solo son usados por un objeto, se crean dentro del objeto.
+Los objetos unicos de las listas, se crean dentro de la clase lista.
+class Object {
+	public:
+		class Subobject {};
+};
