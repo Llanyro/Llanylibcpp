@@ -25,6 +25,12 @@
     <Filter Include="Archivos de recursos\Corelib\Libs">
       <UniqueIdentifier>{9ba2954d-05ed-4110-a6f7-1aa2f6fb9e42}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de recursos\Listlib">
+      <UniqueIdentifier>{946f07c3-3115-4123-ad80-2c88892ee9dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\New">
+      <UniqueIdentifier>{70cff3f8-0f91-46df-a73c-67fe39f19dfe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Corelib\Class\Countable.cpp">
@@ -116,8 +122,53 @@
     <ClInclude Include="..\..\Corelib\Structs\stringtype.h">
       <Filter>Archivos de recursos\Corelib\Struct</Filter>
     </ClInclude>
-    <ClInclude Include="Container.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="..\..\Listlib\Dynamiclist\VectorResize.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Listlib\Linkedlists\AbstractLinkedlist.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Listlib\Corelist\AbstractSmartList.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Listlib\Linkedlists\Linkedlist.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Listlib\Corelist\List.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Listlib\Nodes\NodeDouble.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Listlib\Nodes\Nodes.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Listlib\Corelist\SimpleList.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Listlib\Linkedlists\SmartLinkedlist.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Listlib\Nodes\SmartNodeDouble.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Listlib\Staticlist\StaticList.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Listlib\Dynamiclist\Vector.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\New\Container.h">
+      <Filter>Archivos de recursos\New</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\New\Iterator.h">
+      <Filter>Archivos de recursos\New</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\New\Node.h">
+      <Filter>Archivos de recursos\New</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\New\ListTest.h">
+      <Filter>Archivos de recursos\New</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

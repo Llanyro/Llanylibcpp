@@ -50,7 +50,22 @@
     <ClInclude Include="..\..\Corelib\Structs\basicstructs.h" />
     <ClInclude Include="..\..\Corelib\Structs\llanystring.h" />
     <ClInclude Include="..\..\Corelib\Structs\stringtype.h" />
-    <ClInclude Include="Container.h" />
+    <ClInclude Include="..\..\Listlib\Corelist\AbstractSmartList.h" />
+    <ClInclude Include="..\..\Listlib\Corelist\List.h" />
+    <ClInclude Include="..\..\Listlib\Corelist\SimpleList.h" />
+    <ClInclude Include="..\..\Listlib\Dynamiclist\Vector.h" />
+    <ClInclude Include="..\..\Listlib\Dynamiclist\VectorResize.h" />
+    <ClInclude Include="..\..\Listlib\Linkedlists\AbstractLinkedlist.h" />
+    <ClInclude Include="..\..\Listlib\Linkedlists\Linkedlist.h" />
+    <ClInclude Include="..\..\Listlib\Linkedlists\SmartLinkedlist.h" />
+    <ClInclude Include="..\..\Listlib\Nodes\NodeDouble.h" />
+    <ClInclude Include="..\..\Listlib\Nodes\Nodes.h" />
+    <ClInclude Include="..\..\Listlib\Nodes\SmartNodeDouble.h" />
+    <ClInclude Include="..\..\Listlib\Staticlist\StaticList.h" />
+    <ClInclude Include="..\..\New\Container.h" />
+    <ClInclude Include="..\..\New\Iterator.h" />
+    <ClInclude Include="..\..\New\ListTest.h" />
+    <ClInclude Include="..\..\New\Node.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
