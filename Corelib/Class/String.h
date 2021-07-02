@@ -15,9 +15,9 @@ namespace Llanylib {
 namespace Corelib {
 namespace Classes {
 
-class String {
+/*class String {
 	char* a;
-};
+};*/
 
 /*class String : public Listlib::Dynamiclist::Vector<char> {
 	public:

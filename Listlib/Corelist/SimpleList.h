@@ -20,7 +20,7 @@ namespace Corelist {
 template<class T>
 class Simplelist : public Corelib::Classes::LlanyCore {
 	protected:
-		Simplelist() : LlanyCore() {}
+		Simplelist() : Corelib::Classes::LlanyCore() {}
 		virtual ~Simplelist() {}
 	public:
 		#pragma region Funciones nuevas heredables

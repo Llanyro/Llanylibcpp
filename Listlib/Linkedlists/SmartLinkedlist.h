@@ -8,17 +8,15 @@
 #ifndef LISTLIB_LINKEDLISTS_SMARTLINKEDLIST_H_
 #define LISTLIB_LINKEDLISTS_SMARTLINKEDLIST_H_
 
-
-
-#include "../Nodes/SmartNodeDouble.h"
-#include "AbstractLinkedlist.h"
-#include "../Corelist/AbstractSmartList.h"
+//#include "../Nodes/SmartNodeDouble.h"
+//#include "AbstractLinkedlist.h"
+//#include "../Corelist/AbstractSmartList.h"
 
 namespace Llanylib {
 namespace Listlib {
 namespace Linkedlists {
 
-template<class T>
+/*template<class T>
 class SmartLinkedlist : public AbstractLinkedlist<T, Nodes::NDUSO<T>>, public Corelist::AbstractSmartList<T> {
 	public:
 		SmartLinkedlist() : Corelist::AbstractSmartList<T>(), AbstractLinkedlist<T, Nodes::NDUSO<T>>() {}
@@ -72,7 +70,7 @@ class SmartLinkedlist : public AbstractLinkedlist<T, Nodes::NDUSO<T>>, public Co
 			}
 			return result;
 		}
-};
+};*/
 
 } /* namespace Linkedlist */
 } /* namespace Listlib */

@@ -5,11 +5,10 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORELIBLIBLIB_CLASSES_HERITABLES_LLANYCORE_H_
-#define LLANYLIB_CORELIBLIB_CLASSES_HERITABLES_LLANYCORE_H_
+#ifndef LLANYLIB_CORELIB_CLASSES_HERITABLES_LLANYCORE_H_
+#define LLANYLIB_CORELIB_CLASSES_HERITABLES_LLANYCORE_H_
 
 #include  "../Libs/llanytypeslib.h"
-#include "String.h"
 
 namespace Llanylib {
 namespace Corelib {
@@ -25,12 +24,12 @@ class LlanyCore {
 		// Complejidad temporal y espacial: O(?) y M(1)
 		virtual ll_bool_t clear();
 		// Devuelve un hash del objeto en formato string
-		virtual String* hash() const;
+		virtual dynamic hash() const;
 		// Sirve para generar una funcion para poder printear la clase
-		virtual String* toString() const;
+		virtual dynamic toString() const;
 		// Serialize y toJSON son iguales, es decir
 		//	el serializador simula o imita el metodo json
-		virtual String* serialize() const;
+		virtual dynamic serialize() const;
 		void* clone() const;
 };
 
@@ -38,4 +37,4 @@ class LlanyCore {
 } /* namespace Corelib */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORELIBLIB_CLASSES_HERITABLES_LLANYCORE_H_ */
+#endif /* LLANYLIB_CORELIB_CLASSES_HERITABLES_LLANYCORE_H_ */

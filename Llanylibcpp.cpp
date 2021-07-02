@@ -21,7 +21,7 @@
 //using namespace Llanylib::Listlib::Linkedlists;
 //using namespace Llanylib::Core::Classes::Containers;
 
-#define STR "./Folder/Folder2/Test"
+//#define STR "./Folder/Folder2/Test"
 
 /*#define NUM 9999
 
@@ -111,6 +111,16 @@ test_func function took 21 milliseconds
 Start
 test_func function took 30 milliseconds
 
+
+New Performance test -> Test list lib
+
+Windows(laptop):
+Start
+test_func function took 66 milliseconds
+Start
+test_func function took 165 milliseconds
+
+
 */
 /*void testSmartList() {
 	SmartLinkedlist<len_t>* list = new SmartLinkedlist<len_t>();
@@ -176,11 +186,44 @@ void testmem2() {
 #include "New/ListTest.h"
 using namespace Llanylib::Listlib::Linkedlists;
 
-int main(int argc, char **argv) {
+/*
+
+
+*/
+void testList() {
 	ListTest<len_t>* list = new ListTest<len_t>();
+	for (len_t i = 0; i < SIZE_TEST; i++)
+		list->add(i);
+	len_t* temp;
+	for (len_t i = 0; i < list->len(); i++) {
+		temp = list->get(i);
+		//std::cout << *temp << ", ";
+	}
+	delete list;
+}
+void testListSTD() {
+	std::list<len_t>* list = new std::list<len_t>();
 
-	list->add(1);
+	for (len_t i = 0; i < SIZE_TEST; i++)
+		list->push_back(i);
 
+	len_t* temp;
+	std::list<len_t>::iterator it = list->begin();
+	while (it != list->end()) {
+		temp = &(*it);
+		//std::cout << *temp << ", ";
+		std::advance(it, 1);
+	}
+
+	delete list;
+}
+
+
+
+int main(int argc, char **argv) {
+	testList();
+	execute_test(testList);
+	execute_test(testListSTD);
 
 
 

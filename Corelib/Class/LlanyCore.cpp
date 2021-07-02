@@ -15,9 +15,9 @@ LlanyCore::LlanyCore() {}
 LlanyCore::~LlanyCore() {}
 
 ll_bool_t LlanyCore::clear() { return false; }
-String* LlanyCore::hash() const { return nullptr; }
-String* LlanyCore::toString() const { return nullptr; }
-String* LlanyCore::serialize() const { return nullptr; }
+dynamic LlanyCore::hash() const { return nullptr; }
+dynamic LlanyCore::toString() const { return nullptr; }
+dynamic LlanyCore::serialize() const { return nullptr; }
 void* LlanyCore::clone() const { return nullptr; }
 
 } /* namespace Classes */

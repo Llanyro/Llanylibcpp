@@ -3,9 +3,7 @@
 #ifndef L_H
 #define L_H
 
-#include "../Corelib/Class/Countable.h"
 #include "../Listlib/Corelist/List.h"
-
 
 #include "Iterator.h"
 
@@ -81,7 +79,7 @@ class ListTest : public Corelist::List<T> {
 			}
 			return nodoActual;
 		}
-	protected:
+	public:
 		virtual ll_bool_t contains(const T* item, Compare_bool compare) const override {
 			ll_bool_t resultado = false;
 			NodeDouble<T>* nodoActual = this->root;

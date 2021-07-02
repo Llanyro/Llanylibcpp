@@ -8,7 +8,7 @@
 #ifndef LLANYLIB_CORE_CLASSES_NODES_NODES_H_
 #define LLANYLIB_CORE_CLASSES_NODES_NODES_H_
 
-#include "../../Classes/LlanyCore.h"
+/*#include "../../Classes/LlanyCore.h"
 
 namespace Llanylib {
 namespace Listlib {
@@ -75,7 +75,7 @@ class NodeDouble : protected Node<T, 2> {
 					this->getSiguienteNodo()->deleteRecursivo(first);
 			}
 			delete this;
-		}*/
+		}*
 };
 
 template<class T>
@@ -95,7 +95,7 @@ class NodeAVL : protected Node<T, 3> {
 		T* getRightChild() { return Node<T, 3>::get(2); }
 		const T* getConstRightChild() const { return Node<T, 3>::get(2); }
 		ll_bool_t setRightChild(T* node) { return Node<T, 3>::set(node, 2); }
-};
+};*/
 
 } /* namespace Nodes */
 } /* namespace Listlib */

@@ -31,6 +31,7 @@
     <ClCompile Include="..\..\Corelib\Libs\stringlib.cpp" />
     <ClCompile Include="..\..\Corelib\Structs\llanystring.cpp" />
     <ClCompile Include="..\..\Corelib\Structs\stringtype.cpp" />
+    <ClCompile Include="..\..\Llanylibcpp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Corelib\Class\Countable.h" />
