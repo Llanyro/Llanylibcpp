@@ -1,0 +1,27 @@
+List size 99.999
+Windows:
+Start
+test_func function took 205 milliseconds
+Start
+test_func function took 224 milliseconds
+
+Unix:
+Start
+test_func function took 21 milliseconds
+Start
+test_func function took 30 milliseconds
+
+
+New Performance test -> Test list lib
+
+Windows(laptop):
+Start
+test_func function took 66 milliseconds
+Start
+test_func function took 165 milliseconds
+
+Unix (pc):
+Start
+test_func function took 7 milliseconds
+Start
+test_func function took 12 milliseconds

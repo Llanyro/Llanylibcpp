@@ -98,30 +98,6 @@ void testSmart() {
 
 #define SIZE_TEST 99999
 
-/*
-* Windows:
-Start
-test_func function took 205 milliseconds
-Start
-test_func function took 224 milliseconds
-
-Unix:
-Start
-test_func function took 21 milliseconds
-Start
-test_func function took 30 milliseconds
-
-
-New Performance test -> Test list lib
-
-Windows(laptop):
-Start
-test_func function took 66 milliseconds
-Start
-test_func function took 165 milliseconds
-
-
-*/
 /*void testSmartList() {
 	SmartLinkedlist<len_t>* list = new SmartLinkedlist<len_t>();
 	for (len_t i = 0; i < SIZE_TEST; i++)
