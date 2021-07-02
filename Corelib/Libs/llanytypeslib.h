@@ -48,7 +48,7 @@ typedef ll_uint64_t len_t; 	// Usado para posiciones de listas y tamaños de lis
 typedef bool ll_bool_t;
 //typedef enum { False, True } ll_bool_t;
 //typedef char const* const ll_constchar_t;
-typedef void* Dynamic;
+typedef void* dynamic;
 typedef void ll_void;
 
 /*
