@@ -9,7 +9,7 @@ Containers:
 		T object_0 ~ TN object_N:
 			Objeto a contener
 	Funciones:
-		getObject(int):
+		getObject(int) -> void:
 			devuelve el puntero (void) del objeto que contiene de tipo N
 
 Iterator:
