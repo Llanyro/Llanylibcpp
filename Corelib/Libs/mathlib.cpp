@@ -11,7 +11,7 @@
 #include <assert.h>
 
 //#include "../Structs/llanylinkedlist.h"
-#include "../Classes/SimpleLists/List.h"
+//#include "../Classes/SimpleLists/List.h"
 
 namespace Llanylib {
 namespace Corelib {
@@ -156,7 +156,7 @@ ll_float_t getTanHDeriv(const ll_float_t& value) { return 1 - (value * value); }
 ll_float_t linearDeriv(const ll_float_t& value) { return 1.0; }
 
 /* Funciones complejas propias O(1)*/
-Classes::SimpleLists::List<ll_uint64_t>* uniqueDivisors(const ll_uint64_t& num) {
+/*Classes::SimpleLists::List<ll_uint64_t>* uniqueDivisors(const ll_uint64_t& num) {
 	assert(num != 0);
 
 	Classes::SimpleLists::List<ll_uint64_t>* l = new Classes::SimpleLists::List<ll_uint64_t>();
@@ -194,8 +194,8 @@ Classes::SimpleLists::List<ll_uint64_t>* uniqueDivisors(const ll_uint64_t& num) 
 	}
 
 	return l;
-}
-ll_uint64_t eulerFi(const ll_uint64_t& num) {
+}*/
+/*ll_uint64_t eulerFi(const ll_uint64_t& num) {
 	/*SIMPLE_LISTS::List<ll_uint64_t>* l = SIMPLE_LISTS::newlist<ll_uint64_t>();
 	ll_bool_t continuar = true;
 	ll_uint64_t temp = 0, modVal = base;
@@ -244,7 +244,7 @@ ll_uint64_t eulerFi(const ll_uint64_t& num) {
 
 		}
 		else continuar = false;
-	}*/
+	}*
 
 	// Si la lista recibida de uniqueDivisors() es 0
 	// El resultado es num - 1
@@ -259,7 +259,7 @@ ll_uint64_t eulerFi(const ll_uint64_t& num) {
 	}
 
 	return result;
-}
+}*/
 char* solveDiophantineEquationLinear(const ll_ulonglong_t& a, const ll_ulonglong_t& b, const ll_ulonglong_t& c) {
 	//
 	/*

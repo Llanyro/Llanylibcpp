@@ -8,7 +8,7 @@
 #ifndef LLANYLIB_CORE_LISTLIB_CORELIST_SIMPLELIST_H_
 #define LLANYLIB_CORE_LISTLIB_CORELIST_SIMPLELIST_H_
 
-#include "../../Classes/LlanyCore.h"
+#include "../../Corelib/Class/LlanyCore.h"
 
 // Contiene todas las funciones generales de las listas
 // Pero no contiene el size
@@ -18,7 +18,7 @@ namespace Listlib {
 namespace Corelist {
 
 template<class T>
-class Simplelist : public Core::Classes::LlanyCore {
+class Simplelist : public Corelib::Classes::LlanyCore {
 	protected:
 		Simplelist() : LlanyCore() {}
 		virtual ~Simplelist() {}

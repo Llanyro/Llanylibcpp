@@ -7,7 +7,7 @@
 
 #ifndef LISTLIB_LINKEDLISTS_ABSTRACTLINKEDLIST_H_
 #define LISTLIB_LINKEDLISTS_ABSTRACTLINKEDLIST_H_
-
+/*
 #include "../Corelist/List.h"
 
 namespace Llanylib {
@@ -164,7 +164,7 @@ class AbstractLinkedlist : public Corelist::List<T> {
 		}
 		// Funcion: Por defecto llama a remove()
 		ll_bool_t del(const len_t& pos) { return this->remove(pos); }
-};
+};*/
 
 } /* namespace Linkedlist */
 } /* namespace Listlib */

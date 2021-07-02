@@ -8,7 +8,7 @@
 #ifndef LLANYLIB_CORE_LISTLIB_CORELIST_LIST_H_
 #define LLANYLIB_CORE_LISTLIB_CORELIST_LIST_H_
 
-#include "../../Classes/Countable.h"
+#include "../../Corelib/Class/Countable.h"
 #include "SimpleList.h"
 
 namespace Llanylib {
@@ -16,7 +16,7 @@ namespace Listlib {
 namespace Corelist {
 
 template<class T>
-class List : public Simplelist<T>, public Core::Classes::Countable {
+class List : public Simplelist<T>, public Corelib::Classes::Countable {
 	protected:
 		List() : Simplelist<T>(), Countable() {}
 		List(const len_t& length) : Simplelist<T>(), Countable(length) {}

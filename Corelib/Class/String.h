@@ -8,13 +8,18 @@
 #ifndef CORE_CLASSES_STRING_H_
 #define CORE_CLASSES_STRING_H_
 
-#include "SimpleLists/Vector.h"
+//#include "SimpleLists/Vector.h"
+//#include "../../Listlib/Dynamiclist/Vector.h"
 
 namespace Llanylib {
 namespace Corelib {
 namespace Classes {
 
-class String : public SimpleLists::Vector<char> {
+class String {
+	char* a;
+};
+
+/*class String : public Listlib::Dynamiclist::Vector<char> {
 	public:
 		String();
 		String(const len_t& lenght);
@@ -28,7 +33,7 @@ class FixedString : public SimpleLists::FixedVector<char, lenght> {
 	public:
 		FixedString();
 		virtual ~FixedString();
-};
+};*/
 
 } /* namespace Classes */
 } /* namespace Core */

@@ -8,7 +8,7 @@
 #ifndef LLANYLIB_CORE_CLASSES_CONTAINERS_DYNAMICCONTAINER_H_
 #define LLANYLIB_CORE_CLASSES_CONTAINERS_DYNAMICCONTAINER_H_
 
-#include "../../Libs/llanymathtypeslib.h"
+#include "../Corelib/Libs/llanytypeslib.h"
 
 namespace Llanylib {
 namespace Core {
@@ -26,19 +26,19 @@ namespace Containers {
  * */
 class DynamicContainer {
 	private:
-		Dynamic object;
+		dynamic object;
 		Destructor destructor;
 	private:
-		ll_bool_t setProtected(Dynamic object, Destructor destructor);
+		ll_bool_t setProtected(dynamic object, Destructor destructor);
 	public:
 		DynamicContainer();
 		virtual ~DynamicContainer();
 
 		void clear();
-		Dynamic getObjectDynamic();
+		dynamic getObjectDynamic();
 		ll_bool_t getReadOnly() const;
 		Destructor getDestructor() const;
-		ll_bool_t set(Dynamic object, Destructor destructor);
+		ll_bool_t set(dynamic object, Destructor destructor);
 
 		template<class T>
 		T* getObject() { return (T*)this->object; }

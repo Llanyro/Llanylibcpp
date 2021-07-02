@@ -10,7 +10,7 @@
 
 #include "llanymathtypeslib.h"
 
-#define STRING_LIB Llanylib::Core::Libs::String
+#define STRING_LIB Llanylib::Corelib::Libs::String
 
 namespace Llanylib {
 namespace Corelib {

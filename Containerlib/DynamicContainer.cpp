@@ -24,16 +24,16 @@ void DynamicContainer::clear() {
 	}
 }
 
-Dynamic DynamicContainer::getObjectDynamic() { return this->object; }
+dynamic DynamicContainer::getObjectDynamic() { return this->object; }
 ll_bool_t DynamicContainer::getReadOnly() const { return this->destructor == nullptr; }
 Destructor DynamicContainer::getDestructor() const { return this->destructor; }
 
-ll_bool_t DynamicContainer::setProtected(Dynamic object, Destructor destructor) {
+ll_bool_t DynamicContainer::setProtected(dynamic object, Destructor destructor) {
 	this->object = object;
 	this->destructor = destructor;
 	return true;
 }
-ll_bool_t DynamicContainer::set(Dynamic object, Destructor destructor) {
+ll_bool_t DynamicContainer::set(dynamic object, Destructor destructor) {
 	ll_bool_t resultado = false;
 	if(object != nullptr && destructor == nullptr)
 		resultado = false;

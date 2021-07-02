@@ -14,7 +14,7 @@ namespace Llanylib {
 namespace Corelib {
 namespace Classes {
 
-String::String() : Vector(){}
+/*String::String() : Vector(){}
 String::String(const len_t& lenght) : Vector(lenght){}
 String::~String(){}
 inline ll_bool_t String::operator==(const String& other) const {
@@ -32,7 +32,7 @@ inline ll_bool_t String::operator!=(const String& other) const {
 template<len_t lenght>
 FixedString<lenght>::FixedString() : String(lenght){}
 template<len_t lenght>
-FixedString<lenght>::~FixedString(){}
+FixedString<lenght>::~FixedString(){}*/
 
 } /* namespace Classes */
 } /* namespace Core */

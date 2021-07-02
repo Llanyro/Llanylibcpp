@@ -10,7 +10,7 @@
 
 #include "llanytypeslib.h"
 
-#define MEM_LIB Llanylib::Core::Libs::Mem
+#define MEM_LIB Llanylib::Corelib::Libs::Mem
 
 namespace Llanylib {
 namespace Corelib {

@@ -9,7 +9,7 @@
 
 #include "memlib.h"
 #include "../Structs/llanystring.h"
-#include "../Classes/String.h"
+#include "../Class/String.h"
 
 namespace Llanylib {
 namespace Corelib {

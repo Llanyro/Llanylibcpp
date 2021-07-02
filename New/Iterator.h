@@ -1,5 +1,10 @@
 #pragma once
 
+
+#ifndef I_H
+#define I_H
+
+
 #include "../Corelib/Libs/llanytypeslib.h"
 #include "Node.h"
 
@@ -48,3 +53,5 @@ class IteratorDouble {
 			return result;
 		}
 };
+
+#endif /* I_H */

@@ -4,21 +4,21 @@
 #include <list>
 #include <memory>
 
-#include "Core/Libs/llanysimpleprint.h"
+/*#include "Core/Libs/llanysimpleprint.h"
 #include "Core/Libs/randomlib.h"
 #include "Core/Libs/filelib.h"
-#include "Core/Libs/stringlib.h"
+#include "Core/Libs/stringlib.h"*/
 
 //#include "Core/Classes/Containers/SmartPointer.h"
 //#include "Core/Classes/SimpleLists/List.h"
 
 //#include "Core/Structs/llanylinkedlist.h"
-#include "Core/Listlib/Linkedlists/SmartLinkedlist.h"
+//#include "Core/Listlib/Linkedlists/SmartLinkedlist.h"
 //#include "Listlib/Linkedlists/Linkedlist.h"
 
 //using namespace Llanylib::Core::Structs;
-using namespace Llanylib::Core::Classes::SimpleLists;
-using namespace Llanylib::Listlib::Linkedlists;
+//using namespace Llanylib::Core::Classes::SimpleLists;
+//using namespace Llanylib::Listlib::Linkedlists;
 //using namespace Llanylib::Core::Classes::Containers;
 
 #define STR "./Folder/Folder2/Test"
@@ -112,7 +112,7 @@ Start
 test_func function took 30 milliseconds
 
 */
-void testSmartList() {
+/*void testSmartList() {
 	SmartLinkedlist<len_t>* list = new SmartLinkedlist<len_t>();
 	for (len_t i = 0; i < SIZE_TEST; i++)
 		list->add(new len_t(i));
@@ -138,7 +138,7 @@ void testSmartListSTD() {
 	}
 
 	delete list;
-}
+}*/
 
 /*template<class T>
 struct data_pack {
@@ -173,12 +173,23 @@ void testmem2() {
 
 */
 
+#include "New/ListTest.h"
+using namespace Llanylib::Listlib::Linkedlists;
+
 int main(int argc, char **argv) {
+	ListTest<len_t>* list = new ListTest<len_t>();
+
+	list->add(1);
+
+
+
+
+
 	//testSmart();
 	//FILE_LIB::dir_exist_create(STR, STRLEN_DEFINED_STRING(STR));
 
-	execute_test(testSmartList);
-	execute_test(testSmartListSTD);
+	//execute_test(testSmartList);
+	//execute_test(testSmartListSTD);
 	//testmem2();
 
 	return 0;

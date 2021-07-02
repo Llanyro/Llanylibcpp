@@ -1,4 +1,9 @@
 #pragma once
+
+
+#ifndef N_H
+#define N_H
+
 #include "Container.h"
 
 
@@ -31,3 +36,5 @@ class NodeDouble : public Container<T> {
 			this->prevNode = nullptr;
 		}
 };
+
+#endif /* N_H */

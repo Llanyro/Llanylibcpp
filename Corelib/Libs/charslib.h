@@ -10,7 +10,7 @@
 
 #include "llanymathtypeslib.h"
 
-#define CHARS_LIB Llanylib::Core::Libs::Chars
+#define CHARS_LIB Llanylib::Corelib::Libs::Chars
 
 namespace Llanylib {
 namespace Corelib {

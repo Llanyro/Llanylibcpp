@@ -1,16 +1,24 @@
 #pragma once
 
+#ifndef L_H
+#define L_H
+
 #include "../Corelib/Class/Countable.h"
+#include "../Listlib/Corelist/List.h"
 
 
 #include "Iterator.h"
 
+namespace Llanylib {
+namespace Listlib {
+namespace Linkedlists {
+
 template<class T>
-class ListTest : public Llanylib::Corelib::Classes::Countable {
+class ListTest : public Corelist::List<T> {
 	protected:
 		NodeDouble<T>* root;
 		ContainerDouble<NodeDouble<T>*, len_t>* cache;
-	protected:
+	public:
 		ListTest() {
 			this->root = nullptr;
 			this->cache = new ContainerDouble<NodeDouble<T>*, len_t>(nullptr, 0);
@@ -74,7 +82,7 @@ class ListTest : public Llanylib::Corelib::Classes::Countable {
 			return nodoActual;
 		}
 	protected:
-		virtual ll_bool_t contains(const T* item, Compare_bool compare) const {
+		virtual ll_bool_t contains(const T* item, Compare_bool compare) const override {
 			ll_bool_t resultado = false;
 			NodeDouble<T>* nodoActual = this->root;
 			// Si tenemos la funcion de comparacion
@@ -93,13 +101,13 @@ class ListTest : public Llanylib::Corelib::Classes::Countable {
 			}
 			return resultado;
 		}
-		virtual T* get(const len_t& pos) const {
+		virtual T* get(const len_t& pos) const override {
 			T* item = nullptr;
 			if (this->validPos(pos))
 				item = &this->getNodoCache(pos)->object_0;
 			return item;
 		}
-		virtual T* operator[](const len_t& pos) { return this->get(pos); }
+		virtual T* operator[](const len_t& pos) override { return this->get(pos); }
 		virtual ll_bool_t clear() override {
 			NodeDouble<T>* temp = nullptr;
 			NodeDouble<T>* nodeRemove = this->root->prevNode;
@@ -155,5 +163,41 @@ class ListTest : public Llanylib::Corelib::Classes::Countable {
 		}
 		// Funcion: Por defecto llama a remove()
 		ll_bool_t del(const len_t& pos) { return this->remove(pos); }
+	public:
+		virtual void add(const T& object) {
+			// Creamos el nodo
+			NodeDouble<T>* nuevoNodo = new NodeDouble<T>(object);
+			// Caso especial de que la lista este vacia
+			if (this->length == 0)
+				this->root = nuevoNodo;
+			// Añadirmos al final
+			else {
+				// Guardamos los Nodes que vamos a modificar
+				NodeDouble<T>* anteriorNodo = this->getNodoCache(this->length - 1);
+				NodeDouble<T>* siguienteNodo = anteriorNodo->nextNode;
+
+				// Apuntamos correctamente el nodo entre los otros Nodes
+				nuevoNodo->nextNode = siguienteNodo;
+				nuevoNodo->prevNode = anteriorNodo;
+				// Hacemos que los otros Nodes apunten al nuevo
+				anteriorNodo->nextNode = nuevoNodo;
+				siguienteNodo->prevNode = nuevoNodo;
+			}
+			// Incrementamos el tama�o
+			this->length++;
+		}
+		virtual ll_bool_t set(const T& object, const len_t& position) {
+			ll_bool_t result = true;
+			if(this->validPos(position))
+				this->getNodoCache(position)->object_0 = object;
+			else result = false;
+			return result;
+		}
 
 };
+
+} /* namespace Linkedlist */
+} /* namespace Listlib */
+} /* namespace Llanylib */
+
+#endif /* L_H */

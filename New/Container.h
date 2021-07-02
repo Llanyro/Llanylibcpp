@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef C_H
+#define C_H
+
 template<class T>
 class Container {
 	public:
@@ -29,3 +32,5 @@ class ContainerTriple : public ContainerDouble<T0, T1> {
 		ContainerTriple(const T0& object_0, const T1& object_1, const T2& object_2) : ContainerDouble<T0, T1>(object_0, object_1) { this->object_2 = object_2; }
 		virtual ~ContainerTriple() {}
 };
+
+#endif /* C_H */
