@@ -1,18 +1,17 @@
 /*
  * DynamicContainer.h
  *
- *  Created on: Dec 15, 2020
+ *  Created on: Jul 14, 2021
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORE_CLASSES_CONTAINERS_DYNAMICCONTAINER_H_
-#define LLANYLIB_CORE_CLASSES_CONTAINERS_DYNAMICCONTAINER_H_
+#ifndef CONTAINERLIB_DYNAMICCONTAINER_H_
+#define CONTAINERLIB_DYNAMICCONTAINER_H_
 
 #include "../Corelib/Libs/llanytypeslib.h"
 
 namespace Llanylib {
-namespace Core {
-namespace Classes {
+namespace Containerlib {
 namespace Containers {
 
 /*
@@ -45,8 +44,7 @@ class DynamicContainer {
 };
 
 } /* namespace Containers */
-} /* namespace Classes */
-} /* namespace Core */
+} /* namespace Containerlib */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORE_CLASSES_CONTAINERS_DYNAMICCONTAINER_H_ */
+#endif /* CONTAINERLIB_DYNAMICCONTAINER_H_ */

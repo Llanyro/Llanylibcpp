@@ -1,15 +1,14 @@
 /*
  * DynamicContainer.cpp
  *
- *  Created on: Dec 15, 2020
+ *  Created on: Jul 14, 2021
  *      Author: llanyro
  */
 
 #include "DynamicContainer.h"
 
 namespace Llanylib {
-namespace Core {
-namespace Classes {
+namespace Containerlib {
 namespace Containers {
 
 DynamicContainer::DynamicContainer() {
@@ -43,6 +42,5 @@ ll_bool_t DynamicContainer::set(dynamic object, Destructor destructor) {
 }
 
 } /* namespace Containers */
-} /* namespace Classes */
-} /* namespace Core */
+} /* namespace Containerlib */
 } /* namespace Llanylib */

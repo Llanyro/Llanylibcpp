@@ -1,69 +1,52 @@
 /*
  * Containers.h
  *
- *  Created on: Nov 24, 2020
+ *  Created on: Jul 14, 2021
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORE_CLASSES_CONTAINERS_CONTAINERS_H_
-#define LLANYLIB_CORE_CLASSES_CONTAINERS_CONTAINERS_H_
-
-#include "../LlanyCore.h"
-
-#define CONTAINER Llanylib::Core::Classes::Containers
+#ifndef CONTAINERLIB_CONTAINERS_H_
+#define CONTAINERLIB_CONTAINERS_H_
 
 namespace Llanylib {
-namespace Core {
-namespace Classes {
+namespace Containerlib {
 namespace Containers {
 
 template<class T>
-class Container : public LlanyCore {
-	protected:
-		T item_0;
+class Container {
 	public:
-		// Constructores
-		Container() : LlanyCore() { this->item_0 = T(); }
-		Container(const T& item_0) { this->item_0 = item_0; }
-		Container(const Container* other) {
-			if (other != nullptr)
-				this->item_0 = other->item_0;
-			else
-				this->item_0 = T();
-		}
+		T object_0;
+	public:
+		Container() { this->object_0 = T(); }
+		Container(const T& object_0) { this->object_0 = object_0; }
 		virtual ~Container() {}
-		// Get/Set
-		T* get_0() { return &this->item_0; }
-		const T* getConst_0() const { return &this->item_0; }
-		void set_0(const T& item_0) { this->item_0 = item_0; }
+		const T* get_object_0() const { return &this->object_0; }
 };
 
 template<class T0, class T1>
 class ContainerDouble : public Container<T0> {
-	protected:
-		T1 item_1;
 	public:
-		// Constructores
-		ContainerDouble() : Container<T0>() { this->item_1 = T1(); }
-		ContainerDouble(const T0& item_0, const T1& item_1) : Container<T0>(item_0) {
-			this->item_1 = item_1;
-		}
-		ContainerDouble(const ContainerDouble* other) : Container<T0>(other) {
-			if (other != nullptr)
-				this->item_1 = other->item_1;
-			else
-				this->item_1 = T1();
-		}
+		T1 object_1;
+	public:
+		ContainerDouble() : Container<T0>() { this->object_1 = T1(); }
+		ContainerDouble(const T0& object_0, const T1& object_1) : Container<T0>(object_0) { this->object_1 = object_1; }
 		virtual ~ContainerDouble() {}
-		// Get/Set
-		T1* get_1() { return &this->item_1; }
-		const T1* getConst_1() const { return &this->item_1; }
-		void set_1(const T1& item_1) { this->item_1 = item_1; }
+		const T1* get_object_1() const { return &this->object_1; }
+};
+
+template<class T0, class T1, class T2>
+class ContainerTriple : public ContainerDouble<T0, T1> {
+	public:
+		T2 object_2;
+	public:
+		ContainerTriple() : ContainerDouble<T0, T1>() { this->object_2 = T2(); }
+		ContainerTriple(const T0& object_0, const T1& object_1, const T2& object_2) : ContainerDouble<T0, T1>(object_0, object_1) { this->object_2 = object_2; }
+		virtual ~ContainerTriple() {}
+		const T2* get_object_2() const { return &this->object_2; }
 };
 
 } /* namespace Containers */
-} /* namespace Classes */
-} /* namespace Core */
+} /* namespace Containerlib */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORE_CLASSES_CONTAINERS_CONTAINERS_H_ */
+#endif /* CONTAINERLIB_CONTAINERS_H_ */
