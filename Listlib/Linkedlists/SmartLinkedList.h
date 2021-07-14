@@ -18,7 +18,7 @@ namespace Linkedlists {
 template<class T>
 class SmartLinkedList : public AbstractLinkedlist<T, LIST_SMART_NODES::NodeDouble<T>>{
 	public:
-		SmartLinkedList() : AbstractLinkedlist<T, LIST_NODES::NodeDouble<T>>() {}
+		SmartLinkedList() : AbstractLinkedlist<T, LIST_SMART_NODES::NodeDouble<T>>() {}
 		virtual ~SmartLinkedList() {}
 		virtual void add(T* object, Destructor destructor) {
 			// Creamos el nodo y lo añadimos

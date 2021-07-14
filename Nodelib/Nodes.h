@@ -17,19 +17,19 @@ class NodeSimple {
 	public:
 		NODE* nextNode;
 	public:
-		NodeSimple() { this->nextNode = this; }
+		NodeSimple() { this->nextNode = nullptr; }
 		NodeSimple(NODE* nextNode) { this->nextNode = nextNode; }
 		virtual ~NodeSimple() { this->nextNode = nullptr; }
 };
 
 template<class NODE>
-class NodeDouble : NodeSimple<NODE>{
+class NodeDouble : public NodeSimple<NODE>{
 	public:
 		NODE* prevNode;
 	public:
 		NodeDouble() {
-			this->nextNode = this;
-			this->prevNode = this;
+			this->nextNode = nullptr;
+			this->prevNode = nullptr;
 		}
 		NodeDouble(NODE* nextNode, NODE* prevNode) {
 			this->nextNode = nextNode;

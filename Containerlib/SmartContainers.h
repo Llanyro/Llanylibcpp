@@ -10,9 +10,11 @@
 
 #include "../Corelib/Libs/llanytypeslib.h"
 
+#define SMART_CONTAINERS Llanylib::Containerlib::SmartContainers
+
 namespace Llanylib {
 namespace Containerlib {
-namespace Containers {
+namespace SmartContainers {
 
 template<class T>
 class SmartContainer {
@@ -30,7 +32,8 @@ class SmartContainer {
 		}
 		SmartContainer(T* object_0) : SmartContainer<T>(object_0, nullptr) {}
 		virtual ~SmartContainer() { this->remove_0(); }
-		const T* get_object_0() const { return this->object_0; }
+		T* get_object_0() { return this->object_0; }
+		const T* get_const_object_0() const { return this->object_0; }
 
 		// Set/Remove
 		void set_0(T* object_0) { this->set_0(object_0, nullptr); }
@@ -76,7 +79,8 @@ class SmartContainerDouble : public SmartContainer<T0> {
 		SmartContainerDouble(T0* object_0, T1* object_1)
 		: SmartContainerDouble<T0, T1>(object_0, nullptr, object_1, nullptr) {}
 		virtual ~SmartContainerDouble() { this->remove_1(); }
-		const T1* get_object_1() const { return &this->object_1; }
+		T1* get_object_1() { return this->object_1; }
+		const T1* get_const_object_1() const { return this->object_1; }
 
 		// Get/Set/Remove
 		void set_1(T1* object_1) { this->set_1(object_1, nullptr); }

@@ -4,6 +4,17 @@
 #include <list>
 #include <memory>
 
+void execute_test(void func(void)) {
+	std::cout << "Start\n";
+	auto t1 = std::chrono::high_resolution_clock::now();
+	func();
+	auto t2 = std::chrono::high_resolution_clock::now();
+	std::cout << "test_func function took "
+		<< std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count()
+		<< " milliseconds\n";
+}
+
+
 /*#include "Core/Libs/llanysimpleprint.h"
 #include "Core/Libs/randomlib.h"
 #include "Core/Libs/filelib.h"
@@ -75,17 +86,6 @@ void test_func_std() {
 
 	delete list;
 }*/
-
-void execute_test(void func(void)) {
-	std::cout << "Start\n";
-	auto t1 = std::chrono::high_resolution_clock::now();
-	func();
-	auto t2 = std::chrono::high_resolution_clock::now();
-	std::cout << "test_func function took "
-		<< std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count()
-		<< " milliseconds\n";
-}
-
 
 /*SmartPointer<int> tests() {
 	SmartPointer<int> s(new int(7));
@@ -159,13 +159,9 @@ void testmem2() {
 
 */
 
-#include "New/ListTest.h"
+/*#include "New/ListTest.h"
 using namespace Llanylib::Listlib::Linkedlists;
 
-/*
-
-
-*/
 void testList() {
 	ListTest<len_t>* list = new ListTest<len_t>();
 	for (len_t i = 0; i < SIZE_TEST; i++)
@@ -192,15 +188,80 @@ void testListSTD() {
 	}
 
 	delete list;
+}*/
+
+#include "Corelib/Libs/llanytypeslib.h"
+#include "Corelib/Libs/memlib.h"
+#include "Listlib/Linkedlists/Linkedlist.h"
+#include "Listlib/Linkedlists/SmartLinkedList.h"
+
+using namespace Llanylib::Listlib::Linkedlists;
+
+void testSmartList() {
+	SmartLinkedList<len_t>* list = new SmartLinkedList<len_t>();
+	for (len_t i = 0; i < SIZE_TEST; i++)
+		list->add(new len_t(i), MEM_LIB::__delete__);
+	len_t* temp;
+	for (len_t i = 0; i < list->len(); i++) {
+		temp = list->get(i);
+		//std::cout << *temp << ", ";
+	}
+	delete list;
+}
+void testList() {
+	Linkedlist<len_t>* list = new Linkedlist<len_t>();
+	for (len_t i = 0; i < SIZE_TEST; i++)
+		list->add(i);
+	len_t* temp;
+	for (len_t i = 0; i < list->len(); i++) {
+		temp = list->get(i);
+		//std::cout << *temp << ", ";
+	}
+	delete list;
+}
+void testSmartListSTD() {
+	std::list<std::unique_ptr<len_t>>* list = new std::list<std::unique_ptr<len_t>>();
+
+	for (len_t i = 0; i < SIZE_TEST; i++)
+		list->push_back(std::unique_ptr<len_t>(new len_t(i)));
+
+	len_t* temp;
+	std::list<std::unique_ptr<len_t>>::iterator it = list->begin();
+	while (it != list->end()) {
+		temp = (*it).get();
+		//std::cout << *temp << ", ";
+		std::advance(it, 1);
+	}
+
+	delete list;
+}
+void testListSTD() {
+	std::list<len_t>* list = new std::list<len_t>();
+
+	for (len_t i = 0; i < SIZE_TEST; i++)
+		list->push_back(i);
+
+	len_t* temp;
+	std::list<len_t>::iterator it = list->begin();
+	while (it != list->end()) {
+		temp = &(*it);
+		//std::cout << *temp << ", ";
+		std::advance(it, 1);
+	}
+
+	delete list;
 }
 
 
-
 int main(int argc, char **argv) {
-	testList();
+	//testList();
+	//testSmartList();
+
+	execute_test(testSmartList);
+	execute_test(testSmartListSTD);
+
 	execute_test(testList);
 	execute_test(testListSTD);
-
 
 
 

@@ -9,6 +9,7 @@
 #define LISTLIB_LINKEDLISTS_ABSTRACTLINKEDLIST_H_
 
 #include "../Corelist/List.h"
+#include "../../Containerlib/Containers.h"
 
 namespace Llanylib {
 namespace Listlib {
@@ -23,11 +24,12 @@ template<class T, class NODE>
 class AbstractLinkedlist : public Corelist::List<T> {
 	protected:
 		NODE* root;
-		ContainerDouble<NODE*, len_t>* cache;
+		Containerlib::Containers::ContainerDouble<NODE*, len_t>* cache;
 	protected:
 		AbstractLinkedlist() {
 			this->root = nullptr;
-			this->cache = new ContainerDouble<NODE*, len_t>(nullptr, 0);
+			this->cache = 
+				new Containerlib::Containers::ContainerDouble<NODE*, len_t>(nullptr, 0);
 		}
 		virtual ~AbstractLinkedlist() {
 			this->clear();
@@ -109,7 +111,7 @@ class AbstractLinkedlist : public Corelist::List<T> {
 	public:
 		virtual ll_bool_t contains(const T* item, Compare_bool compare) const override {
 			ll_bool_t resultado = false;
-			NodeDouble<T>* nodoActual = this->root;
+			NODE* nodoActual = this->root;
 			// Si tenemos la funcion de comparacion
 			if (compare != nullptr) {
 				for (len_t i = 0; !resultado && i < this->length; i++) {

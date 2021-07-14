@@ -25,3 +25,17 @@ Start
 test_func function took 7 milliseconds
 Start
 test_func function took 12 milliseconds
+
+
+Tras integrar la libreria Test list lib a Listlib
+Windows(laptop)[smartlist]: -> 55,309734513274336283185840707965
+Start
+test_func function took 125 milliseconds
+Start
+test_func function took 226 milliseconds
+
+Windows(laptop)[list]: -> 53,594771241830065359477124183007
+Start
+test_func function took 82 milliseconds
+Start
+test_func function took 153 milliseconds

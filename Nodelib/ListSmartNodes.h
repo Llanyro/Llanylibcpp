@@ -20,46 +20,46 @@ namespace ListSmartNodes {
 template<class T>
 class NodeSimple :
 		public Nodes::NodeSimple<NodeSimple<T>>,
-		public Containerlib::Containers::SmartContainer<T> {
+		public SMART_CONTAINERS::SmartContainer<T> {
 	public:
 		NodeSimple() :
-			Nodes::NodeSimple<NodeSimple<T>>(),
-			SmartContainer<T>() {}
+			Nodes::NodeSimple<NodeSimple<T>>(this),
+			SMART_CONTAINERS::SmartContainer<T>() {}
 		NodeSimple(T* object_0, Destructor destructor_0, NodeSimple* nextNode) :
 			Nodes::NodeSimple<NodeSimple<T>>(nextNode),
-			SmartContainer<T>(object_0, destructor_0) {}
+			SMART_CONTAINERS::SmartContainer<T>(object_0, destructor_0) {}
 		NodeSimple(T* object_0, Destructor destructor_0) :
-			Nodes::NodeSimple<NodeSimple<T>>(),
-			SmartContainer<T>(object_0, destructor_0) {}
+			Nodes::NodeSimple<NodeSimple<T>>(this),
+			SMART_CONTAINERS::SmartContainer<T>(object_0, destructor_0) {}
 		NodeSimple(NodeSimple* nextNode) :
 			Nodes::NodeSimple<NodeSimple<T>>(nextNode),
-			SmartContainer<T>() {}
+			SMART_CONTAINERS::SmartContainer<T>() {}
 		virtual ~NodeSimple() {}
 };
 
 template<class T>
 class NodeDouble :
 		public Nodes::NodeDouble<NodeDouble<T>>,
-		public Containerlib::Containers::SmartContainer<T> {
+		public SMART_CONTAINERS::SmartContainer<T> {
 	public:
 		NodeDouble() :
-			Nodes::NodeDouble<NodeDouble<T>>(),
-			SmartContainer<T>() {}
+			Nodes::NodeDouble<NodeDouble<T>>(this, this),
+			SMART_CONTAINERS::SmartContainer<T>() {}
 		NodeDouble(T* object_0, Destructor destructor_0, NodeDouble* nextNode, NodeDouble* prevNode) :
 			Nodes::NodeDouble<NodeDouble<T>>(nextNode, prevNode),
-			SmartContainer<T>(object_0, destructor_0) {}
+			SMART_CONTAINERS::SmartContainer<T>(object_0, destructor_0) {}
 		NodeDouble(T* object_0, Destructor destructor_0) :
-			Nodes::NodeDouble<NodeDouble<T>>(),
-			SmartContainer<T>(object_0, destructor_0) {}
+			Nodes::NodeDouble<NodeDouble<T>>(this, this),
+			SMART_CONTAINERS::SmartContainer<T>(object_0, destructor_0) {}
 		NodeDouble(T* object_0, NodeDouble* nextNode, NodeDouble* prevNode) :
 			Nodes::NodeDouble<NodeDouble<T>>(nextNode, prevNode),
-			SmartContainer<T>(object_0) {}
+			SMART_CONTAINERS::SmartContainer<T>(object_0) {}
 		NodeDouble(T* object_0) :
-			Nodes::NodeDouble<NodeDouble<T>>(),
-			SmartContainer<T>(object_0) {}
+			Nodes::NodeDouble<NodeDouble<T>>(this, this),
+			SMART_CONTAINERS::SmartContainer<T>(object_0) {}
 		NodeDouble(NodeDouble* nextNode, NodeDouble* prevNode) :
 			Nodes::NodeDouble<NodeDouble<T>>(nextNode, prevNode),
-			SmartContainer<T>() {}
+			SMART_CONTAINERS::SmartContainer<T>() {}
 		virtual ~NodeDouble() {}
 };
 } /* namespace Nodes */

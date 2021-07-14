@@ -20,20 +20,20 @@ namespace ListNodes {
 template<class T>
 class NodeSimple :
 		public Nodes::NodeSimple<NodeSimple<T>>,
-		public Containerlib::Containers::Container<T> {
+		public CONTAINERS::Container<T> {
 	public:
 		NodeSimple() :
-			Nodes::NodeSimple<NodeSimple<T>>(),
-			Container<T>() {}
+			Nodes::NodeSimple<NodeSimple<T>>(this),
+			CONTAINERS::Container<T>() {}
 		NodeSimple(const T& object_0, NodeSimple* nextNode) :
 			Nodes::NodeSimple<NodeSimple<T>>(nextNode),
-			Container<T>(object_0) {}
+			CONTAINERS::Container<T>(object_0) {}
 		NodeSimple(const T& object_0) :
-			Nodes::NodeSimple<NodeSimple<T>>(),
-			Container<T>(object_0) {}
+			Nodes::NodeSimple<NodeSimple<T>>(this),
+			CONTAINERS::Container<T>(object_0) {}
 		NodeSimple(NodeSimple* nextNode) :
 			Nodes::NodeSimple<NodeSimple<T>>(nextNode),
-			Container<T>() {}
+			CONTAINERS::Container<T>() {}
 		virtual ~NodeSimple() {}
 };
 
@@ -43,17 +43,17 @@ class NodeDouble :
 		public Containerlib::Containers::Container<T> {
 	public:
 		NodeDouble() :
-			Nodes::NodeDouble<NodeDouble<T>>(),
-			Container<T>() {}
+			Nodes::NodeDouble<NodeDouble<T>>(this, this),
+			CONTAINERS::Container<T>() {}
 		NodeDouble(const T& object_0, NodeDouble* nextNode, NodeDouble* prevNode) :
 			Nodes::NodeDouble<NodeDouble<T>>(nextNode, prevNode),
-			Container<T>(object_0) {}
+			CONTAINERS::Container<T>(object_0) {}
 		NodeDouble(const T& object_0) :
-			Nodes::NodeDouble<NodeDouble<T>>(),
-			Container<T>(object_0) {}
+			Nodes::NodeDouble<NodeDouble<T>>(this, this),
+			CONTAINERS::Container<T>(object_0) {}
 		NodeDouble(NodeDouble* nextNode, NodeDouble* prevNode) :
 			Nodes::NodeDouble<NodeDouble<T>>(nextNode, prevNode),
-			Container<T>() {}
+			CONTAINERS::Container<T>() {}
 		virtual ~NodeDouble() {}
 };
 
