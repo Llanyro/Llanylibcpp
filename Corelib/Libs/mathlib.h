@@ -133,7 +133,7 @@ ll_void sub(ll_uint64_t* a, const ll_uint64_t* b);
 // Retorno: El valor absoluto del valor introduciodo
 // Complejidad temporal y espacial: O(1) y M(1)
 ll_uint64_t valorAbsoluto(const ll_uint64_t& valor);
-
+ll_ldouble_t q_rsqrt(const ll_ldouble_t& number);
 
 /* Operaciones simples O(n) */
 

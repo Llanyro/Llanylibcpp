@@ -30,5 +30,9 @@ typedef ll_float_t ll_coordinate_t;
 #define GRAVITATIONAL_CONSTANT 6.674e-10
 #define GRAVITATIONAL_CONSTANT_2 6.674
 
+// Value created and used in (q_rsqrt) [https://www.youtube.com/watch?v=p8u_k2LIZyo]
+#define THREEHALFS 1.5
+
+
 
 #endif /* LLANYLIB_CORELIB_SIMPLELIBS_LLANYMATHTYPESLIB_H_ */

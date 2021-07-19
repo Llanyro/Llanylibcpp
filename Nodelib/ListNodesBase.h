@@ -1,16 +1,16 @@
 /*
- * Nodes.h
+ * ListNodesBase.h
  *
- *  Created on: Jul 14, 2021
+ *  Created on: Jul 15, 2021
  *      Author: llanyro
  */
 
-#ifndef NODELIB_NODES_H_
-#define NODELIB_NODES_H_
+#ifndef NODELIB_LISTNODESBASE_H_
+#define NODELIB_LISTNODESBASE_H_
 
 namespace Llanylib {
 namespace Nodelib {
-namespace Nodes {
+namespace ListNodes {
 
 template<class NODE>
 class NodeSimple {
@@ -41,8 +41,8 @@ class NodeDouble : public NodeSimple<NODE>{
 		}
 };
 
-} /* namespace Nodes */
+} /* namespace ListNodes */
 } /* namespace Nodelib */
 } /* namespace Llanylib */
 
-#endif /* NODELIB_NODES_H_ */
+#endif /* NODELIB_LISTNODESBASE_H_ */

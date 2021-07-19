@@ -39,3 +39,34 @@ Start
 test_func function took 82 milliseconds
 Start
 test_func function took 153 milliseconds
+
+Unix(pc)[smartlist]: -> 39,473684211
+Start
+test_func function took 15 milliseconds
+Start
+test_func function took 38 milliseconds
+
+Unix(pc)[smartlist]: -> 100
+Start
+test_func function took 12 milliseconds
+Start
+test_func function took 12 milliseconds
+
+
+Unix(pc)[smartlist]: -> 43,75
+Start
+test_func function took 14 milliseconds
+Start
+test_func function took 32 milliseconds
+
+Unix(pc)[smartlist]: -> 83,333333333
+Start
+test_func function took 10 milliseconds
+Start
+test_func function took 12 milliseconds
+
+
+
+
+
+
