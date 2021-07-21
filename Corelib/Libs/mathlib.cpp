@@ -102,9 +102,9 @@ ll_uint64_t valorAbsoluto(const ll_uint64_t& valor) {
 	else resultado -= valor;
 	return valor;
 }
-ll_ldouble_t q_rsqrt(const ll_ldouble_t& number){
+ll_float_t q_rsqrt(const ll_float_t& number){
 	ll_long_t i;
-	ll_ldouble_t x2 = 0.0, y = 0.0;
+	ll_float_t x2 = 0.0, y = 0.0;
 
 	x2 = number * 0.5;
 	y = number;
@@ -112,7 +112,7 @@ ll_ldouble_t q_rsqrt(const ll_ldouble_t& number){
 	i = *((ll_long_t*)&y);						// evil floating point bit hack
 	i = 0x5f3759df - ( i >> 1 );				// what the fuck
 
-	y = *((ll_ldouble_t*)&i);
+	y = *((ll_float_t*)&i);
 
 	y = y * ( THREEHALFS - ( x2 * y * y) );		// 1st iteration
 	//y = y * ( THREEHALFS - ( x2 * y * y) );	// 2nd iteration, can be removed

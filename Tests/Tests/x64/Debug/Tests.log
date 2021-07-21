@@ -1,0 +1,6 @@
+﻿  mathlib.cpp
+C:\Users\Fran-Administrador\Documents\GitHub\Llanylibcpp\Corelib\Libs\mathlib.cpp(109,14): warning C4244: '=': conversión de 'double' a 'll_float_t'; posible pérdida de datos
+C:\Users\Fran-Administrador\Documents\GitHub\Llanylibcpp\Corelib\Libs\mathlib.cpp(117,8): warning C4244: '=': conversión de 'double' a 'll_float_t'; posible pérdida de datos
+  Llanylibcpp.cpp
+  Generando código...
+  Tests.vcxproj -> C:\Users\Fran-Administrador\Documents\GitHub\Llanylibcpp\Tests\x64\Debug\Tests.exe

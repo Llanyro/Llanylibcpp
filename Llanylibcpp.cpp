@@ -190,7 +190,7 @@ void testListSTD() {
 	delete list;
 }*/
 
-#include "Corelib/Libs/llanytypeslib.h"
+/*#include "Corelib/Libs/llanytypeslib.h"
 #include "Corelib/Libs/memlib.h"
 #include "Listlib/Linkedlists/Linkedlist.h"
 #include "Listlib/Linkedlists/SmartLinkedList.h"
@@ -250,18 +250,20 @@ void testListSTD() {
 	}
 
 	delete list;
-}
+}*/
 
+#include "Corelib/Libs/mathlib.h"
 
 int main(int argc, char **argv) {
 	//testList();
 	//testSmartList();
 
-	execute_test(testSmartList);
+	/*execute_test(testSmartList);
 	execute_test(testSmartListSTD);
 
 	execute_test(testList);
-	execute_test(testListSTD);
+	execute_test(testListSTD);*/
+
 
 
 

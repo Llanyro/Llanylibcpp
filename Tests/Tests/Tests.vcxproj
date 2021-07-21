@@ -32,6 +32,7 @@
     <ClCompile Include="..\..\Corelib\Structs\llanystring.cpp" />
     <ClCompile Include="..\..\Corelib\Structs\stringtype.cpp" />
     <ClCompile Include="..\..\Llanylibcpp.cpp" />
+    <ClCompile Include="..\..\New\sortlib.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Corelib\Class\Countable.h" />
@@ -67,6 +68,7 @@
     <ClInclude Include="..\..\New\Iterator.h" />
     <ClInclude Include="..\..\New\ListTest.h" />
     <ClInclude Include="..\..\New\Node.h" />
+    <ClInclude Include="..\..\New\sortlib.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

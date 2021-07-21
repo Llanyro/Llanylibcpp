@@ -11,7 +11,7 @@
 #include "llanytypeslib.h"
 #include "llanymathtypeslib.h"
 
-#define MATH_LIB Llanylib::Core::Libs::Math
+#define MATH_LIB Llanylib::Corelib::Libs::Math
 
 namespace Llanylib {
 namespace Corelib {
@@ -133,7 +133,10 @@ ll_void sub(ll_uint64_t* a, const ll_uint64_t* b);
 // Retorno: El valor absoluto del valor introduciodo
 // Complejidad temporal y espacial: O(1) y M(1)
 ll_uint64_t valorAbsoluto(const ll_uint64_t& valor);
-ll_ldouble_t q_rsqrt(const ll_ldouble_t& number);
+// Fast 1 / sqrt(x)
+// Error: 1%
+// Url: https://www.youtube.com/watch?v=p8u_k2LIZyo
+ll_float_t q_rsqrt(const ll_float_t& number);
 
 /* Operaciones simples O(n) */
 

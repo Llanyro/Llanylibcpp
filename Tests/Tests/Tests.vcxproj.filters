@@ -72,6 +72,9 @@
     <ClCompile Include="..\..\Llanylibcpp.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\New\sortlib.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Corelib\Class\Countable.h">
@@ -172,6 +175,9 @@
     </ClInclude>
     <ClInclude Include="..\..\New\ListTest.h">
       <Filter>Archivos de recursos\New</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\New\sortlib.h">
+      <Filter>Archivos de origen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
