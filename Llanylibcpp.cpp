@@ -255,6 +255,60 @@ void testListSTD() {
 #include "Corelib/Libs/mathlib.h"
 
 int main(int argc, char **argv) {
+
+
+	int mayor = -1, mediano = -1, menor = -1, temp = 0;
+
+	std::cin >> mediano;
+
+	std::cin >> temp;
+	if (temp > mediano)
+		mayor = temp;
+	else
+		menor = temp;
+
+	std::cin >> temp;
+	if (temp > mediano) {
+		if(mayor == -1)
+			mayor = temp;
+		else if (temp > mayor) {
+			menor = mediano;
+			mediano = mayor;
+			mayor = temp;
+		}
+		else {
+			menor = mediano;
+			mediano = temp;
+		}
+	}
+	else {
+		if(menor == -1) 
+			menor = temp;
+		else if (temp < menor) {
+			mayor = mediano;
+			mediano = menor;
+			menor = temp;
+		}
+		else {
+			mayor = mediano;
+			mediano = temp;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	//testList();
 	//testSmartList();
 
