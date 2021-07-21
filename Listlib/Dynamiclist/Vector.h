@@ -19,6 +19,34 @@ class Vector : public Corelist::List<T> {
 	protected:
 		T* vector;
 		ll_bool_t free = false; // Marca si es necesario liberar la memoria contenida
+		Destructor d;
+
+
+	public:
+		Vector() : Vector(300, true) {}
+		Vector(const len_t& length, const ll_bool_t& free) {
+			this->vector = new T[this->length];
+			this->free = free;
+		}
+		Vector(const T* vector) {
+			this->vector = vector;
+
+		}
+		virtual ~Vector() {
+			delete[] this->vector;
+			this->free = false;
+		}
+
+
+
+};
+
+
+template<class T>
+class Vector : public Corelist::List<T> {
+	protected:
+		T* vector;
+		ll_bool_t free = false; // Marca si es necesario liberar la memoria contenida
 	protected:
 		Vector() : Corelist::List<T>() {
 			this->free = false;
