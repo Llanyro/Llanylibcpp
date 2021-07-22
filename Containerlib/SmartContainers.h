@@ -51,8 +51,9 @@ class SmartContainer {
 		}
 		void remove_0() {
 			if(this->destructor_0 != nullptr && this->object_0 != nullptr) {
-				this->destructor_0((void**)&this->object_0);
+				this->destructor_0((void*)this->object_0);
 				this->destructor_0 = nullptr;
+				this->object_0 = nullptr;
 			}
 		}
 };
@@ -99,8 +100,9 @@ class SmartContainerDouble : public SmartContainer<T0> {
 		}
 		void remove_1() {
 			if(this->destructor_1 != nullptr && this->object_1 != nullptr) {
-				this->destructor_1((void**)&this->object_1);
+				this->destructor_1((void*)this->object_1);
 				this->destructor_1 = nullptr;
+				this->object_1 = nullptr;
 			}
 		}
 };

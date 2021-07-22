@@ -9,6 +9,7 @@
 #define LLANYLIB_CORE_LISTLIB_VECTOR_VECTOR_H_
 
 #include "../Corelist/List.h"
+#include "../../Corelib/Libs/memlib.h"
 
 namespace Llanylib {
 namespace Listlib {
@@ -17,24 +18,50 @@ namespace Dynamiclist {
 template<class T>
 class Vector : public Corelist::List<T> {
 	protected:
+		/*
+		 * vector != nullptr
+		 * if destructor == nullptr && free == true -> delete[] vector;
+		 * if destructor == nullptr && free == false -> vector = nullptr;
+		 * if destructor != nullptr && free == true -> destructor(&vector);
+		 * if destructor != nullptr && free == false -> destructor(&vector);
+		 * */
 		T* vector;
 		ll_bool_t free = false; // Marca si es necesario liberar la memoria contenida
-		Destructor d;
-
-
+		Destructor destructor;
 	public:
-		Vector() : Vector(300, true) {}
-		Vector(const len_t& length, const ll_bool_t& free) {
+		// Si queremos generar un vector de tamaño n
+		Vector(const len_t& length) : Corelist::List<T>() {
 			this->vector = new T[this->length];
-			this->free = free;
+			this->free = true;
+			this->destructor = nullptr;
 		}
-		Vector(const T* vector) {
+		// Si queremos controlar y guardar un vector creado externamente
+		Vector(T* vector, const ll_bool_t& free, Destructor destructor) {
 			this->vector = vector;
-
+			this->free = free;
+			this->destructor = destructor;
 		}
+
+		/* Atajos */
+		Vector() : Vector(300) {}
+		Vector(T* vector) : Vector(vector, false, nullptr) {}
+		Vector(T* vector, const ll_bool_t& free) : Vector(vector, free, nullptr) {}
+		Vector(T* vector, Destructor destructor) : Vector(vector, true, destructor) {}
+
 		virtual ~Vector() {
-			delete[] this->vector;
-			this->free = false;
+			// Si tenemos destructor, liberamos el vector
+			if(this->destructor != nullptr) {
+				this->destructor(this->vector);
+				this->destructor = nullptr;
+			}
+
+			// Si no tenemos destructor, pero aun asi queremos liberarlo
+			if (this->free == true) {
+				delete[] this->vector;
+				this->free = false;
+			}
+
+			this->vector = nullptr;
 		}
 
 

@@ -355,23 +355,19 @@ T* __newArray__(const len_t& size) {
 	return result;
 }
 template<class T>
-void __delete__(T** pointer) {
-	if(pointer != nullptr && *pointer != nullptr) {
-		delete *pointer;
-		*pointer = nullptr;
-	}
+void __delete__(T* pointer) {
+	if(pointer != nullptr)
+		delete pointer;
 }
 template<class T>
-void __deleteArray__(T** pointer) {
-	if(pointer != nullptr && *pointer != nullptr) {
-		delete[] *pointer;
-		*pointer = nullptr;
-	}
+void __deleteArray__(T* pointer) {
+	if(pointer != nullptr)
+		delete[] pointer;
 }
 template<class T>
-void __del__(void** pointer) { __delete__(pointer); }
+void __del__(void* pointer) { __delete__(pointer); }
 template<class T>
-void __delArray__(void** pointer) { __deleteArray__(pointer); }
+void __delArray__(void* pointer) { __deleteArray__(pointer); }
 
 template<class T>
 T* autoPointer(const T* memBlock, const len_t& posicion) {

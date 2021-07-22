@@ -76,7 +76,7 @@ typedef ll_int_t (*Compare_int)(const void* item_a, const void* item_b);
 typedef ll_bool_t (*Compare_bool)(const void* item_a, const void* item_b);
 typedef ll_int_t (*CompareChar_int)(const char* caracter1, const char* caracter2);
 typedef ll_uint32_t (*Range_uint32)(const ll_uint32_t& value);
-typedef void (*Destructor)(void**);
+typedef void (*Destructor)(void*);
 
 #define COMPARE_INT_T ll_int_t compare_t(const T* item_a, const T* item_b)
 #define COMPARE_BOOL_T ll_bool_t compare_t(const T* item_a, const T* item_b)
