@@ -109,32 +109,32 @@ class AbstractLinkedlist : public Corelist::List<T> {
 			this->length++;
 		}
 	public:
-		virtual ll_bool_t contains(const T* item, Compare_bool compare) const override {
+		virtual ll_bool_t contains(const T* object, Compare_bool compare) const override {
 			ll_bool_t resultado = false;
 			NODE* nodoActual = this->root;
 			// Si tenemos la funcion de comparacion
 			if (compare != nullptr) {
 				for (len_t i = 0; !resultado && i < this->length; i++) {
-					resultado = compare(item, nodoActual->get_object_0());
+					resultado = compare(object, nodoActual->get_object_0());
 					nodoActual = nodoActual->nextNode;
 				}
 			}
 			// Si no tenemos, usamos ==
 			else {
 				for (len_t i = 0; !resultado && i < this->length; i++) {
-					resultado = (*item == *nodoActual->get_object_0());
+					resultado = (*object == *nodoActual->get_object_0());
 					nodoActual = nodoActual->nextNode;
 				}
 			}
 			return resultado;
 		}
-		virtual T* get(const len_t& pos) const override {
+		virtual T* get(const len_t& position) const override {
 			T* item = nullptr;
-			if (this->validPos(pos))
-				item = this->getNodoCache(pos)->get_object_0();
+			if (this->validPos(position))
+				item = this->getNodoCache(position)->get_object_0();
 			return item;
 		}
-		virtual T* operator[](const len_t& pos) override { return this->get(pos); }
+		virtual T* operator[](const len_t& position) override { return this->get(position); }
 		virtual ll_bool_t clear() override {
 			NODE* temp = nullptr;
 			NODE* nodeRemove = this->root->prevNode;

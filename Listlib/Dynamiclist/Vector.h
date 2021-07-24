@@ -28,18 +28,22 @@ class Vector : public Corelist::List<T> {
 		T* vector;
 		ll_bool_t free = false; // Marca si es necesario liberar la memoria contenida
 		Destructor destructor;
+		ll_bool_t modificable;
 	public:
 		// Si queremos generar un vector de tamaño n
 		Vector(const len_t& length) : Corelist::List<T>() {
 			this->vector = new T[this->length];
 			this->free = true;
 			this->destructor = nullptr;
+			this->modificable = true;
 		}
 		// Si queremos controlar y guardar un vector creado externamente
 		Vector(T* vector, const ll_bool_t& free, Destructor destructor) {
 			this->vector = vector;
 			this->free = free;
 			this->destructor = destructor;
+			// Es modificable si, se puede liberar de una manera u otra
+			this->modificable = (this->free || this->destructor != nullptr);
 		}
 
 		/* Atajos */
@@ -62,8 +66,34 @@ class Vector : public Corelist::List<T> {
 			}
 
 			this->vector = nullptr;
+			this->modificable = false;
 		}
 
+		// Funcion: Obtiene el puntero del objeto solicitado
+		// Precondiciones:
+		//		posicion < count
+		// Retorno: El objeto solicitado
+		//		Si la posicion es erronea devuelve nullptr
+		// Complejidad temporal y espacial: O(?) y M(1)
+		virtual T* get(const len_t& position) const override {
+			T* result = nullptr;
+			if(this->validPos(position))
+				result = this->vector + position;
+			return result;
+		}
+		// Funcion: Obtiene el puntero del objeto solicitado en formato const
+		// Precondiciones:
+		//		posicion < count
+		// Retorno: El objeto solicitado
+		//		Si la posicion es erronea devuelve nullptr
+		// Complejidad temporal y espacial: O(?) y M(1)
+		virtual const T* cget(const len_t& position) const override {
+			const T* result = nullptr;
+			if(this->validPos(position))
+				result = this->vector + position;
+			return result;
+		}
+		virtual T* operator[](const len_t& position) override { return this->get(position); }
 
 
 };

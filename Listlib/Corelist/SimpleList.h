@@ -41,21 +41,21 @@ class Simplelist : public Corelib::Classes::LlanyCore {
 		// Retorno: El objeto solicitado
 		//		Si la posicion es erronea devuelve nullptr
 		// Complejidad temporal y espacial: O(?) y M(1)
-		virtual T* get(const len_t& pos) const { return nullptr; }
+		virtual T* get(const len_t& position) const { return nullptr; }
 		// Funcion: Obtiene el puntero del objeto solicitado en formato const
 		// Precondiciones:
 		//		posicion < count
 		// Retorno: El objeto solicitado
 		//		Si la posicion es erronea devuelve nullptr
 		// Complejidad temporal y espacial: O(?) y M(1)
-		virtual const T* cget(const len_t& pos) const { return nullptr; }
-		virtual T* operator[](const len_t& pos) { return nullptr; }
-		virtual ll_bool_t contains(const T* item, Compare_bool compare) const { return false; }
+		virtual const T* cget(const len_t& position) const { return nullptr; }
+		virtual T* operator[](const len_t& position) { return nullptr; }
+		virtual ll_bool_t contains(const T* object, Compare_bool compare) const { return false; }
 		virtual ll_bool_t swap(const len_t& posObject1, const len_t& posObject2) { return false; }
 		#pragma endregion
 		#pragma region Funciones nuevas no heredables
 		// Funcion:Por defector llama a contains()_
-		ll_bool_t contains(const T* item) const { return this->contains(item, nullptr); }
+		ll_bool_t contains(const T* object) const { return this->contains(object, nullptr); }
 		#pragma endregion
 		#pragma region Funciones heredadas
 		#pragma endregion
