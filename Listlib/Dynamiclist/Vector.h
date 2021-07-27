@@ -15,6 +15,78 @@ namespace Llanylib {
 namespace Listlib {
 namespace Dynamiclist {
 
+/*
+ * Clase para controlar vectores simples-
+ * */
+template<class T>
+class VectorLite : public Corelist::List<T> {
+	protected:
+		T* vector;
+	public:
+		VectorLite() : VectorLite(300) {}
+		VectorLite(const len_t& length) : Countable(length) {
+			this->vector = new T[this->length];
+		}
+		virtual ~VectorLite() { delete[] this->vector; }
+		// Funcion: Obtiene el puntero del objeto solicitado
+		// Precondiciones:
+		//		posicion < count
+		// Retorno: El objeto solicitado
+		//		Si la posicion es erronea devuelve nullptr
+		// Complejidad temporal y espacial: O(?) y M(1)
+		virtual T* get(const len_t& position) const {
+			T* result = nullptr;
+			if(this->validPos(position))
+				result = this->vector + position;
+			return result;
+		}
+		// Funcion: Obtiene el puntero del objeto solicitado en formato const
+		// Precondiciones:
+		//		posicion < count
+		// Retorno: El objeto solicitado
+		//		Si la posicion es erronea devuelve nullptr
+		// Complejidad temporal y espacial: O(?) y M(1)
+		virtual const T* cget(const len_t& position) const {
+			const T* result = nullptr;
+			if(this->validPos(position))
+				result = (this->vector + position);
+			return result;
+		}
+		virtual T* operator[](const len_t& position) { return this->get(position); }
+		virtual ll_bool_t contains(const T* object, Compare_bool compare) const {
+			ll_bool_t resultado = false;
+			// Si tenemos la funcion de comparacion
+			if (compare != nullptr) {
+				for (len_t i = 0; !resultado && i < this->length; i++)
+					resultado = compare(object, this->vector + i);
+			}
+			// Si no tenemos, usamos ==
+			else {
+				for (len_t i = 0; !resultado && i < this->length; i++)
+					resultado = (*object == (this->vector + i));
+			}
+			return resultado;
+		}
+		// Funcion: Sustituye el objeto antiguo por uno nuevo
+		// Version: Final
+		// Precondiciones:
+		//		pos < length
+		// Retorno:
+		//		 true: Si se ha seteado todo correctamente
+		//		false: Si no se ha podido setear todo correctamente
+		// Complejidad temporal y espacial: O(1) y M(1)
+		virtual ll_bool_t set(const T& item, const len_t& position) {
+			ll_bool_t result = true;
+			if (this->in_range(position))
+				this->vector[position] = item;
+			else result = false;
+			return result;
+		}
+};
+
+
+
+
 template<class T>
 class Vector : public Corelist::List<T> {
 	protected:
