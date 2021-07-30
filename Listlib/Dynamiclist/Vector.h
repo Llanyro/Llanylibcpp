@@ -9,25 +9,27 @@
 #define LLANYLIB_CORE_LISTLIB_VECTOR_VECTOR_H_
 
 #include "../Corelist/List.h"
-#include "../../Corelib/Libs/memlib.h"
+//#include "../../Corelib/Libs/memlib.h"
 
 namespace Llanylib {
 namespace Listlib {
 namespace Dynamiclist {
 
 /*
- * Clase para controlar vectores simples-
+ * Clase para controlar vectores simples
  * */
 template<class T>
-class VectorLite : public Corelist::List<T> {
+class Vec : public Corelist::List<T> {
 	protected:
 		T* vector;
 	public:
-		VectorLite() : VectorLite(300) {}
-		VectorLite(const len_t& length) : Countable(length) {
-			this->vector = new T[this->length];
+		Vec() { this->vector = nullptr; }
+		Vec(const len_t& length) : Corelist::List<T>(length) { this->vector = new T[this->length]; }
+		virtual ~Vec() {
+			if(this->vector != nullptr)
+				delete[] this->vector;
+			this->vector = nullptr;
 		}
-		virtual ~VectorLite() { delete[] this->vector; }
 		// Funcion: Obtiene el puntero del objeto solicitado
 		// Precondiciones:
 		//		posicion < count
@@ -63,7 +65,7 @@ class VectorLite : public Corelist::List<T> {
 			// Si no tenemos, usamos ==
 			else {
 				for (len_t i = 0; !resultado && i < this->length; i++)
-					resultado = (*object == (this->vector + i));
+					resultado = (*object == this->vector[i]);
 			}
 			return resultado;
 		}
@@ -83,7 +85,23 @@ class VectorLite : public Corelist::List<T> {
 			return result;
 		}
 };
+template<class T>
+class Vector : public Vec<T> {
+	protected:
+		/*
+		 * vector != nullptr
+		 * if destructor == nullptr && free == true -> delete[] vector;
+		 * if destructor == nullptr && free == false -> vector = nullptr;
+		 * if destructor != nullptr && free == true -> destructor(&vector);
+		 * if destructor != nullptr && free == false -> destructor(&vector);
+		 * */
+		ll_bool_t free = false; // Marca si es necesario liberar la memoria contenida
+		Destructor destructor;
+		ll_bool_t modificable;
+	public:
 
+
+};
 
 
 
