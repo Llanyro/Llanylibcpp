@@ -24,12 +24,12 @@ template<class T, class NODE>
 class AbstractLinkedlist : public Corelist::List<T> {
 	protected:
 		NODE* root;
-		Containerlib::Containers::ContainerDouble<NODE*, len_t>* cache;
+		CONTAINERS::ContainerDouble<NODE*, len_t>* cache;
 	protected:
 		AbstractLinkedlist() {
 			this->root = nullptr;
 			this->cache = 
-				new Containerlib::Containers::ContainerDouble<NODE*, len_t>(nullptr, 0);
+				new CONTAINERS::ContainerDouble<NODE*, len_t>(nullptr, 0);
 		}
 		virtual ~AbstractLinkedlist() {
 			this->clear();
@@ -105,7 +105,7 @@ class AbstractLinkedlist : public Corelist::List<T> {
 				anteriorNodo->nextNode = node;
 				siguienteNodo->prevNode = node;
 			}
-			// Incrementamos el tama�o
+			// Incrementamos el tamaño
 			this->length++;
 		}
 	public:

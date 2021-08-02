@@ -134,9 +134,6 @@
     <ClInclude Include="..\..\Listlib\Linkedlists\AbstractLinkedlist.h">
       <Filter>Archivos de recursos\Listlib</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Listlib\Corelist\AbstractSmartList.h">
-      <Filter>Archivos de recursos\Listlib</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Listlib\Linkedlists\Linkedlist.h">
       <Filter>Archivos de recursos\Listlib</Filter>
     </ClInclude>
@@ -178,6 +175,9 @@
     </ClInclude>
     <ClInclude Include="..\..\New\sortlib.h">
       <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Listlib\Linkedlists\Buffer.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
