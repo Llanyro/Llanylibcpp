@@ -55,6 +55,7 @@
     <ClInclude Include="..\..\Listlib\Corelist\List.h" />
     <ClInclude Include="..\..\Listlib\Corelist\SimpleList.h" />
     <ClInclude Include="..\..\Listlib\Dynamiclist\Vector.h" />
+    <ClInclude Include="..\..\Listlib\Dynamiclist\VectorBuffer.h" />
     <ClInclude Include="..\..\Listlib\Dynamiclist\VectorResize.h" />
     <ClInclude Include="..\..\Listlib\Linkedlists\AbstractLinkedlist.h" />
     <ClInclude Include="..\..\Listlib\Linkedlists\Buffer.h" />

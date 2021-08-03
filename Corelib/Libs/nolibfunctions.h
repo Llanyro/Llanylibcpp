@@ -5,8 +5,8 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORELIB_SIMPLELIBS_NOLIBFUNCTIONS_H_
-#define LLANYLIB_CORELIB_SIMPLELIBS_NOLIBFUNCTIONS_H_
+#ifndef CORELIB_LIBS_NOLIBFUNCTIONS_H_
+#define CORELIB_LIBS_NOLIBFUNCTIONS_H_
 
 #include "llanytypeslib.h"
 
@@ -23,4 +23,4 @@ Classes::String* getCommandsMain(int argc, char** argv, const ll_bool_t& ignoreF
 } /* namespace Core */
 } /* namespace Llanylibc */
 
-#endif /* LLANYLIB_CORELIB_SIMPLELIBS_NOLIBFUNCTIONS_H_ */
+#endif /* CORELIB_LIBS_NOLIBFUNCTIONS_H_ */

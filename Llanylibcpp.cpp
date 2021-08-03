@@ -1,39 +1,18 @@
 
-#include <iostream>
-#include <chrono>
-#include <list>
-#include <memory>
-
-void execute_test(void func(void)) {
-	std::cout << "Start\n";
-	auto t1 = std::chrono::high_resolution_clock::now();
-	func();
-	auto t2 = std::chrono::high_resolution_clock::now();
-	std::cout << "test_func function took "
-		<< std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count()
-		<< " milliseconds\n";
-}
-
-
 /*#include "Core/Libs/llanysimpleprint.h"
 #include "Core/Libs/randomlib.h"
 #include "Core/Libs/filelib.h"
 #include "Core/Libs/stringlib.h"*/
-
 //#include "Core/Classes/Containers/SmartPointer.h"
 //#include "Core/Classes/SimpleLists/List.h"
-
 //#include "Core/Structs/llanylinkedlist.h"
 //#include "Core/Listlib/Linkedlists/SmartLinkedlist.h"
 //#include "Listlib/Linkedlists/Linkedlist.h"
-
 //using namespace Llanylib::Core::Structs;
 //using namespace Llanylib::Core::Classes::SimpleLists;
 //using namespace Llanylib::Listlib::Linkedlists;
 //using namespace Llanylib::Core::Classes::Containers;
-
 //#define STR "./Folder/Folder2/Test"
-
 /*#define NUM 9999
 
 void test_func() {
@@ -94,7 +73,6 @@ void test_func_std() {
 void testSmart() {
 	SmartPointer<int> s = tests();
 }*/
-
 
 #define SIZE_TEST 99999
 
@@ -252,12 +230,28 @@ void testListSTD() {
 	delete list;
 }*/
 
+#include "Corelib/Libs/llanysimpleprint.h"
 #include "Corelib/Libs/mathlib.h"
+#include "Listlib/Dynamiclist/VectorBuffer.h"
+
+using namespace Llanylib::Listlib::Dynamiclist;
+
+void test_buffer() {
+	VectorBuffer<char> vec(300);
+	vec.add("Esto", 4);
+	vec.add(" es", 3);
+	vec.add(" un", 3);
+	vec.add(" vector", 7);
+	vec.add(" buffer", 8);
+
+	PRINT(vec.begin());
+}
+
 
 int main(int argc, char **argv) {
 
 
-	int mayor = -1, mediano = -1, menor = -1, temp = 0;
+	/*int mayor = -1, mediano = -1, menor = -1, temp = 0;
 
 	std::cin >> mediano;
 
@@ -293,21 +287,10 @@ int main(int argc, char **argv) {
 			mayor = mediano;
 			mediano = temp;
 		}
-	}
+	}*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+	test_buffer();
 
 	//testList();
 	//testSmartList();

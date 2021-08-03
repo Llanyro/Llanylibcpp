@@ -5,8 +5,8 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORE_LISTLIB_CORELIST_LIST_H_
-#define LLANYLIB_CORE_LISTLIB_CORELIST_LIST_H_
+#ifndef LISTLIB_CORELIST_LIST_H_
+#define LISTLIB_CORELIST_LIST_H_
 
 #include "SimpleList.h"
 #include "../../Corelib/Class/Countable.h"
@@ -61,4 +61,4 @@ class List : public Simplelist<T>, public Llanylib::Corelib::Classes::Countable 
 } /* namespace Listlib */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORE_LISTLIB_CORELIST_LIST_H_ */
+#endif /* LISTLIB_CORELIST_LIST_H_ */

@@ -128,6 +128,10 @@ class AbstractLinkedlist : public Corelist::List<T> {
 			}
 			return resultado;
 		}
+		virtual T* begin() const { return (this->length > 0) ? this->get(0)->get_object_0() : nullptr; }
+		virtual T* end() const { return (this->length > 0) ? this->get(this->length - 1)->get_object_0() : nullptr; }
+		virtual const T* cbegin() const { return (this->length > 0) ? this->get(0)->get_object_0() : nullptr; }
+		virtual const T* cend() const { return (this->length > 0) ? this->get(this->length - 1)->get_object_0() : nullptr; }
 		virtual T* get(const len_t& position) const override {
 			T* item = nullptr;
 			if (this->validPos(position))

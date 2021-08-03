@@ -179,5 +179,8 @@
     <ClInclude Include="..\..\Listlib\Linkedlists\Buffer.h">
       <Filter>Archivos de recursos\Listlib</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Listlib\Dynamiclist\VectorBuffer.h">
+      <Filter>Archivos de recursos\Listlib</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

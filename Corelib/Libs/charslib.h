@@ -5,8 +5,8 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORELIB_SIMPLELIBS_CHARSLIB_H_
-#define LLANYLIB_CORELIB_SIMPLELIBS_CHARSLIB_H_
+#ifndef CORELIB_LIBS_CHARSLIB_H_
+#define CORELIB_LIBS_CHARSLIB_H_
 
 #include "llanymathtypeslib.h"
 
@@ -82,4 +82,4 @@ ll_int_t cambiarMinus(char* caracter);
 } /* namespace Core */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORELIB_SIMPLELIBS_CHARSLIB_H_ */
+#endif /* CORELIB_LIBS_CHARSLIB_H_ */

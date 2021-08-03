@@ -5,8 +5,8 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORELIB_SIMPLELIBS_MATHLIB_H_
-#define LLANYLIB_CORELIB_SIMPLELIBS_MATHLIB_H_
+#ifndef CORELIB_LIBS_MATHLIB_H_
+#define CORELIB_LIBS_MATHLIB_H_
 
 #include "llanytypeslib.h"
 #include "llanymathtypeslib.h"
@@ -227,4 +227,4 @@ ll_uint64_t gerneratePrime();
 } /* namespace Core */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORELIB_SIMPLELIBS_MATHLIB_H_ */
+#endif /* CORELIB_LIBS_MATHLIB_H_ */

@@ -5,11 +5,10 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORE_LISTLIB_VECTOR_VECTOR_H_
-#define LLANYLIB_CORE_LISTLIB_VECTOR_VECTOR_H_
+#ifndef LISTLIB_DYNAMICLISTS_VECTOR_H_
+#define LISTLIB_DYNAMICLISTS_VECTOR_H_
 
 #include "../Corelist/List.h"
-//#include "../../Corelib/Libs/memlib.h"
 
 namespace Llanylib {
 namespace Listlib {
@@ -86,7 +85,7 @@ class Vector : public Corelist::List<T> {
 		// Complejidad temporal y espacial: O(1) y M(1)
 		virtual ll_bool_t set(const T& item, const len_t& position) {
 			ll_bool_t result = true;
-			if (this->in_range(position))
+			if (this->inRange(position))
 				this->vector[position] = item;
 			else result = false;
 			return result;
@@ -180,7 +179,7 @@ class Vector : public Dynamiclist::Vector<T> {
 		// Complejidad temporal y espacial: O(1) y M(1)
 		virtual ll_bool_t set(const T& item, const len_t& position) {
 			ll_bool_t result = true;
-			if (this->modificable && this->in_range(position))
+			if (this->modificable && this->inRange(position))
 				this->vector[position] = item;
 			else result = false;
 			return result;
@@ -188,24 +187,8 @@ class Vector : public Dynamiclist::Vector<T> {
 };
 
 } /* namespace Extra */
-
-namespace Buffer {
-
-
-/*
-	Class vector created to being used in Buffer
-*/
-template<class T>
-class Vector : public Dynamiclist::Vector<T> {
-	public:
-		Vector(const len_t& length) : Dynamiclist::Vector<T>(length) {}
-		~Vector(){}
-};
-
-} /* namespace Buffer */
-
 } /* namespace Dynamiclist */
 } /* namespace Listlib */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORE_LISTLIB_VECTOR_VECTOR_H_ */
+#endif /* LISTLIB_DYNAMICLISTS_VECTOR_H_ */

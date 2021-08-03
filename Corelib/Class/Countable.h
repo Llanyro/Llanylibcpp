@@ -34,7 +34,7 @@ class Countable : public Classes::LlanyCore {
 		//		 true: Si la posicion dada esta en la lista
 		//		false: Si la posicion dada no esta en la lista
 		// Complejidad temporal y espacial: O(1) y M(1)
-		ll_bool_t in_range(const len_t& position) const;
+		ll_bool_t inRange(const len_t& position) const;
 		virtual ll_bool_t clear() override;
 };
 

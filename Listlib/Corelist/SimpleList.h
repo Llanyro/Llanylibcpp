@@ -5,8 +5,8 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORE_LISTLIB_CORELIST_SIMPLELIST_H_
-#define LLANYLIB_CORE_LISTLIB_CORELIST_SIMPLELIST_H_
+#ifndef LISTLIB_CORELIST_SIMPLELIST_H_
+#define LISTLIB_CORELIST_SIMPLELIST_H_
 
 #include "../../Corelib/Class/LlanyCore.h"
 
@@ -96,4 +96,4 @@ class Simplelist : public Corelib::Classes::LlanyCore {
 } /* namespace Listlib */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORE_LISTLIB_CORELIST_SIMPLELIST_H_ */
+#endif /* LISTLIB_CORELIST_SIMPLELIST_H_ */

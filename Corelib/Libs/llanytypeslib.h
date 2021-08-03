@@ -5,8 +5,8 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORELIB_SIMPLELIBS_LLANYTYPESLIB_H_
-#define LLANYLIB_CORELIB_SIMPLELIBS_LLANYTYPESLIB_H_
+#ifndef CORELIB_LIBS_LLANYTYPESLIB_H_
+#define CORELIB_LIBS_LLANYTYPESLIB_H_
 
 // Signed
 typedef char ll_char_t;
@@ -88,4 +88,4 @@ typedef void (*Destructor)(void*);
 #define TRUE_VALUE 1
 #define FALSE_VALUE 0
 
-#endif /* LLANYLIB_CORELIB_SIMPLELIBS_LLANYTYPESLIB_H_ */
+#endif /* CORELIB_LIBS_LLANYTYPESLIB_H_ */

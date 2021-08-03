@@ -5,8 +5,8 @@
  *      Author: llanyro
  */
 
-#ifndef LLANYLIB_CORELIB_SIMPLELIBS_MEMLIB_H_
-#define LLANYLIB_CORELIB_SIMPLELIBS_MEMLIB_H_
+#ifndef CORELIB_LIBS_MEMLIB_H_
+#define CORELIB_LIBS_MEMLIB_H_
 
 #include "llanytypeslib.h"
 
@@ -395,4 +395,4 @@ T* typerFunction(void* item) { return (T*)item; }
 } /* namespace Core */
 } /* namespace Llanylib */
 
-#endif /* LLANYLIB_CORELIB_SIMPLELIBS_MEMLIB_H_ */
+#endif /* CORELIB_LIBS_MEMLIB_H_ */
