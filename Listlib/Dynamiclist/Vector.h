@@ -58,9 +58,9 @@ class Vector : public Corelist::List<T> {
 		virtual T* operator[](const len_t& position) { return this->get(position); }
 
 		virtual T* begin() const override { return this->vector; }
-		virtual T* end() const override { return this->vector + this->length - 1; }
+		virtual T* end() const override { return (this->vector + this->length - 1); }
 		virtual const T* cbegin() const override { return this->vector; }
-		virtual const T* cend() const override { return this->vector + this->length - 1; }
+		virtual const T* cend() const override { return (this->vector + this->length - 1); }
 
 		virtual ll_bool_t contains(const T* object, Compare_bool compare) const {
 			ll_bool_t resultado = false;
@@ -119,11 +119,14 @@ class Vector : public Dynamiclist::Vector<T> {
 		Vector(
 			// Vector to use
 			T* vector,
+			// Size of vector
+			const len_t& length,
 			// If is  freeable
 			const ll_bool_t& free,
 			// Function to free the vector to use
 			Destructor destructor) {
 			this->vector = vector;
+			this->length = length;
 			this->free = free;
 			this->destructor = destructor;
 			// Es modificable si, se puede liberar de una manera u otra
@@ -133,17 +136,23 @@ class Vector : public Dynamiclist::Vector<T> {
 		Vector() : Vector(300) {}
 		Vector(
 			// Vector to use
-			T* vector) : Vector(vector, false, nullptr) {}
+			T* vector,
+			// Size of vector
+			const len_t& length) : Vector(vector, length, false, nullptr) {}
 		Vector(
 			// Vector to use
 			T* vector,
+			// Size of vector
+			const len_t& length,
 			// If is  freeable
-			const ll_bool_t& free) : Vector(vector, free, nullptr) {}
+			const ll_bool_t& free) : Vector(vector, length, free, nullptr) {}
 		Vector(
 			// Vector to use
 			T* vector,
+			// Size of vector
+			const len_t& length,
 			// Function to free the vector to use
-			Destructor destructor) : Vector(vector, true, destructor) {}
+			Destructor destructor) : Vector(vector, length, true, destructor) {}
 		virtual ~Vector() {
 			// Si tenemos destructor, liberamos el vector
 			if (this->destructor != nullptr) {
@@ -177,7 +186,24 @@ class Vector : public Dynamiclist::Vector<T> {
 			return result;
 		}
 };
+
 } /* namespace Extra */
+
+namespace Buffer {
+
+
+/*
+	Class vector created to being used in Buffer
+*/
+template<class T>
+class Vector : public Dynamiclist::Vector<T> {
+	public:
+		Vector(const len_t& length) : Dynamiclist::Vector<T>(length) {}
+		~Vector(){}
+};
+
+} /* namespace Buffer */
+
 } /* namespace Dynamiclist */
 } /* namespace Listlib */
 } /* namespace Llanylib */

@@ -31,10 +31,10 @@ class Simplelist : public Corelib::Classes::LlanyCore {
 		 * La funcion de remove() elimina el objeto si esta indicado y del llama a remove()
 		 * */
 
-		/*virtual T* begin() const { return nullptr; }
+		virtual T* begin() const { return nullptr; }
 		virtual T* end() const { return nullptr; }
 		virtual const T* cbegin() const { return nullptr; }
-		virtual const T* cend() const { return nullptr; }*/
+		virtual const T* cend() const { return nullptr; }
 		// Funcion: Obtiene el puntero del objeto solicitado
 		// Precondiciones:
 		//		posicion < count

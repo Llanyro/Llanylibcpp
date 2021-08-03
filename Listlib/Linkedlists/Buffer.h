@@ -1,5 +1,5 @@
 /*
- * Vector.h
+ * Buffer.h
  *
  *  Created on: Mar 3, 2021
  *      Author: llanyro
@@ -8,8 +8,8 @@
 #ifndef LISTLIB_LINKEDLISTS_BUFFER_H_
 #define LISTLIB_LINKEDLISTS_BUFFER_H_
 
-#include "../Corelist/List.h"
-#include "../../Nodelib/ListNodes.h"
+#include "Linkedlist.h"
+#include "../Dynamiclist/Vector.h"
 
 namespace Llanylib {
 namespace Listlib {
@@ -28,8 +28,12 @@ namespace Linkedlists {
 template<class T>
 class Buffer : public Corelist::List<T> {
 	protected:
-		LIST_NODES::NodeDouble* root;
-		CONTAINERS::ContainerDouble<LIST_NODES::NodeDouble*, len_t>* cache;
+		len_t bufferPseudoSize;
+
+		Linkedlist<Dynamiclist::Buffer::Vector<T>> a;
+		Dynamiclist::Buffer::Vector<T>* lastVector;
+		LIST_NODES::NodeDouble<T>* root;
+		CONTAINERS::ContainerDouble<LIST_NODES::NodeDouble<T>*, len_t>* cache;
 	protected:
 		// Funcion: Busca el la lista el nodo solicitado
 		// Extra: Guarda el ultimo nodo visitado
@@ -38,7 +42,7 @@ class Buffer : public Corelist::List<T> {
 		//		position != nullptr
 		// Retorno: Nodo solicitado
 		// Complejidad temporal y espacial: O(n/2) y M(1)
-		LIST_NODES::NodeDouble* getNodoNoCache(const len_t& position) const {
+		LIST_NODES::NodeDouble<T>* getNodoNoCache(const len_t& position) const {
 			LIST_NODES::NodeDouble* nodoActual = nullptr;
 			if (this->validPos(position)) {
 				nodoActual = this->root;
@@ -61,7 +65,7 @@ class Buffer : public Corelist::List<T> {
 		// Retorno: Nodo solicitado
 		// Complejidad temporal y espacial peor: O(n/2) y M(1)
 		// Complejidad temporal y espacial mejor: O(1) y M(1)
-		LIST_NODES::NodeDouble* getNodoCache(const len_t& position) const {
+		LIST_NODES::NodeDouble<T>* getNodoCache(const len_t& position) const {
 			LIST_NODES::NodeDouble* nodoActual = nullptr;
 			if (this->validPos(position)) {
 				if (position == 0)
@@ -84,7 +88,7 @@ class Buffer : public Corelist::List<T> {
 			}
 			return nodoActual;
 		}
-		void addNode(NODE* node) {
+		void addNode(LIST_NODES::NodeDouble<T>* node) {
 			// Caso especial de que la lista este vacia
 			if (this->length == 0)
 				this->root = node;
@@ -105,11 +109,16 @@ class Buffer : public Corelist::List<T> {
 			this->length++;
 		}
 	public:
-		Buffer() {
+		Buffer(const len_t& bufferPseudoSize) {
+			this->bufferPseudoSize = bufferPseudoSize;
+
 			this->root = nullptr;
 			this->cache =
-				new CONTAINERS::ContainerDouble<LIST_NODES::NodeDouble*, len_t>(nullptr, 0);
+				new CONTAINERS::ContainerDouble
+				<LIST_NODES::NodeDouble<T>*, len_t>
+				(nullptr, 0);
 		}
+		Buffer() : Buffer(300) {}
 		virtual ~Buffer() {
 			this->clear();
 			delete this->cache;
